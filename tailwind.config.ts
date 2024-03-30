@@ -7,6 +7,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      padding: '2rem',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -18,6 +21,6 @@ const config: Config = {
       sans: ['var(--font-satoshi)'],
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-fluid-type')],
 };
 export default config;

@@ -16,6 +16,9 @@ export default function RootLayout({
       <nav>
         <ul className='flex gap-3 pt-3 pb-3 border border-dashed border-white fixed top-0 left-0 w-screen'>
           <li>
+            <Link href='/'>Home</Link>
+          </li>
+          <li>
             <Link href='/o-mnie#dlaczego-ja'>Dlaczego ja ?</Link>
           </li>
           <li>
