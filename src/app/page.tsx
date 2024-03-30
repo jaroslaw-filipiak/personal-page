@@ -3,13 +3,19 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <nav className='border fixed left-0 top-0 w-screen h-10'>
-        <ul className='flex gap-3 pt-3 pb-3 border border-dashed border-white'>
+      <nav className='fixed left-0 top-0 w-screen'>
+        <ul className='flex container justify-end text-base gap-10 pt-10'>
           <li>
-            <Link href='/'>Home</Link>
+            <Link href='/'>Usługi</Link>
+          </li>
+          <li>
+            <Link href='/'>Case studies</Link>
           </li>
           <li>
             <Link href='/o-mnie'>O mnie</Link>
+          </li>
+          <li>
+            <Link href='/'>Kontakt</Link>
           </li>
         </ul>
       </nav>
