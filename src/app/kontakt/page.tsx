@@ -7,7 +7,7 @@ export default function Contact() {
       <Nav />
       <section
         id='kontakt'
-        className='h-screen border flex items-center justify-center'
+        className='h-screen flex items-center justify-center bg-white'
       >
         <div className='container'>
           <h1 className='text-5xl text-balance'>
