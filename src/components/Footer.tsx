@@ -16,7 +16,7 @@ export default function Footer() {
           </li>
 
           <li>
-            <Link href='/case-studies'>Kontakt</Link>
+            <Link href='/kontakt'>Kontakt</Link>
           </li>
         </ul>
       </div>
