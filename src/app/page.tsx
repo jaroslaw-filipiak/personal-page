@@ -19,9 +19,11 @@ export default function Home() {
 
             <div className='flex lg:w-7/12 gap-10 text-sm'>
               <div>
-                Znamy narzędzia branżowe, jeśli chodzi o tworzenie dedykowanych
-                aplikacji (mobilnych i webowych). Oferujemy znacznie więcej niż
-                tylko umiejętności.
+                <h2>
+                  Znamy narzędzia branżowe, jeśli chodzi o tworzenie
+                  dedykowanych aplikacji (mobilnych i webowych). Oferujemy
+                  znacznie więcej niż tylko umiejętności.
+                </h2>
               </div>
               <div>
                 Znamy narzędzia branżowe, jeśli chodzi o tworzenie dedykowanych
