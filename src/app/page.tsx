@@ -1,5 +1,6 @@
 import Nav from '@/components/Nav';
 import Link from 'next/link';
+import Cta from '@/components/Cta';
 
 export default function Home() {
   return (
@@ -122,6 +123,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Cta />
     </>
   );
 }
