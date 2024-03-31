@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 import './globals.css';
+import Footer from '@/components/Footer';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -23,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={satoshi.className}>
-        <main>{children}</main>
+        <main className='z-10 pb-[100vh] relative '>{children}</main>
+        <Footer />
       </body>
     </html>
   );

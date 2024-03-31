@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <section
       id='err404'
-      className='pt-72 pb-72 flex items-center justify-start h-screen'
+      className='pt-72 pb-72 flex items-center justify-start h-screen bg-white'
     >
       <div className='container'>
         <h1 className='text-5xl text-balance pb-24 text-left'>

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <section id='start' className='pt-72 pb-72'>
+      <section id='start' className='pt-72 pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-end'>
             <div>
@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id='uslugi' className='bg-black pt-20 pb-20'>
+      <section id='uslugi' className='bg-dark pt-20 pb-20'>
         <div className='container  text-white'>
           <h3 className='text-5xl pb-60'>W tym mogę Tobie pomóc</h3>
           <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
