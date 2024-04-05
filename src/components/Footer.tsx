@@ -6,10 +6,10 @@ export default function Footer() {
       <div className='w-full h-full  flex items-center justify-center '>
         <ul className='text-5xl text-center flex flex-col gap-5'>
           <li>
-            <Link href='/uslugi'>Usługi</Link>
+            <Link href='/#uslugi'>Usługi</Link>
           </li>
           <li>
-            <Link href='/case-studies'>Case studies</Link>
+            <Link href='/#case-studies'>Case studies</Link>
           </li>
           <li>
             <Link href='/o-mnie'>O mnie</Link>

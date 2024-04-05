@@ -1,8 +1,15 @@
+'use client';
+
 import Nav from '@/components/Nav';
-import Link from 'next/link';
 import Cta from '@/components/Cta';
+import Link from 'next/link';
+import Image from 'next/image';
+
+import { use, useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {});
+
   return (
     <>
       <Nav />
@@ -10,7 +17,7 @@ export default function Home() {
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-end'>
             <div>
-              <h1 className='text-5xl text-balance pb-24'>
+              <h1 className='text-5xl text-balance pb-10'>
                 Tworzę i rozwijam aplikacje szyte na miarę. Obsługuję klientów
                 kompleksowo - od koncepcji przez projekt graficzny, finalne
                 wdrożenie oraz stałą obsługę. Pracuję tylko w najnowszych
@@ -35,9 +42,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id='uslugi' className='bg-dark pt-20 pb-20'>
+      <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
         <div className='container  text-white'>
-          <h3 className='text-5xl pb-60'>W tym mogę Tobie pomóc</h3>
+          <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
           <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
             {/* projektowanie graficzne */}
             <Link
@@ -123,6 +130,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section id='case-studies' className='bg-white pt-20 pb-20'>
+        <div className='container'>
+          <h3 className='text-5xl pb-60'>Case studies</h3>
+          <div className='flex flex-col items-center justify-start gap-40'>
+            <div className='case-study w-full'>
+              <Image
+                alt='Konfigurator produktu dla ddgro.eu'
+                src='/img/img.jpg'
+                width={1422}
+                height={800}
+              ></Image>
+
+              <div className='pl-3 pr-3'>
+                <h4 className='text-lg mt-6 '>
+                  Konfigurator produktu dla ddgro.eu
+                </h4>
+                <h5 className='text-2xl text-balance'>
+                  W jaki sposób zamieniłem excela na konfigurator, który sam
+                  tworzy oferty i wysyła je do klientów ?
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className='pt-6 0 bg-white'></div>
       <Cta />
     </>
   );
