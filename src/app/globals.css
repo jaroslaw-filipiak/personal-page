@@ -17,3 +17,17 @@ html {
     text-wrap: balance;
   }
 }
+
+.content {
+  li {
+    @apply text-sm;
+  }
+
+  ul {
+    @apply list-disc pt-3 pb-3;
+  }
+
+  ol {
+    @apply list-decimal pl-6 lg:pl-10;
+  }
+}

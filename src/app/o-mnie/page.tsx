@@ -62,32 +62,31 @@ export default function AboutMe() {
       <section id='skills' className='pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
-            <div>
-              <h3 className='text-5xl text-balance pb-24 hidden'>
-                Mój największy kapitał to ludzie z którymi pracuje
-              </h3>
-            </div>
+            <div></div>
 
-            <div className='flex items-end gap-10'>
-              <div>
+            <div className='flex items-center justify-between'>
+              <div className='w-4/12'>
+                <Image
+                  src='/img/jaroslaw-filipiak.webp'
+                  alt='Jarosław Filipiak'
+                  width={434}
+                  height={688}
+                ></Image>
+              </div>
+              <div className='flex-1'>
+                <h3 className='text-5xl text-balance pb-24'>
+                  Oferuje indywidualne , partnerskie podejście w kameralnym
+                  gronie, ogromne doświadczenie oraz jasne warunki współpracy.
+                </h3>
                 <h4 className='text-lg'>
-                  Jestem freelancerem i współpracuje blisko z klientem. Nie
-                  mniej posiadam kameralne grono osób z którymi współpracuje.
-                  Mam “pod ręką” kilka świetnych osób, które pomagają mi w
-                  codziennej pracy. Potrzebujesz fotografa ? montazysty ? osoby
-                  do konsultacji od AI ? Do wiekszych lub bardziej wymagających
-                  projektów jestem w stanie utowrzyć wiekszy zespół.
+                  Współpraca bezpośrednio ze mną to gwarancja, że Twoje zlecenie
+                  zostanie wykonane z najwyższą starannością, zgodnie z
+                  najnowszymi trendami. Masz również pewność szybkiego przepływu
+                  informacji oraz tego, że kwota na fakturze nie będzie zawyżona
+                  o koszty aparatu administracyjnego, wynajmu biura czy też
+                  kosztów floty samochodowej itp.
                 </h4>
               </div>
-            </div>
-
-            <div className='mt-24'>
-              <Image
-                src='/img/jaroslaw-filipiak.webp'
-                alt='Jarosław Filipiak'
-                width={434}
-                height={688}
-              ></Image>
             </div>
           </div>
         </div>
