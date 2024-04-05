@@ -320,8 +320,8 @@ export default function PrivacyPolicy() {
                     Serwisu ponownie wpisywać loginu i hasła;
                   </li>
                   <li>
-                    realizacji celów określonych powyżej w części "Istotne
-                    techniki marketingowe";
+                    realizacji celów określonych powyżej w części Istotne
+                    techniki marketingowe;
                   </li>
                 </ol>
               </li>
