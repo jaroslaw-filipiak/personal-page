@@ -1,5 +1,7 @@
+'use client';
 import Nav from '@/components/Nav';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
@@ -9,7 +11,13 @@ export default function Contact() {
         id='kontakt'
         className='h-screen flex items-center justify-center bg-white'
       >
-        <div className='container'>
+        <motion.div
+          initial={{ opacity: 0, top: 30 }}
+          whileInView={{ opacity: 1, top: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: 'spring', duration: 1 }}
+          className='container relative'
+        >
           <h1 className='text-5xl text-balance'>
             Czas na nowy projekt? Potrzebujesz stałego, konkretnego partnera do
             współpracy projektowej? napisz do mnie na&nbsp;
@@ -20,7 +28,7 @@ export default function Contact() {
               rozmowę online klikając tutaj
             </Link>
           </h1>
-        </div>
+        </motion.div>
       </section>
     </>
   );

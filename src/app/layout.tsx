@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`relative  ${satoshi.className}`}>
-        <main className='z-10 relative mb-[100vh]'>{children}</main>
+        <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
         <Footer />
       </body>
     </html>
