@@ -1,16 +1,8 @@
-import { motion } from 'framer-motion';
-
 export default function Cta() {
   return (
     <section id='cta' className='pt-20 pb-20 bg-white'>
       <div className='flex items-center justify-center'>
-        <motion.div
-          initial={{ opacity: 0, top: 30 }}
-          whileInView={{ opacity: 1, top: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ type: 'spring', duration: 2 }}
-          className='container flex flex-col items-end'
-        >
+        <div className='container flex flex-col items-end'>
           <div>
             <h3 className='text-5xl text-balance pb-24'>
               Masz ciekawy projekt? Skontaktuj się ze mną już teraz! Napisz do
@@ -40,7 +32,7 @@ export default function Cta() {
               <h4></h4>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

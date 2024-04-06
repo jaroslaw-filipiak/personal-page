@@ -51,27 +51,14 @@ export default function Home() {
       </section>
       <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
         <div className='container  text-white'>
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 100 }}
-            className='text-5xl pb-40'
-          >
-            W tym mogę Tobie pomóc
-          </motion.h3>
+          <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
           <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
             {/* projektowanie graficzne */}
             <Link
               href='/projektowanie-graficzne'
               className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ type: 'spring', duration: 0.8 }}
-              >
+              <div>
                 <Image
                   width={147}
                   height={138}
@@ -79,29 +66,17 @@ export default function Home() {
                   src='/img/projektowanie-graficzne.svg'
                   alt='projektowanie-graficzne, ikona informacyjna'
                 />
-              </motion.div>
+              </div>
               <div className='flex flex-col items-start justify-start gap-5 '>
-                <motion.h4
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-xl mt-14 text-balance'
-                >
+                <h4 className='text-xl mt-14 text-balance'>
                   Projekty graficzne stron www oraz aplikacji mobilnych
-                </motion.h4>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-sm text-gray text-balance'
-                >
+                </h4>
+                <p className='text-sm text-gray text-balance'>
                   Zaprojektuję dla Ciebie unikalny projekt aplikacji mobilnej,
                   aplikacji webowej lub strony internetowej. Projekt będzie w
                   pełni profesjonalny, zgodny ze standardami UI/UX oraz w pełni
                   indywidualny
-                </motion.p>
+                </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
                   więcej
                 </button>
@@ -112,12 +87,7 @@ export default function Home() {
               href='/wdrozenia-wordpress'
               className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ type: 'spring', duration: 0.8 }}
-              >
+              <div>
                 <Image
                   width={166}
                   height={166}
@@ -125,29 +95,17 @@ export default function Home() {
                   src='/img/wp.svg'
                   alt='wordpress, ikona informacyjna'
                 />
-              </motion.div>
+              </div>
               <div className='flex flex-col items-start gap-5'>
-                <motion.h4
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-xl mt-14 text-balance'
-                >
+                <h4 className='text-xl mt-14 text-balance'>
                   Autorskie wdrażanie projektów graficznych do systemu WordPress
-                </motion.h4>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-sm text-gray text-balance'
-                >
+                </h4>
+                <p className='text-sm text-gray text-balance'>
                   Wdrożę dowolny projekt graficzny do systemu WordPress. Strona
                   będzie wdrożona w pełni responsywnie, zgodnie z najnowszymi
                   standardami. Zoptymalizowana pod kątem SEO oraz szybkości
                   ładowania.
-                </motion.p>
+                </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
                   więcej
                 </button>
@@ -158,12 +116,7 @@ export default function Home() {
               href='dedykowane-oprogramowanie'
               className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ type: 'spring', duration: 0.8 }}
-              >
+              <div>
                 <Image
                   width={126}
                   height={125}
@@ -171,29 +124,17 @@ export default function Home() {
                   src='/img/wsparcie.svg'
                   alt='wsparcie informatyczne, ikona informacyjna'
                 />
-              </motion.div>
+              </div>
               <div className='flex flex-col items-start gap-5'>
-                <motion.h4
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-xl mt-14 text-balance'
-                >
+                <h4 className='text-xl mt-14 text-balance'>
                   Dedykowane oprogramowanie usprawniające Twój biznes
-                </motion.h4>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', duration: 0.6 }}
-                  className='text-sm text-gray text-balance'
-                >
+                </h4>
+                <p className='text-sm text-gray text-balance'>
                   Autorskie oprogramowanie dla Twojego biznesu. Uwielbiam
                   tworzyć aplikację, które usprawniają codzienne działanie
                   firmy. Tworze również aplikację mobilne oraz takie, które
                   wykorzystują AI
-                </motion.p>
+                </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
                   więcej
                 </button>
@@ -204,23 +145,9 @@ export default function Home() {
       </section>
       <section id='case-studies' className='bg-white pt-20 pb-20'>
         <div className='container'>
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 100 }}
-            className='text-5xl pb-60'
-          >
-            Case studies
-          </motion.h3>
+          <h3 className='text-5xl pb-60'>Case studies</h3>
           <div className='flex flex-col items-center justify-start gap-40'>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 100, duration: 1 }}
-              className='case-study w-full'
-            >
+            <div className='case-study w-full'>
               <Image
                 alt='Konfigurator produktu dla ddgro.eu'
                 src='/img/img.jpg'
@@ -237,7 +164,7 @@ export default function Home() {
                   tworzy oferty i wysyła je do klientów ?
                 </h5>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
