@@ -2,7 +2,6 @@
 
 import Nav from '@/components/Nav';
 import Cta from '@/components/Cta';
-import Link from 'next/link';
 import Image from 'next/image';
 
 import { use, useEffect } from 'react';
@@ -54,10 +53,7 @@ export default function Home() {
           <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
           <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
             {/* projektowanie graficzne */}
-            <Link
-              href='/projektowanie-graficzne'
-              className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
-            >
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
               <div>
                 <Image
                   width={147}
@@ -77,16 +73,13 @@ export default function Home() {
                   pełni profesjonalny, zgodny ze standardami UI/UX oraz w pełni
                   indywidualny
                 </p>
-                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
+                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
                 </button>
               </div>
-            </Link>
+            </div>
             {/* wp */}
-            <Link
-              href='/wdrozenia-wordpress'
-              className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
-            >
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
               <div>
                 <Image
                   width={166}
@@ -106,16 +99,13 @@ export default function Home() {
                   standardami. Zoptymalizowana pod kątem SEO oraz szybkości
                   ładowania.
                 </p>
-                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
+                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hieen'>
                   więcej
                 </button>
               </div>
-            </Link>
+            </div>
             {/* wsparcie */}
-            <Link
-              href='dedykowane-oprogramowanie'
-              className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'
-            >
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
               <div>
                 <Image
                   width={126}
@@ -135,11 +125,11 @@ export default function Home() {
                   firmy. Tworze również aplikację mobilne oraz takie, które
                   wykorzystują AI
                 </p>
-                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all'>
+                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
                 </button>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
