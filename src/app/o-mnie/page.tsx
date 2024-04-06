@@ -19,7 +19,7 @@ export default function AboutMe() {
           </h1>
         </div>
       </section>
-      <section id='skills' className='pt-72 pb-72 bg-white'>
+      <section id='skills' className='pt-20 pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-end'>
             <div>
@@ -60,7 +60,7 @@ export default function AboutMe() {
         </div>
       </section>
 
-      <section id='skills' className='pb-72 bg-white'>
+      <section id='cooperation' className='pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
             <div></div>
