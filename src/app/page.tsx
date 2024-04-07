@@ -208,6 +208,32 @@ export default function Home() {
                 </div>
               </Link>
             </div>
+
+            <div className='flex flex-col items-center justify-start gap-40'>
+              <Link
+                href='/case-studies/skinoren'
+                className='case-study w-full group'
+              >
+                <Image
+                  alt='skinoren'
+                  src='/img/portfolio/skinoren/skinoren-cover.webp'
+                  width={1400}
+                  height={790}
+                  className='group-hover:opacity-80 transition-all'
+                ></Image>
+
+                <div className='pl-3 pr-3'>
+                  <h4 className='text-lg mt-6 '>
+                    Skinoren - Twój ekspert w leczeniu trądziku
+                  </h4>
+                  <h5 className='text-2xl text-balance'>
+                    Autorskie wdrożenie na podstawie projektu graficznego.
+                    Uwielbiam takie projekty i z przyjemnością i starannością
+                    zamieniam je w pełni interaktywne strony www.
+                  </h5>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
