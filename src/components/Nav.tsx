@@ -48,11 +48,9 @@ export default function Nav() {
             />
           </Link>
         </li>
+
         <li>
-          <Link href='/#uslugi'>Usługi</Link>
-        </li>
-        <li>
-          <Link href='/'>Case studies</Link>
+          <Link href='/#case-studies'>Case studies</Link>
         </li>
         <li>
           <Link href='/o-mnie'>O mnie</Link>

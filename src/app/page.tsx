@@ -3,6 +3,7 @@
 import Nav from '@/components/Nav';
 import Cta from '@/components/Cta';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { use, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -53,7 +54,7 @@ export default function Home() {
           <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
           <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
             {/* projektowanie graficzne */}
-            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all '>
               <div>
                 <Image
                   width={147}
@@ -79,7 +80,7 @@ export default function Home() {
               </div>
             </div>
             {/* wp */}
-            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -99,13 +100,13 @@ export default function Home() {
                   standardami. Zoptymalizowana pod kątem SEO oraz szybkości
                   ładowania.
                 </p>
-                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hieen'>
+                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
                 </button>
               </div>
             </div>
             {/* wsparcie */}
-            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all lg:hover:-top-2'>
+            <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all '>
               <div>
                 <Image
                   width={126}
@@ -136,24 +137,76 @@ export default function Home() {
       <section id='case-studies' className='bg-white pt-20 pb-20'>
         <div className='container'>
           <h3 className='text-5xl pb-60'>Case studies</h3>
-          <div className='flex flex-col items-center justify-start gap-40'>
-            <div className='case-study w-full'>
-              <Image
-                alt='Konfigurator produktu dla ddgro.eu'
-                src='/img/img.jpg'
-                width={1422}
-                height={800}
-              ></Image>
+          <div className='flex flex-col gap-10 lg:gap-40'>
+            <div className='flex flex-col items-center justify-start gap-40'>
+              <Link
+                href='/case-studies/femmefab'
+                className='case-study w-full group'
+              >
+                <Image
+                  alt='Femmefab'
+                  src='/img/portfolio/femmefab/femmefab-cover.webp'
+                  width={1400}
+                  height={790}
+                  className='group-hover:opacity-80 transition-all'
+                ></Image>
 
-              <div className='pl-3 pr-3'>
-                <h4 className='text-lg mt-6 '>
-                  Konfigurator produktu dla ddgro.eu
-                </h4>
-                <h5 className='text-2xl text-balance'>
-                  W jaki sposób zamieniłem excela na konfigurator, który sam
-                  tworzy oferty i wysyła je do klientów ?
-                </h5>
-              </div>
+                <div className='pl-3 pr-3'>
+                  <h4 className='text-lg mt-6 '>Femmefab.nl</h4>
+                  <h5 className='text-2xl text-balance'>
+                    Doskonały przykład, który pokazuje jak wyglądają autorskie,
+                    dedykowane strony internetowe, lekkość, świeżość, nowoczesny
+                    wygląd oraz przyjemne animacje.
+                  </h5>
+                </div>
+              </Link>
+            </div>
+
+            <div className='flex flex-col items-center justify-start gap-40'>
+              <Link
+                href='/case-studies/siborsoft'
+                className='case-study w-full group'
+              >
+                <Image
+                  alt='Siborsoft'
+                  src='/img/portfolio/siborsoft/siborsoft-cover.webp'
+                  width={1400}
+                  height={790}
+                  className='group-hover:opacity-80 transition-all'
+                ></Image>
+
+                <div className='pl-3 pr-3'>
+                  <h4 className='text-lg mt-6 '>Siborsoft</h4>
+                  <h5 className='text-2xl text-balance'>
+                    Czyli jak zrobić prostą stronę z supermocami ? Strona, która
+                    nie przeładowuje się po wejściu na kolejne podstrony!
+                  </h5>
+                </div>
+              </Link>
+            </div>
+
+            <div className='flex flex-col items-center justify-start gap-40'>
+              <Link
+                href='/case-studies/23knots'
+                className='case-study w-full group'
+              >
+                <Image
+                  alt='23knots'
+                  src='/img/portfolio/23knots/23knots-cover.webp'
+                  width={1400}
+                  height={790}
+                  className='group-hover:opacity-80 transition-all'
+                ></Image>
+
+                <div className='pl-3 pr-3'>
+                  <h4 className='text-lg mt-6 '>23knots</h4>
+                  <h5 className='text-2xl text-balance'>
+                    Prosty One page, który przykuwa uwagę! Również i przy
+                    mniejszych zleceniach staram się zaskoczyć klienta i dać mu
+                    coś więcej niż tylko zwykłą stronę jaką robią wszyscy inni.
+                  </h5>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

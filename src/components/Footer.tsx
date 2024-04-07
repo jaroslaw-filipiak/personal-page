@@ -6,9 +6,6 @@ export default function Footer() {
       <div className='w-full h-full  flex items-center justify-center '>
         <ul className='text-5xl text-center flex flex-col gap-5'>
           <li>
-            <Link href='/#uslugi'>Usługi</Link>
-          </li>
-          <li>
             <Link href='/#case-studies'>Case studies</Link>
           </li>
           <li>
@@ -32,7 +29,7 @@ export default function Footer() {
             <Link href='https://www.facebook.com/jfilipiakpl'>Facebook</Link>
           </li>
           <li>
-            <Link href='/polityka-prywatnosci'>Polityka prywatnosci</Link>
+            <Link href='/polityka-prywatnosci'>Polityka prywatności</Link>
           </li>
         </ul>
       </div>

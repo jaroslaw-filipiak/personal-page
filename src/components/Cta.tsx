@@ -1,13 +1,14 @@
-export default function Cta() {
+export default function Cta({
+  title = 'Masz ciekawy projekt? Skontaktuj się ze mną już teraz! Napisz do mnie lub zadzwoń (+48) 663 568 828',
+}: {
+  title?: string;
+}) {
   return (
     <section id='cta' className='pt-20 pb-20 bg-white'>
       <div className='flex items-center justify-center'>
-        <div className='container flex flex-col items-end'>
+        <div className='container flex flex-col items-start'>
           <div>
-            <h3 className='text-5xl text-balance pb-24'>
-              Masz ciekawy projekt? Skontaktuj się ze mną już teraz! Napisz do
-              mnie lub zadzwoń (+48) 663 568 828
-            </h3>
+            <h3 className='text-5xl text-balance pb-24'>{title}</h3>
           </div>
 
           <div className='flex flex-col lg:flex-row lg:w-10/12 gap-10 text-sm'>
