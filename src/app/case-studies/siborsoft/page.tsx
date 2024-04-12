@@ -56,7 +56,7 @@ export default function Home() {
       <section className='lg:pt-20 bg-white'>
         <div className='container'>
           <div>
-            <h3 className='text-5xl text-balance pb-12 lg:pb-24'>
+            <h3 className='text-5xl text-balance pb-12 lg:pb-24 pt-10'>
               Kwestia technologiczna
             </h3>
           </div>

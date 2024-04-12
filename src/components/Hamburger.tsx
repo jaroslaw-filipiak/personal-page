@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -29,14 +31,10 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed hidden md:flex left-0  w-screen transition-all z-10 ${
-        scrollDirection === 'up'
-          ? 'nav--visible bg-white top-0'
-          : 'nav--hidden -top-[90px]'
-      }`}
+      className={`fixed w-screen md:hidden left-0 transition-all z-30 bg-transparnt flex items-center pt-3 pb-3`}
     >
-      <ul className='flex container justify-end items-center text-base gap-10 h-[90px]'>
-        <li className='flex-grow'>
+      <ul className='w-full flex items-center justify-between pl-6 pr-6'>
+        <li>
           <Link className='inline-flex' href='/'>
             <Image
               width={47}
@@ -46,15 +44,11 @@ export default function Nav() {
             />
           </Link>
         </li>
-
         <li>
-          <Link href='/#case-studies'>Case studies</Link>
-        </li>
-        <li>
-          <Link href='#dlaczego-ja'>Dlaczego ja ? </Link>
-        </li>
-        <li>
-          <Link href='#cta'>Kontakt</Link>
+          <button className='hamburger group hover:opacity-80 flex flex-col gap-2 transition-all'>
+            <div className='w-10 h-[1px] bg-black transition-all'></div>
+            <div className='w-10 h-[1px] bg-black transition-all'></div>
+          </button>
         </li>
       </ul>
     </nav>

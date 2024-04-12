@@ -19,17 +19,17 @@ export default function AboutMe() {
           </h1>
         </div>
       </section>
-      <section id='skills' className='pt-20 pb-72 bg-white'>
+      <section className='pt-20 pb-10 lg:pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-end'>
             <div>
-              <h2 className='text-5xl text-balance pb-24'>
+              <h2 className='text-5xl text-balance pb-10 lg:pb-24'>
                 Posiadam solidny zestaw umiejętności i technologii związanych z
                 całą otoczką procesu projektowania.
               </h2>
             </div>
 
-            <div className='flex items-start gap-10 '>
+            <div className='flex flex-col lg:flex-row items-start gap-10 '>
               <div>
                 <h3 className='text-lg'>
                   Rozpoczynałem swoją przygodę jako grafik komputerowy, w
@@ -50,23 +50,22 @@ export default function AboutMe() {
                   jednak jest mocno zunifikowana na jedym stacku
                   technologicznym.
                 </p>
-                <p>
-                  Oferuje indywidualne , partnerskie podejście , ogromne
-                  doświadczenie oraz jasne warunki współpracy
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id='cooperation' className='pb-72 bg-white'>
+      <section className='lg:pb-72 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
             <div></div>
 
-            <div className='flex items-center justify-between'>
-              <div className='w-4/12'>
+            <div
+              id='dlaczego-ja'
+              className='flex flex-col lg:flex-row items-center justify-between'
+            >
+              <div className='w-full lg:w-6/12 xl:w-4/12 pb-10 lg:pb-0'>
                 <Image
                   src='/img/jaroslaw-filipiak.webp'
                   alt='Jarosław Filipiak'
@@ -74,8 +73,8 @@ export default function AboutMe() {
                   height={688}
                 ></Image>
               </div>
-              <div className='flex-1'>
-                <h3 className='text-5xl text-balance pb-24'>
+              <div className='lg:flex-1'>
+                <h3 className='text-5xl text-balance pb-10 lg:pb-24'>
                   Oferuje indywidualne , partnerskie podejście w kameralnym
                   gronie, ogromne doświadczenie oraz jasne warunki współpracy.
                 </h3>

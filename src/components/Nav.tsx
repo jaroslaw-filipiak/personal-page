@@ -1,17 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Nav() {
   const [scrollDirection, setScrollDirection] = useState('up');
+  const pathname = usePathname();
 
   useEffect(() => {
-    let lastScrollTop =
-      window.pageYOffset || document.documentElement.scrollTop;
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     const handleScroll = () => {
       const currentScrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+        window.scrollY || document.documentElement.scrollTop;
 
       if (currentScrollTop > lastScrollTop) {
         setScrollDirection('down');
@@ -23,17 +24,14 @@ export default function Nav() {
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    pathname.includes('case-studies') ? window.scrollTo(0, 90) : null;
   }, []);
 
   return (
     <nav
-      className={`fixed left-0 top-0 w-screen transition-all z-10 ${
+      className={`fixed hidden md:flex left-0  w-screen transition-all z-10 ${
         scrollDirection === 'up'
-          ? 'nav--visible bg-white'
+          ? 'nav--visible bg-white top-0'
           : 'nav--hidden -top-[90px]'
       }`}
     >

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <section id='start' className='pt-72 pb-72 '>
+      <section id='start' className='pt-40 lg:pt-72 pb-40 lg:pb-72 '>
         <div className='flex items-center justify-center'>
           <motion.div
             initial={{ opacity: 0, top: 30 }}
@@ -32,7 +32,7 @@ export default function Home() {
               </h1>
             </div>
 
-            <div className='flex lg:w-7/12 gap-10 text-sm'>
+            <div className='flex flex-col lg:flex-row lg:w-7/12 gap-10 text-sm'>
               <div>
                 <h2>
                   Znamy narzędzia branżowe, jeśli chodzi o tworzenie
@@ -136,7 +136,8 @@ export default function Home() {
       </section>
       <section id='case-studies' className='bg-white pt-20 pb-20'>
         <div className='container'>
-          <h3 className='text-5xl pb-60'>Case studies</h3>
+          <h3 className='text-5xl pb-2 '>Case studies</h3>
+          <h3 className='text-xl pb-20'>Zobacz wybrane realizacje</h3>
           <div className='flex flex-col gap-10 lg:gap-40'>
             <div className='flex flex-col items-center justify-start gap-40'>
               <Link
