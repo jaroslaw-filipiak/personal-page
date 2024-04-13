@@ -23,7 +23,7 @@ export default function Contact() {
             współpracy projektowej? napisz do mnie na&nbsp;
             <Link
               className='text-dark opacity-20 hover:opacity-100 transition-opacity duration-300'
-              href='mailto: info@j-filipiak.pl'
+              href='mailto:info@j-filipiak.pl?subject=Czas na nowy projekt&body=Cześć Jarek, chciałbym porozmawiać o świetnym projekcie.'
             >
               info@j-filipiak.pl
             </Link>

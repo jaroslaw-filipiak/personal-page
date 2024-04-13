@@ -5,6 +5,7 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import Hamburger from '@/components/Hamburger';
 import SideMenu from '@/components/SideMenu';
+import '@/scss/main.scss';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
