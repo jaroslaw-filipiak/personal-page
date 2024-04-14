@@ -16,7 +16,7 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://j-filpiak.pl/'),
+  metadataBase: new URL('https://j-filipiak.pl/'),
 };
 
 export default function RootLayout({
