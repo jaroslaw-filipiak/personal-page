@@ -103,7 +103,7 @@ export default function Home() {
 
             <li className='flex flex-col lg:flex-row pb-12  border-b border-black border-opacity-20 mb-12'>
               <div className='text-lg lg:w-6/12 mb-6 lg:mb-0'>
-                Projekt graficzny{' '}
+                Projekt graficzny
               </div>
               <div className='lg:w-6/12 flex flex-col items-start justify-start gap-6 text-balance'>
                 <p>Strona zaprototypowana i zaprojektowana w Figmie.</p>
