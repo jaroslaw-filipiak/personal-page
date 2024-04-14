@@ -8,6 +8,7 @@ import SideMenu from '@/components/SideMenu';
 import '@/scss/main.scss';
 import Script from 'next/script';
 import Head from 'next/head';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Hamburger />
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
+        <GoogleAnalytics gaId='AW-11423080410' />
         <Footer />
       </body>
     </html>
