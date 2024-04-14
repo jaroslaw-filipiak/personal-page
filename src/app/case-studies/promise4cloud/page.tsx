@@ -43,9 +43,10 @@ export default function Home() {
             <div className='flex flex-col lg:flex-row items-start gap-6 lg:gap-10 lg:pb-24'>
               <div>
                 <h3 className='text-lg'>
-                  Strona została wdrożona w oparciu o builder 'Beaver Builder'.
-                  Podjeliśmy tą decyzję wspólnie z klientem ponieważ jednym z
-                  wymogów była możliwość edycji za pomocą buildera wizualnego
+                  Strona została wdrożona w oparciu o builder
+                  {`'Beaver Builder'`}. Podjeliśmy tą decyzję wspólnie z
+                  klientem ponieważ jednym z wymogów była możliwość edycji za
+                  pomocą buildera wizualnego
                 </h3>
               </div>
               <div className='text-sm'>
