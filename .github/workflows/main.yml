@@ -16,8 +16,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Generate
-        run: npm run generate
+      - name: Build
+        run: npm run build
 
       - name: 📂 Deploy to ftp
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -25,5 +25,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
+          local-dir: ./out/
           server-dir: public_html/j-filipiak.pl/

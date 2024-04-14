@@ -1,14 +1,12 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
 import localFont from 'next/font/local';
 import './globals.css';
+import '@/scss/main.scss';
 import Footer from '@/components/Footer';
 import Hamburger from '@/components/Hamburger';
 import SideMenu from '@/components/SideMenu';
-import '@/scss/main.scss';
-import Script from 'next/script';
-import Head from 'next/head';
+
 import { GoogleAnalytics } from '@next/third-parties/google';
+import type { Metadata } from 'next';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -16,6 +14,10 @@ const satoshi = localFont({
   display: 'swap',
   variable: '--font-satoshi',
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://j-filpiak.pl'),
+};
 
 export default function RootLayout({
   children,

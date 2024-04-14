@@ -32,7 +32,7 @@ export default function Nav() {
     window.addEventListener('scroll', handleScroll);
     pathname.includes('case-studies') ? window.scrollTo(0, 90) : null;
     pathname.includes('/o-mnie') ? window.scrollTo(0, 90) : null;
-  }, []);
+  }, [pathname]);
 
   return (
     <nav
