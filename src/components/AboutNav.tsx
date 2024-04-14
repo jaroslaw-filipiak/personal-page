@@ -67,7 +67,7 @@ export default function Nav() {
         <li>
           <Link
             className='hover:underline underline-offset-[6px] transition-all'
-            href='#cta'
+            href='/kontakt'
           >
             Kontakt
           </Link>
