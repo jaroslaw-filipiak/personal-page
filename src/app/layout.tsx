@@ -16,11 +16,6 @@ const satoshi = localFont({
   variable: '--font-satoshi',
 });
 
-export const metadata: Metadata = {
-  title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
-  description: 'jfilipiak.pl',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

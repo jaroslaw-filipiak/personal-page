@@ -3,8 +3,9 @@ import Cta from '@/components/Cta';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'O mnie',
-  description: 'jfilipiak.pl',
+  title: 'O mnie - Jarosław Filipiak',
+  description:
+    'Nazywam się Jarosław Filipiak, jestem doświadczonym grafikiem oraz front-end developerem. Specjalizuje się w projektowaniu oraz kodowaniu stron internetowych a także kompleksowych aplikacji webowych. Dowiedz się więcej o mnie!',
 };
 export default function AboutMe() {
   return (

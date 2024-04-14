@@ -1,48 +1,21 @@
-'use client';
-
 import Nav from '@/components/Nav';
 import Cta from '@/components/Cta';
 import Image from 'next/image';
 import Link from 'next/link';
+import HomeHero from '@/components/home/HomeHero';
+import { Metadata } from 'next';
 
-import { use, useEffect } from 'react';
-import { motion } from 'framer-motion';
+export const metadata: Metadata = {
+  title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
+  description:
+    'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
+};
 
 export default function Home() {
-  useEffect(() => {});
-
   return (
     <>
       <Nav />
-      <section id='start' className='pt-40 lg:pt-72 pb-40 lg:pb-72 '>
-        <div className='flex items-center justify-center'>
-          <motion.div
-            initial={{ opacity: 0, top: 30 }}
-            whileInView={{ opacity: 1, top: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: 'spring', duration: 1 }}
-            className='container flex flex-col items-endm relative  '
-          >
-            <div>
-              <h1 className='text-5xl text-balance pb-10'>
-                Stworzę da Ciebie niesamowitą stronę internetową. Żadnych
-                kompromisów - tylko autorski i w pełni profesjonany proces: Od
-                projektu graficznego po wdrożenie.
-              </h1>
-            </div>
-
-            <div className='flex flex-col lg:flex-row lg:w-8/12 gap-10 text-lg'>
-              <div>
-                <h2>
-                  Pełna obsługa stron internetowych. Potrzebujesz specjalisty do
-                  optymalizacji szybkośći ? SEO ? Wdrożenia projektu graficznego
-                  do WordPressa ? Rozpocznijmy współpracę!
-                </h2>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HomeHero />
       <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
         <div className='container  text-white'>
           <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
