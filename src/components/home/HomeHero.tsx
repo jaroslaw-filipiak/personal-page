@@ -21,7 +21,7 @@ export default function HomeHero() {
             </h1>
           </div>
 
-          <div className='flex flex-col lg:flex-row lg:w-8/12 gap-10 text-lg'>
+          <div className='flex flex-col lg:flex-row lg:w-9/12 gap-10 text-lg'>
             <div>
               <h2>
                 Pełna obsługa stron internetowych. Potrzebujesz specjalisty do
