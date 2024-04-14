@@ -71,7 +71,7 @@ export default function AboutMe() {
             >
               <div className='w-full lg:w-6/12 xl:w-4/12 pb-10 lg:pb-0'>
                 <Image
-                  src='/img/jaroslaw-filipiak.webp'
+                  src='/img/jaroslaw-filipiak.jpg'
                   alt='Jarosław Filipiak'
                   width={434}
                   height={688}
