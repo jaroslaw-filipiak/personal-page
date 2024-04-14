@@ -1,6 +1,10 @@
-'use client';
-
 import Nav from '@/components/Nav';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Polityka prywatności',
+  description: 'jfilipiak.pl',
+};
 
 export default function PrivacyPolicy() {
   return (

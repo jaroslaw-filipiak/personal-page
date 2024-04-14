@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -25,18 +27,19 @@ export default function Nav() {
 
     window.addEventListener('scroll', handleScroll);
     pathname.includes('case-studies') ? window.scrollTo(0, 90) : null;
+    pathname.includes('o-mnie') ? window.scrollTo(0, 90) : null;
   }, []);
 
   return (
     <nav
-      className={`fixed hidden md:flex left-0  w-screen transition-all z-10 ${
+      className={`fixed hidden lg:flex left-0  w-screen transition-all z-10 ${
         scrollDirection === 'up'
           ? 'nav--visible bg-white top-0'
           : 'nav--hidden -top-[90px]'
       }`}
     >
       <ul className='flex container justify-end items-center text-base gap-10 h-[90px]'>
-        <li className='flex-grow'>
+        <li className='flex-grow hover:opacity-70 transition-all'>
           <Link className='inline-flex' href='/'>
             <Image
               width={47}
@@ -48,13 +51,28 @@ export default function Nav() {
         </li>
 
         <li>
-          <Link href='/#case-studies'>Case studies</Link>
+          <Link
+            className='hover:underline underline-offset-[6px] transition-all'
+            href='/#case-studies'
+          >
+            Case studies
+          </Link>
         </li>
         <li>
-          <Link href='/o-mnie'>O mnie</Link>
+          <Link
+            className='hover:underline underline-offset-[6px] transition-all'
+            href='/o-mnie'
+          >
+            O mnie
+          </Link>
         </li>
         <li>
-          <Link href='/kontakt'>Kontakt</Link>
+          <Link
+            className='hover:underline underline-offset-[6px] transition-all'
+            href='/kontakt'
+          >
+            Kontakt
+          </Link>
         </li>
       </ul>
     </nav>

@@ -1,8 +1,11 @@
-'use client';
-import Link from 'next/link';
 import Image from 'next/image';
 import Cta from '@/components/Cta';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'O mnie',
+  description: 'jfilipiak.pl',
+};
 export default function AboutMe() {
   return (
     <>
@@ -19,7 +22,7 @@ export default function AboutMe() {
           </h1>
         </div>
       </section>
-      <section className='pt-20 pb-10 lg:pb-72 bg-white'>
+      <section className='pt-20 pb-10 lg:pb-40 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-end'>
             <div>
@@ -56,7 +59,7 @@ export default function AboutMe() {
         </div>
       </section>
 
-      <section className='lg:pb-72 bg-white'>
+      <section className='lg:pb-40 bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
             <div></div>

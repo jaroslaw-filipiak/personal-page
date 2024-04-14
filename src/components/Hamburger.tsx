@@ -11,6 +11,7 @@ export default function Nav() {
   const pathname = usePathname();
   const isMenuOpen = useMainStore((state) => state.isMenuOpen);
   const toggleMenu = useMainStore((state) => state.toggleMenu);
+  const closeMenu = useMainStore((state) => state.closeMenu);
 
   useEffect(() => {
     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -30,15 +31,22 @@ export default function Nav() {
 
     window.addEventListener('scroll', handleScroll);
     pathname.includes('case-studies') ? window.scrollTo(0, 90) : null;
+    pathname.includes('/o-mnie') ? window.scrollTo(0, 90) : null;
   }, []);
 
   return (
     <nav
-      className={`fixed w-screen lg:hidden left-0 transition-all z-30 bg-transparnt flex items-center pt-3 pb-3`}
+      className={`fixed w-screen lg:hidden left-0 transition-all z-30 bg-transparnt flex items-center pt-3 pb-3  ${
+        isMenuOpen ? 'bg-transparent' : 'bg-white'
+      } ${
+        scrollDirection === 'up'
+          ? 'nav--visible  top-0'
+          : 'nav--hidden -top-[90px]'
+      } `}
     >
       <ul className='w-full flex items-center justify-between pl-6 pr-6'>
         <li>
-          <Link className='inline-flex' href='/'>
+          <Link onClick={closeMenu} className='inline-flex' href='/'>
             <svg
               width='47'
               height='43'

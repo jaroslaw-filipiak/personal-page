@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import Hamburger from '@/components/Hamburger';
 import SideMenu from '@/components/SideMenu';
 import '@/scss/main.scss';
+import Script from 'next/script';
+import Head from 'next/head';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -25,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='pl'>
       <body className={`relative  ${satoshi.className}`}>
         <Hamburger />
         <SideMenu />

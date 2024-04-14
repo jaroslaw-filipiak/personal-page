@@ -1,3 +1,5 @@
+'use client';
+
 export default function Cta({
   title = 'Masz ciekawy projekt? Skontaktuj się ze mną już teraz! Napisz do mnie lub zadzwoń (+48) 663 568 828',
 }: {

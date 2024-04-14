@@ -14,47 +14,57 @@ export default function Home() {
         className=' bg-white h-[400px] sm:h-[500px] md:h-[600px] lg:h-screen w-full relative transition-all'
       >
         <Image
-          src='/img/portfolio/siborsoft/siborsoft-hero.webp'
+          src='/img/portfolio/promise4cloud/promise4cloud-hero.webp'
           layout='fill'
           objectFit='cover'
-          alt='siborsoft'
+          alt='promise4cloud'
           quality={100}
         ></Image>
       </section>
 
       <section className='pt-20  bg-white'>
         <div className='flex items-center justify-center'>
-          <div className='container flex flex-col items-center justify-start'>
+          <div className='container flex flex-col items-start justify-start'>
             <div>
               <Link
-                className='text-xl mt-3 mb-10 flex hover:underline hover:underline-offset-[16px] transition-all'
-                href='https://siborsoft.com/'
+                className='text-xl mt-3 mb-10 inline-flex hover:underline hover:underline-offset-[16px] transition-all'
+                href='https://promise4cloud.com/'
                 target='_blank'
               >
-                Zobacz stronę na żywo
+                Zobacz stronę na żywo ( https://promise4cloud.com )
               </Link>
-              <h2 className='text-5xl text-balance pb-16 lg:pb-24'>
-                Siborsoft to bardzo prosta strona, nie mogło zabraknąć tutaj
-                czegoś zaskakującego!
+              <h2 className='text-5xl text-balance pb-16 lg:pb-6'>
+                Promise4cloud to ciekawy projekt, który miałem przyjemność
+                zarówno zaprojektować od strony graficznej jak i finalnie
+                wdrożyć go do systemu CMS WordPress
               </h2>
             </div>
 
             <div className='flex flex-col lg:flex-row items-start gap-6 lg:gap-10 lg:pb-24'>
               <div>
                 <h3 className='text-lg'>
-                  Dlatego też podjełem decyzję o sprawdzeniu jak zachowuje się
-                  strona, która nie przeładowuje się po wejściu na kolejne
-                  podstrony. Przypomne, że jest ona oparta o system CMS
-                  WordPress także jest to dosyć unikalna funkcjonalność, która
-                  wyróznia stronę na tle innych.
+                  Strona została wdrożona w oparciu o builder 'Beaver Builder'.
+                  Podjeliśmy tą decyzję wspólnie z klientem ponieważ jednym z
+                  wymogów była możliwość edycji za pomocą buildera wizualnego
                 </h3>
               </div>
               <div className='text-sm'>
                 <p className='mb-10'>
-                  Zakres prac obejmował zarówno projekt graficzny jak i jego
-                  autorskie wdrożenie.
+                  Świadomie zrezygnowaliśmy z Elementora. Dziś okazuje się, że
+                  był to strzał w dziesiątkę. Ze stroną nic się nie dzieje a
+                  builder posiada to co potrzebne bez zbędnych dodatków
                 </p>
               </div>
+            </div>
+
+            <div className='relative'>
+              <Image
+                src='/img/portfolio/promise4cloud/promise4cloud-img-1.webp'
+                width={1422}
+                height={822}
+                alt='image'
+                className='mb-6 lg:mb-20'
+              ></Image>
             </div>
           </div>
         </div>
@@ -73,7 +83,7 @@ export default function Home() {
             <li className='flex flex-col lg:flex-row items-start pb-12  border-b border-black border-opacity-20 mb-12'>
               <div className='text-lg lg:w-6/12 mb-6 lg:mb-0'>Frontend</div>
               <div className='lg:w-6/12 flex flex-col items-start justify-start gap-6 text-balance'>
-                <p>Strona zakodowana z wykorzystaniem preprocesorów SASS</p>
+                <p>Strona wdrożona w oparciu o Beaver Builder</p>
               </div>
             </li>
             <li className='flex flex-col lg:flex-row pb-12  border-b border-black border-opacity-20 mb-12'>
@@ -81,26 +91,22 @@ export default function Home() {
               <div className='lg:w-6/12 flex flex-col items-start justify-start gap-6 text-balance'>
                 <p>
                   Stronę wdrożono autorsko do systemu WordPress na podstawie
-                  motywu startowego _underscore.me
+                  motywu startowego Ocean Wp
                 </p>
                 <p>
-                  Panel administratora oraz edycja treści została zrealizowana
-                  za pomocą Advanced Custom Fields
+                  Edycja treści została zrealizowana za pomocą Beaver Buildera
+                  oraz pomocniczo Advanced Custom Fields. Strona zawiera
+                  autorski system zapisu na webinary
                 </p>
               </div>
             </li>
 
             <li className='flex flex-col lg:flex-row pb-12  border-b border-black border-opacity-20 mb-12'>
-              <div className='text-lg lg:w-6/12 mb-6 lg:mb-0'>Dodatkowe </div>
+              <div className='text-lg lg:w-6/12 mb-6 lg:mb-0'>
+                Projekt graficzny{' '}
+              </div>
               <div className='lg:w-6/12 flex flex-col items-start justify-start gap-6 text-balance'>
-                <p>
-                  Strona nie przeładowuje się w przypadku przejścia na kolejne
-                  podstrony. Jest to standardowa funkcjonalnośc w przypadku
-                  stron typu SPA (Single Page Application) które rówież mam w
-                  swoje ofercie i portfolio. Jednakże wdrożenie takiej strony na
-                  WordPressie było dosyć kłopotliwe. Nie mniej jednak udało się
-                  to zrealizować.
-                </p>
+                <p>Strona zaprototypowana i zaprojektowana w Figmie.</p>
               </div>
             </li>
           </ul>

@@ -25,25 +25,19 @@ export default function Home() {
           >
             <div>
               <h1 className='text-5xl text-balance pb-10'>
-                Tworzę i rozwijam aplikacje szyte na miarę. Obsługuję klientów
-                kompleksowo - od koncepcji przez projekt graficzny, finalne
-                wdrożenie oraz stałą obsługę. Pracuję tylko w najnowszych
-                technologiach
+                Stworzę da Ciebie niesamowitą stronę internetową. Żadnych
+                kompromisów - tylko autorski i w pełni profesjonany proces: Od
+                projektu graficznego po wdrożenie.
               </h1>
             </div>
 
-            <div className='flex flex-col lg:flex-row lg:w-7/12 gap-10 text-sm'>
+            <div className='flex flex-col lg:flex-row lg:w-8/12 gap-10 text-lg'>
               <div>
                 <h2>
-                  Znamy narzędzia branżowe, jeśli chodzi o tworzenie
-                  dedykowanych aplikacji (mobilnych i webowych). Oferujemy
-                  znacznie więcej niż tylko umiejętności.
+                  Pełna obsługa stron internetowych. Potrzebujesz specjalisty do
+                  optymalizacji szybkośći ? SEO ? Wdrożenia projektu graficznego
+                  do WordPressa ? Rozpocznijmy współpracę!
                 </h2>
-              </div>
-              <div>
-                Znamy narzędzia branżowe, jeśli chodzi o tworzenie dedykowanych
-                aplikacji (mobilnych i webowych). Oferujemy znacznie więcej niż
-                tylko umiejętności.
               </div>
             </div>
           </motion.div>
@@ -66,13 +60,14 @@ export default function Home() {
               </div>
               <div className='flex flex-col items-start justify-start gap-5 '>
                 <h4 className='text-xl mt-14 text-balance'>
-                  Projekty graficzne stron www oraz aplikacji mobilnych
+                  Projektowanie graficzne: strony internetowe, aplikacje mobilne
+                  oraz o wiele więcej.
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Zaprojektuję dla Ciebie unikalny projekt aplikacji mobilnej,
-                  aplikacji webowej lub strony internetowej. Projekt będzie w
-                  pełni profesjonalny, zgodny ze standardami UI/UX oraz w pełni
-                  indywidualny
+                  Pomogę również przy mniejszych kreacjach jak np: bannery
+                  reklamowe pod Google Ads, ale również przy większych
+                  projektach jak np: stworzenie porządnego landing page, który
+                  będzie konwertował czy też aplikacji mobilnej.
                 </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
@@ -95,10 +90,11 @@ export default function Home() {
                   Autorskie wdrażanie projektów graficznych do systemu WordPress
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Wdrożę dowolny projekt graficzny do systemu WordPress. Strona
-                  będzie wdrożona w pełni responsywnie, zgodnie z najnowszymi
-                  standardami. Zoptymalizowana pod kątem SEO oraz szybkości
-                  ładowania.
+                  WordPress to moja główna specjalność. Wdrażam projekty
+                  graficzne z figmy/photoshopa do systemu WordPress w pełni
+                  autorsko ale zadbam również o inne aspekty: SEO, szybkość
+                  ładowania strony, responsywność. Potrzebujesz specjalisty od
+                  WordPressa ? jestem do usług!.
                 </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
@@ -121,10 +117,11 @@ export default function Home() {
                   Dedykowane oprogramowanie usprawniające Twój biznes
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Autorskie oprogramowanie dla Twojego biznesu. Uwielbiam
-                  tworzyć aplikację, które usprawniają codzienne działanie
-                  firmy. Tworze również aplikację mobilne oraz takie, które
-                  wykorzystują AI
+                  Tworze oprogramowanie, które wspiera biznes, wszelkiego
+                  rodzaju konfiguratory, kalkulatory, systemy CRM. Przy
+                  większych zleceniach pracuje w mniejszym teamie programistów.
+                  Pracujemy full code / low code , wykorzystujemy również
+                  potencjał AI
                 </p>
                 <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
                   więcej
@@ -181,6 +178,30 @@ export default function Home() {
                   <h5 className='text-2xl text-balance'>
                     Czyli jak zrobić prostą stronę z supermocami ? Strona, która
                     nie przeładowuje się po wejściu na kolejne podstrony!
+                  </h5>
+                </div>
+              </Link>
+            </div>
+
+            <div className='flex flex-col items-center justify-start gap-40'>
+              <Link
+                href='/case-studies/promise4cloud'
+                className='case-study w-full group'
+              >
+                <Image
+                  alt='Promise4cloud'
+                  src='/img/portfolio/promise4cloud/promise4cloud-cover.webp'
+                  width={1400}
+                  height={790}
+                  className='group-hover:opacity-80 transition-all'
+                ></Image>
+
+                <div className='pl-3 pr-3'>
+                  <h4 className='text-lg mt-6 '>Proimise4cloud</h4>
+                  <h5 className='text-2xl text-balance'>
+                    Technologiczna strona tylko w takich odcieniach! Zobacz
+                    ciekawą realizację gdzie byłem odpowiedzialny za projekt
+                    oraz finalne wdrożenie.
                   </h5>
                 </div>
               </Link>

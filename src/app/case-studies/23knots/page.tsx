@@ -26,6 +26,13 @@ export default function Home() {
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-center justify-start'>
             <div>
+              <Link
+                className='text-xl mt-3 mb-10 inline-flex hover:underline hover:underline-offset-[16px] transition-all'
+                href='https://23knots.com/'
+                target='_blank'
+              >
+                Zobacz stronę na żywo ( https://23knots.com )
+              </Link>
               <h2 className='text-5xl text-balance pb-16 lg:pb-24'>
                 23knots idealnie pokazuje, że każda strona może być inna. Masz
                 dosyć takich samych stron internetowych ?! Napisz do mnie już
@@ -102,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='pt-40 pb-20 '>
+      <section className='pt-40 pb-20 hidden'>
         <div className='container flex items-center justify-center'>
           <div className='title inline-flex text-center text-lg cursor-pointer hover:underline hover:underline-offset-[16px] transition-all'>
             Następny projekt:<strong>Lorem, ipsum dolor.</strong>

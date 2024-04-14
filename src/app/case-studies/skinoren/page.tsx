@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='pt-40 pb-20 '>
+      <section className='pt-40 pb-20 hidden'>
         <div className='container flex items-center justify-center'>
           <div className='title inline-flex text-center text-lg cursor-pointer hover:underline hover:underline-offset-[16px] transition-all'>
             Następny projekt:<strong>Lorem, ipsum dolor.</strong>
