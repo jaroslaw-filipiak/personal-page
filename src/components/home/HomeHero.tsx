@@ -14,7 +14,7 @@ export default function HomeHero() {
           whileInView={{ opacity: 1, top: 0 }}
           exit={{ opacity: 0 }}
           transition={{ type: 'spring', duration: 1 }}
-          className='container flex flex-col items-endm relative  '
+          className='container flex flex-col items-end relative  '
         >
           <div>
             <h1 className='text-5xl text-balance pb-10'>
