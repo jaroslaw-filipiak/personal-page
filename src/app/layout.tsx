@@ -33,6 +33,8 @@ export default function RootLayout({
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
         <GoogleAnalytics gaId='G-X4MDTE1EBE' />
         <Script src='/hotjar.js' strategy='afterInteractive' />
+        <Script src='/meta-pixel.js' strategy='afterInteractive' />
+        <Script src='/piwik.js' strategy='afterInteractive' />
         <Footer />
       </body>
     </html>
