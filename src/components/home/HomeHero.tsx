@@ -6,7 +6,7 @@ export default function HomeHero() {
   return (
     <section
       id='start'
-      className='pt-32 lg:pt-40 2xl:pt-72 lg:pb-40 2xl:pb-72  '
+      className='pt-32 lg:pt-40 2xl:pt-72 pb-40 lg:pb-40 2xl:pb-72  '
     >
       <div className='flex items-center justify-center'>
         <motion.div
