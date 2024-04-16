@@ -12,7 +12,7 @@ export default function AboutMe() {
     <>
       <section
         id='about'
-        className='h-screen flex items-center justify-center bg-dark text-white'
+        className='min-h-screen flex items-center justify-center bg-dark text-white'
       >
         <div className='container'>
           <h1 className='text-5xl text-balance'>
@@ -60,14 +60,14 @@ export default function AboutMe() {
         </div>
       </section>
 
-      <section className='lg:pb-40 bg-white'>
+      <section className=' bg-white'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
             <div></div>
 
             <div
               id='dlaczego-ja'
-              className='flex flex-col lg:flex-row items-center justify-between'
+              className='flex flex-col lg:flex-row items-center justify-between gap-10'
             >
               <div className='w-full lg:w-6/12 xl:w-4/12 pb-10 lg:pb-0'>
                 <Image

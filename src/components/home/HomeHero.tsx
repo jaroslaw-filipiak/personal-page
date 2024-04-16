@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 
 export default function HomeHero() {
   return (
-    <section id='start' className='pt-40 lg:pt-72 pb-40 lg:pb-72 '>
+    <section
+      id='start'
+      className='pt-32 lg:pt-40 2xl:pt-72 lg:pb-40 2xl:pb-72  '
+    >
       <div className='flex items-center justify-center'>
         <motion.div
           initial={{ opacity: 0, top: 30 }}

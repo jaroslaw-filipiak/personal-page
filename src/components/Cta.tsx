@@ -13,7 +13,7 @@ export default function Cta({
             <h3 className='text-5xl text-balance pb-24'>{title}</h3>
           </div>
 
-          <div className='flex flex-col lg:flex-row lg:w-10/12 gap-10 text-sm'>
+          <div className='flex flex-col lg:flex-row 2xl:w-10/12 gap-10 text-sm'>
             <div>
               <h4 className='text-base'>
                 Porozmawiamy o Twoim projekcie — w ciągu 24 godzin możesz liczyć
