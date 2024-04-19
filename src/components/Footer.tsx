@@ -54,8 +54,18 @@ export default function Footer() {
             <Link
               className='transition-all hover:underline underline-offset-[5px]'
               href='https://www.facebook.com/jfilipiakpl'
+              target='_blank'
             >
               Facebook
+            </Link>
+          </li>
+          <li>
+            <Link
+              className='transition-all hover:underline underline-offset-[5px]'
+              href='https://www.behance.net/jarekfilipiak'
+              target='_blank'
+            >
+              Behance
             </Link>
           </li>
           <li>
