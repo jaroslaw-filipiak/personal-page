@@ -4,9 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HomeHero from '@/components/home/HomeHero';
 import Script from 'next/script';
-import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterForm';
 
 import { Metadata } from 'next';
+import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterForm';
+import LHbanner from '@/components/sidebar/LHbanner';
 
 export const metadata: Metadata = {
   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
@@ -65,9 +66,10 @@ export default async function Page({
             dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
           ></div>
         </main>
-        <aside className='w-4/12 sticky top-20  p-10 bg-lightGray'>
+        <aside className='w-4/12 sticky top-24'>
           <div>
             <MailerLiteNewsletterForm />
+            <LHbanner />
           </div>
         </aside>
       </div>
