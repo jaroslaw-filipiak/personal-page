@@ -54,4 +54,11 @@
       @apply text-base hover:underline underline-offset-[12px] transition-all;
     }
   }
+
+  aside {
+    p,
+    h5 {
+      @apply p-0;
+    }
+  }
 }

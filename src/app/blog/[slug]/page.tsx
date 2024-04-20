@@ -66,7 +66,7 @@ export default async function Page({
             dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
           ></div>
         </main>
-        <aside className='w-4/12 sticky top-24'>
+        <aside className='w-4/12 sticky top-14'>
           <div>
             <MailerLiteNewsletterForm />
             <LHbanner />
