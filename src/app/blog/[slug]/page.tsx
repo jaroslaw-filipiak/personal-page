@@ -3,6 +3,9 @@ import Cta from '@/components/Cta';
 import Image from 'next/image';
 import Link from 'next/link';
 import HomeHero from '@/components/home/HomeHero';
+import Script from 'next/script';
+import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterForm';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,7 +38,6 @@ export default async function Page({
   return (
     <>
       <Nav />
-
       <section
         id='start'
         className='pt-32 lg:pt-40 2xl:pt-72 lg:pb-40 2xl:pb-72  '
@@ -56,10 +58,21 @@ export default async function Page({
           </div>
         </div>
       </section>
-      <main
-        className='container'
-        dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
-      ></main>
+      <div className='wrapper container flex items-start single-blog'>
+        <main className='container  w-8/12 pr-16 flex'>
+          <div
+            className='content'
+            dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
+          ></div>
+        </main>
+        <aside className='w-4/12 sticky top-20  p-10 bg-lightGray'>
+          <div>
+            <MailerLiteNewsletterForm />
+          </div>
+        </aside>
+      </div>
+      <Cta />
+      <Script src='/js/mailerlite.js' />
     </>
   );
 }

@@ -4,10 +4,10 @@ import BlogPosts from '@/components/blog/BlogPosts';
 
 export default function blogPage() {
   return (
-    <>
+    <div className='blog'>
       <Nav />
       <BlogHero />
       <BlogPosts />
-    </>
+    </div>
   );
 }
