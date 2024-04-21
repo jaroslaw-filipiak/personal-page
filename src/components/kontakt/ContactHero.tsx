@@ -1,16 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 export default function ContactHero() {
   return (
-    <motion.div
-      initial={{ opacity: 0, top: 30 }}
-      whileInView={{ opacity: 1, top: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ type: 'spring', duration: 1 }}
-      className='container relative'
-    >
+    <div className='container relative'>
       <h1 className='text-5xl text-balance'>
         Czas na nowy projekt? Potrzebujesz stałego, konkretnego partnera do
         współpracy projektowej? napisz do mnie na&nbsp;
@@ -35,6 +28,6 @@ export default function ContactHero() {
           rozmowę online klikając tutaj
         </Link>
       </h1>
-    </motion.div>
+    </div>
   );
 }
