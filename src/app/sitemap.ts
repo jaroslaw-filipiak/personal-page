@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
-      url: 'https://j-filipiak.pl',
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
