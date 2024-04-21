@@ -19,9 +19,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Generate sitemap
-        run: npm run postbuild
-
       - name: 📂 Deploy to ftp
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
