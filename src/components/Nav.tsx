@@ -69,6 +69,14 @@ export default function Nav() {
         <li>
           <Link
             className='hover:underline underline-offset-[6px] transition-all'
+            href='/cennik'
+          >
+            Cennik
+          </Link>
+        </li>
+        <li>
+          <Link
+            className='hover:underline underline-offset-[6px] transition-all'
             href='/kontakt'
           >
             Kontakt
