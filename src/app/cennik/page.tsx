@@ -204,15 +204,14 @@ export default function pricing() {
       <section className='container pb-20 pt-20'>
         <ul>
           <li>
-            <h4 className='text-2xl'>Tanie strony www</h4>
+            <h4 className='text-2xl'>Budżetowa / Ekonomiczna strona www</h4>
             <div className='border-b mt-3 mb-10'></div>
             <div className='description mb-10 flex flex-col lg:flex-row gap-8'>
               <div className='text-lg w-full lg:w-5/12 xl:w-6/12'>
                 Oferta dla klientów, którzy potrzebują prostej strony
                 internetowej aby zaistnieć w internecie.
                 <strong>
-                  &nbsp; Tanie strony www to oparte o system CMS strony wdrożone
-                  na podstawie darmowych motywów
+                  &nbsp; Tanie strony www to oparte o system CMS WordPress
                 </strong>
               </div>
               <div className='w-full lg:w-7/12 xl:w-6/12'>
@@ -225,7 +224,7 @@ export default function pricing() {
                   <strong>Płatność za usługę: przedpłata 100%</strong>
                 </p>
                 <p>
-                  <strong>Termin realizacji: 3dni </strong>
+                  <strong>Stronę otrzymasz już po 3 dniach </strong>
                 </p>
                 <a
                   className='bg-dark hover:opacity-80 transition-all text-white p-4 inline-block mt-3'
@@ -237,22 +236,19 @@ export default function pricing() {
             </div>
             <p>
               <strong>
-                Szacukowe koszty: <span>699 zł brutto</span>
+                Cena: <span>699 zł brutto</span>
               </strong>
             </p>
-            <p>Cena obejmuje:</p>
+            <p>Co otrzymasz:</p>
 
             <ul className='list-disc pt-5 pl-5'>
-              <li>Instalacja systemu WordPress na serwerze klienta</li>
-              <li>
-                Uzupełnienie treści na podsatwie danych przesłanych przez
-                klienta
-              </li>
+              <li>System CMS - Panel do zarządzania stroną</li>
+              <li>Podstawowy szablon graficzny</li>
               <li>
                 Rozmiar strony obejmuje przygotowanie strony głównej + strony
                 kontaktowej
               </li>
-              <li>W cenie wliczona 1 tura poprawek</li>
+              <li>Wsparcie oraz pomoc techniczna</li>
             </ul>
           </li>
         </ul>
