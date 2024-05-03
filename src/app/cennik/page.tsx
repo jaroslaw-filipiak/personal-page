@@ -1,6 +1,5 @@
 import Nav from '@/components/Nav';
 import PricingHero from '@/components/pricing/PricingHero';
-import PricingRow from '@/components/pricing/PricingRow';
 
 export default function pricing() {
   return (
@@ -198,8 +197,6 @@ export default function pricing() {
           </li>
         </ul>
       </section>
-      {/* TODO: link do easy cart + tania strona to jest płatnośc z góry ale za to
-      realizacja 3 dni robocze od płatności */}
       {/* tanie budżetowe strony  */}
       <section className='container pb-20 pt-20'>
         <ul>

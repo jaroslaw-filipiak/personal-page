@@ -43,6 +43,7 @@
   }
 
   .contents-list {
+    @apply bg-lightGray p-10;
     ul {
       @apply list-disc pl-5;
     }

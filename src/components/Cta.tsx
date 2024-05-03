@@ -6,7 +6,7 @@ export default function Cta({
   title?: string;
 }) {
   return (
-    <section id='cta' className='pt-20 pb-20 bg-white'>
+    <section id='cta' className='pt-20 pb-20 bg-lightGray'>
       <div className='flex items-center justify-center'>
         <div className='container flex flex-col items-start'>
           <div>

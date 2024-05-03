@@ -60,16 +60,16 @@ export default async function Page({
         </div>
       </section>
       <div className='wrapper container flex items-start single-blog'>
-        <main className='container  w-full lg:w-7/12 xl:w-8/12 pr-16 flex'>
+        <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 pr-16 flex'>
           <div
             className='content'
             dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
           ></div>
         </main>
-        <aside className='hidden lg:block lg:w-5/12 xl:w-4/12 sticky top-14'>
+        <aside className='hidden lg:block lg:w-5/12 xl:w-3/12 sticky top-14'>
           <div>
             <MailerLiteNewsletterForm />
-            <LHbanner />
+            {/* <LHbanner /> */}
           </div>
         </aside>
       </div>

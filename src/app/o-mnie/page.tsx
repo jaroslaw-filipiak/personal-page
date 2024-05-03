@@ -60,7 +60,7 @@ export default function AboutMe() {
         </div>
       </section>
 
-      <section className=' bg-white'>
+      <section className=' bg-white mb-20'>
         <div className='flex items-center justify-center'>
           <div className='container flex flex-col items-start'>
             <div></div>
