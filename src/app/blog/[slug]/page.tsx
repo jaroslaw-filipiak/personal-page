@@ -39,28 +39,24 @@ export default async function Page({
   return (
     <>
       <Nav />
-      <section
-        id='start'
-        className='pt-32 lg:pt-40 2xl:pt-72 lg:pb-40 2xl:pb-72  '
-      >
+      <section id='start' className='pt-32 lg:pt-40 2xl:pt-48 lg:pb-20'>
         <div className='flex items-center justify-center'>
           <div className='container'>
-            <div>
-              <h1 className='text-5xl pb-3 text-balance'>
+            <div className='flex flex-col items-stretch justify-center'>
+              <h1 className='text-5xl pb-3 lg:pb-4 text-balance text-center'>
                 {post[0].title.rendered}
               </h1>
-              <h2 className='text-xl lg:text-3xl text-balance pb-10'>
+              <h2 className='text-xl lg:text-xl text-balance pb-10 lg:pb-20 opacity-60 text-center'>
                 {post[0].acf.subtitle}
               </h2>
-            </div>
-            <div className='flex flex-col lg:flex-row lg:w-9/12 gap-10 text-lg'>
-              <div></div>
+              <img src={post[0].acf.main_photo} alt={params.slug} />
             </div>
           </div>
         </div>
       </section>
+
       <div className='wrapper container flex items-start single-blog'>
-        <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 pr-16 flex'>
+        <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 lg:pr-16 flex'>
           <div
             className='content'
             dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}

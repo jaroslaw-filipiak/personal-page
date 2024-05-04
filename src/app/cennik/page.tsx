@@ -137,7 +137,7 @@ export default function pricing() {
       <section className='container pb-20 pt-20'>
         <ul>
           <li>
-            <h4 className='text-lg'>Strony oparte o system CMS WordPress</h4>
+            <h4 className='text-2xl'>Strony oparte o system CMS WordPress</h4>
             <div className='border-b mt-3 mb-10'></div>
             <div className='description mb-10 flex flex-col lg:flex-row gap-8'>
               <div className='text-lg w-full lg:w-5/12 xl:w-6/12'>
