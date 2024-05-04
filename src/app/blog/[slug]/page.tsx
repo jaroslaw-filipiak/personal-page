@@ -8,6 +8,7 @@ import Script from 'next/script';
 import { Metadata } from 'next';
 import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterForm';
 import LHbanner from '@/components/sidebar/LHbanner';
+import Share from '@/components/blog/Share';
 
 export const metadata: Metadata = {
   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
@@ -56,12 +57,14 @@ export default async function Page({
       </section>
 
       <div className='wrapper container flex items-start single-blog'>
-        <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 lg:pr-16 flex'>
+        <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 lg:pr-16 flex flex-col items-start'>
           <div
             className='content'
             dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
           ></div>
+          <Share />
         </main>
+
         <aside className='hidden lg:block lg:w-5/12 xl:w-3/12 sticky top-14'>
           <div>
             <MailerLiteNewsletterForm />
@@ -69,6 +72,7 @@ export default async function Page({
           </div>
         </aside>
       </div>
+
       <Cta />
       <Script src='/js/mailerlite.js' />
     </>
