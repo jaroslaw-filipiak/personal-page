@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postsEntries: MetadataRoute.Sitemap = posts.map(
     ({ slug, modified }) => ({
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`,
-      lastModified: modified,
+      lastModified: modified.split('T')[0],
       priority: 1,
     })
   );
