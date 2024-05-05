@@ -11,7 +11,7 @@ import {
   LinkedinIcon,
 } from 'next-share';
 
-const formattedText = (text) => {
+const formattedText = (text: string) => {
   const title = text.split('-').join(' ');
   return title[0].toUpperCase() + title.slice(1);
 };
