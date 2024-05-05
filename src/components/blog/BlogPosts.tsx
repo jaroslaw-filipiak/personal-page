@@ -32,10 +32,6 @@ export default async function BlogPosts() {
                 <h3 className='text-2xl'>{post.title.rendered}</h3>
                 <h4 className='text-lg'>{post?.acf?.subtitle}</h4>
               </div>
-              <h5
-                dangerouslySetInnerHTML={{ __html: post?.excerpt?.rendered }}
-                className='text-md'
-              ></h5>
             </div>
           </Link>
         </article>
