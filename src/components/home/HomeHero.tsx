@@ -10,9 +10,8 @@ export default function HomeHero() {
         <div className='container flex flex-col items-end relative'>
           <div>
             <h1 className='text-5xl text-balance pb-10'>
-              Stworzę da Ciebie niesamowitą stronę internetową. Żadnych
-              kompromisów - tylko autorski i w pełni profesjonany proces: Od
-              projektu graficznego po wdrożenie.
+              Strona internetowa, która przyciągnie do Ciebie nowych klientów i
+              zaprezentuje Twoją firmę w idealnym świetle!
             </h1>
           </div>
 
@@ -20,9 +19,12 @@ export default function HomeHero() {
             <div>
               <h2>
                 Pełna obsługa stron internetowych. Potrzebujesz specjalisty do
-                optymalizacji szybkośći ? SEO ? Wdrożenia projektu graficznego
-                do WordPressa ? Rozpocznijmy współpracę!
+                optymalizacji szybkośći? SEO? Wdrożenia projektu graficznego do
+                WordPressa? Rozpocznijmy współpracę!
               </h2>
+              <h3 className='mt-6'>
+                Piekielnie szybkie i stabilne strony WordPress!
+              </h3>
             </div>
           </div>
         </div>
