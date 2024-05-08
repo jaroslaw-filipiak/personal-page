@@ -1,48 +1,86 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
+const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Form() {
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const sendForm = async () => {
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append('_wpcf7_unit_tag', 'wpcf7-f183-p41-o1');
+      formData.append('your-name', name);
+      formData.append('your-email', email);
+      formData.append('tel-548', phone);
+
+      const response = await fetch(
+        `${NEXT_PUBLIC_BASE_URL}/api/wp-json/contact-form-7/v1/contact-forms/183/feedback`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+      const res = await response.json();
+
+      setLoading(false);
+      setMessage(res?.message);
+    } catch (e) {
+      console.log(e);
+      setLoading(false);
+    }
+  };
+
   return (
-    <div>
+    <>
+      <div className='text-2xl mb-14'>
+        Porozmawiajmy o Twojej nowej stronie internetowej!
+      </div>
       <div>
-        <label htmlFor='name' />
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
           type='text'
           name='name'
           id='name'
           placeholder='Imię, nazwisko *'
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
 
       <div>
-        <label htmlFor='email' />
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
           type='email'
           name='email'
           id='email'
           placeholder='Email *'
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
       <div>
-        <label htmlFor='phone' />
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
           type='text'
           name='phone'
           id='phone'
           placeholder='Telefon'
+          onChange={(e) => setPhone(e.target.value)}
         />
       </div>
 
-      <div className='mt-20 flex items-center gap-6'>
+      <div className='mt-12 flex flex-col items-start gap-6'>
         <input
-          className='bg-dark hover:opacity-80 transition-all text-white py-4 px-10 inline-block  cursor-pointer'
+          onClick={sendForm}
+          className='bg-dark hover:opacity-80 transition-all text-white py-4 px-10 inline-block  cursor-pointer w-full'
           type='submit'
-          value='Wyślij'
+          value={loading ? 'Wysyłam...' : 'Wyślij'}
         />
         <div>
           <small>
@@ -56,6 +94,7 @@ export default function Form() {
           </small>
         </div>
       </div>
-    </div>
+      <div className='mt-10 h-4'>{message}</div>
+    </>
   );
 }

@@ -1,7 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import WhatsApp from '@/components/footer/WhatsApp';
+import * as CookieConsent from 'vanilla-cookieconsent';
+import { useEffect } from 'react';
 
 export default function Footer() {
+  useEffect(() => {
+    console.log(CookieConsent);
+  }, []);
   return (
     <>
       <WhatsApp />
@@ -78,6 +85,12 @@ export default function Footer() {
               >
                 Polityka prywatności
               </Link>
+            </li>
+            <li
+              className='transition-all hover:underline underline-offset-[5px] cursor-pointer'
+              onClick={CookieConsent.showPreferences}
+            >
+              Preferencje cookies
             </li>
           </ul>
         </div>

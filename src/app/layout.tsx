@@ -6,8 +6,10 @@ import Hamburger from '@/components/Hamburger';
 import SideMenu from '@/components/SideMenu';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import CookieConsent from '@/components/CookieConsent';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -32,11 +34,31 @@ export default function RootLayout({
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
         <GoogleAnalytics gaId='G-X4MDTE1EBE' />
-        <Script src='/hotjar.js' strategy='afterInteractive' />
-        <Script src='/meta-pixel.js' strategy='afterInteractive' />
-        <Script src='/piwik.js' strategy='afterInteractive' />
-        <Script src='/js/ms_clarity.js' />
+        <Script
+          type='text/plain'
+          data-category='analytics'
+          src='/hotjar.js'
+          strategy='afterInteractive'
+        />
+        <Script
+          type='text/plain'
+          data-category='analytics'
+          src='/meta-pixel.js'
+          strategy='afterInteractive'
+        />
+        <Script
+          type='text/plain'
+          data-category='analytics'
+          src='/piwik.js'
+          strategy='afterInteractive'
+        />
+        <Script
+          type='text/plain'
+          data-category='analytics'
+          src='/js/ms_clarity.js'
+        />
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

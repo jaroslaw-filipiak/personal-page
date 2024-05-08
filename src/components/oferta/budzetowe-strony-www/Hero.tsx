@@ -29,9 +29,6 @@ export default function Hero() {
             </ul>
           </div>
           <div className='border border-[#d7d7d7] shadow-md lg:w-6/12 xl:w-4/12 p-10'>
-            <div className='text-2xl mb-14'>
-              Porozmawiajmy o Twojej nowej stronie internetowej!
-            </div>
             <Form></Form>
           </div>
         </div>
