@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import ValidationMessage from '@/components/forms/ValidationMessage';
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Form() {
@@ -10,8 +11,11 @@ export default function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [status, setStatus] = useState(null);
+  const [validationErr, setValidationErr] = useState([]);
 
   const sendForm = async () => {
+    setValidationErr([]);
     setLoading(true);
     try {
       const formData = new FormData();
@@ -28,7 +32,10 @@ export default function Form() {
         }
       );
       const res = await response.json();
-
+      console.log(res);
+      setValidationErr(res['invalid_fields']);
+      console.log(validationErr);
+      setStatus(res.status);
       setLoading(false);
       setMessage(res?.message);
     } catch (e) {
@@ -51,6 +58,9 @@ export default function Form() {
           placeholder='Imię, nazwisko *'
           onChange={(e) => setName(e.target.value)}
         />
+        {status === 'validation_failed' && (
+          <ValidationMessage errors={validationErr} field_key='your-name' />
+        )}
       </div>
 
       <div>
@@ -62,6 +72,9 @@ export default function Form() {
           placeholder='Email *'
           onChange={(e) => setEmail(e.target.value)}
         />
+        {status === 'validation_failed' && (
+          <ValidationMessage errors={validationErr} field_key='your-email' />
+        )}
       </div>
 
       <div>
@@ -94,7 +107,7 @@ export default function Form() {
           </small>
         </div>
       </div>
-      <div className='mt-10 h-4'>{message}</div>
+      {message && <div className='h-4 mt-4 pb-10 pt-3'>{message}</div>}
     </>
   );
 }
