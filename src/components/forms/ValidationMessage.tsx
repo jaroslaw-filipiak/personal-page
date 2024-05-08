@@ -1,4 +1,4 @@
-export default function ValidationMessage(props) {
+export default function ValidationMessage(props: any) {
   const errors = props.errors.filter(
     (item: any) => item.field === props.field_key
   );
