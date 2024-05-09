@@ -2,6 +2,7 @@ import Nav from '@/components/Nav';
 import type { Metadata } from 'next';
 
 import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
+import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'Budżetowe strony www ',
   description:
@@ -13,6 +14,7 @@ export default function CheapSites() {
     <>
       <Nav />
       <Hero />
+      <Script src='/js/confetti.js' />
     </>
   );
 }

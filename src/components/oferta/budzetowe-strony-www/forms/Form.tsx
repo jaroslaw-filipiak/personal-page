@@ -16,6 +16,7 @@ export default function Form() {
 
   const sendForm = async () => {
     setValidationErr([]);
+    setMessage(' ');
     setLoading(true);
     try {
       const formData = new FormData();
@@ -86,6 +87,9 @@ export default function Form() {
           placeholder='Telefon'
           onChange={(e) => setPhone(e.target.value)}
         />
+        {status === 'validation_failed' && (
+          <ValidationMessage errors={validationErr} field_key='tel-548' />
+        )}
       </div>
 
       <div className='mt-12 flex flex-col items-start gap-6'>

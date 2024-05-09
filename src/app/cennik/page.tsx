@@ -1,5 +1,13 @@
 import Nav from '@/components/Nav';
 import PricingHero from '@/components/pricing/PricingHero';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Cennik stron internetowych, ile kosztuje strona internetowa ? | j-filipiak.pl',
+  description:
+    'Indywidualne oferty potrzebują indywidualnej wyceny, nie mniej zanim zdecydujesz się na rozmowę sprawdź w jakich “widełkach” cenowych się poruszam',
+};
 
 export default function pricing() {
   return (
