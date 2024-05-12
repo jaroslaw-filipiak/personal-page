@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
 import Script from 'next/script';
+
 export const metadata: Metadata = {
   title: 'Tanie / Budżetowe strony www od j-filipiak.pl',
   description:

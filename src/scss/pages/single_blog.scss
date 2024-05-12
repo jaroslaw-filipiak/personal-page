@@ -12,7 +12,10 @@
   }
 
   img {
-    @apply mb-10;
+  }
+
+  figcaption {
+    @apply mb-3 text-[16px] opacity-80;
   }
 
   .wp-block-code {
