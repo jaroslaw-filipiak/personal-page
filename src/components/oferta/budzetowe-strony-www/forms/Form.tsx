@@ -16,7 +16,6 @@ export default function Form() {
 
   const sendForm = async () => {
     setValidationErr([]);
-    setMessage(' ');
     setLoading(true);
     try {
       const formData = new FormData();

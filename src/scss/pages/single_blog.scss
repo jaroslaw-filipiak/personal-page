@@ -11,6 +11,14 @@
     @apply pb-10;
   }
 
+  img {
+    @apply mb-10;
+  }
+
+  .wp-block-code {
+    @apply bg-[#181818] text-lightGray p-8 mb-10 pb-14;
+  }
+
   p {
     @apply pb-6;
   }
@@ -27,7 +35,7 @@
   }
 
   h3 {
-    @apply text-3xl pb-3;
+    @apply text-2xl;
   }
 
   p {

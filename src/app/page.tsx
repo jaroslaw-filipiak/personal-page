@@ -32,7 +32,7 @@ export default function Home() {
                 />
               </div>
               <div className='flex flex-col items-start justify-start gap-5 '>
-                <h4 className='text-xl mt-14 text-balance'>
+                <h4 className='text-xl lg:mt-14 text-balance'>
                   Projektowanie graficzne: strony internetowe, aplikacje mobilne
                   oraz o wiele więcej.
                 </h4>
@@ -59,7 +59,7 @@ export default function Home() {
                 />
               </div>
               <div className='flex flex-col items-start gap-5'>
-                <h4 className='text-xl mt-14 text-balance'>
+                <h4 className='text-xl lg:mt-14 text-balance'>
                   Autorskie wdrażanie projektów graficznych do systemu WordPress
                 </h4>
                 <p className='text-sm text-gray text-balance'>
@@ -86,7 +86,7 @@ export default function Home() {
                 />
               </div>
               <div className='flex flex-col items-start gap-5'>
-                <h4 className='text-xl mt-14 text-balance'>
+                <h4 className='text-xl lg:mt-14 text-balance'>
                   Dedykowane oprogramowanie usprawniające Twój biznes
                 </h4>
                 <p className='text-sm text-gray text-balance'>
