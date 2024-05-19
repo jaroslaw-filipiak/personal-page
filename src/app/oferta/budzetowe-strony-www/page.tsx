@@ -155,7 +155,7 @@ export default function CheapSites() {
           <h4 className='pb-40 text-2xl mt-6'>
             43% sieci działa na WordPressie.
           </h4>
-          <ul className='flex flex-col lg:flex-row items-start justify-between gap-10'>
+          <ul className='flex flex-wrap flex-col lg:flex-row items-start justify-between gap-10'>
             <li className='w-full lg:w-6/12'>
               <div className='flex flex-col'>
                 <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
@@ -182,6 +182,22 @@ export default function CheapSites() {
               <p className='text-sm text-gray text-balance'>
                 zyskuj wyższej jakości kontakty do potencjalnych klientów
                 i więcej wartościowych konwersji.
+              </p>
+            </li>
+
+            <li className='w-full '>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  Dowolnie rozszerzaj funkcjonalności swojej strony
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Po wykonaniu strony otrzymasz od nas pełny dostęp do strony.
+                Dzięki czemu będiesz miał nad nią pełną kontrolę oraz
+                praktycznie nieograniczone możliwości rozbudowy. Dlatego strony
+                www oparte o system WordPress są doskonałym rozwiązaniem dla
+                naszych kientów
               </p>
             </li>
           </ul>
