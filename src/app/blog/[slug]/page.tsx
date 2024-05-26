@@ -12,13 +12,13 @@ import Share from '@/components/blog/Share';
 
 // or Dynamic metadata
 export async function generateMetadata({ params }: any) {
-  const slug = params.slug;
+  const slug = `slug:${params.slug}`;
   const post = await fetch(
     `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
   ).then((res) => res.json());
 
   return {
-    title: post.title?.rendered,
+    title: post.title.rendered,
   };
 }
 
