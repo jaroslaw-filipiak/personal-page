@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   // optionally access and extend (rather than replace) parent metadata
 
   return {
-    title: post.title?.rendered,
+    title: post[0].title?.rendered,
     // openGraph: {
     //   images: ['/some-specific-page-image.jpg', ...previousImages],
     // },
