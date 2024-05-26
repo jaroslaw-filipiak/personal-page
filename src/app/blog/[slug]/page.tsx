@@ -11,7 +11,7 @@ import LHbanner from '@/components/sidebar/LHbanner';
 import Share from '@/components/blog/Share';
 
 // or Dynamic metadata
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   // read route params
   const slug = params.slug;
 
