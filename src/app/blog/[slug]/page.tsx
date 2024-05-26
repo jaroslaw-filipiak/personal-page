@@ -21,7 +21,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   ).then((res) => res.json());
 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: post.title?.rendered,
