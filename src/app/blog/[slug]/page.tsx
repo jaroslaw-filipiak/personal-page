@@ -10,11 +10,44 @@ import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterF
 import LHbanner from '@/components/sidebar/LHbanner';
 import Share from '@/components/blog/Share';
 
-export const metadata: Metadata = {
-  title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
-  description:
-    'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
-};
+// or Dynamic metadata
+export async function generateMetadata({ params }: any) {
+  const slug = params.slug;
+  const post = await fetch(
+    `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
+  ).then((res) => res.json());
+
+  return {
+    title: post.title?.rendered,
+  };
+}
+
+// export const metadata: Metadata = {
+//   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
+//   description:
+//     'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
+//   openGraph: {
+//     title: 'Next.js',
+//     description: 'The React Framework for the Web',
+//     url: 'https://nextjs.org',
+//     siteName: 'Next.js',
+//     images: [
+//       {
+//         url: 'https://nextjs.org/og.png', // Must be an absolute URL
+//         width: 800,
+//         height: 600,
+//       },
+//       {
+//         url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+//         width: 1800,
+//         height: 1600,
+//         alt: 'My custom alt',
+//       },
+//     ],
+//     locale: 'en_US',
+//     type: 'website',
+//   },
+// };
 
 export async function generateStaticParams() {
   const posts = await fetch(
