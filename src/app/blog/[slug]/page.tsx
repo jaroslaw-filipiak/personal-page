@@ -11,16 +11,36 @@ import LHbanner from '@/components/sidebar/LHbanner';
 import Share from '@/components/blog/Share';
 
 // or Dynamic metadata
-export async function generateMetadata({ params }: any) {
-  const slug = `slug:${params.slug}`;
+export async function generateMetadata({ params }): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
   const post = await fetch(
-    `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
+    `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${slug}`
   ).then((res) => res.json());
 
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
   return {
-    title: post.title.rendered,
+    title: post.title?.rendered,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
   };
 }
+
+// export async function generateMetadata({ params }: any) {
+//   const slug = `slug:${params.slug}`;
+//   const post = await fetch(
+//     `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
+//   ).then((res) => res.json());
+
+//   return {
+//     title: post.title.rendered,
+//   };
+// }
 
 // export const metadata: Metadata = {
 //   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
