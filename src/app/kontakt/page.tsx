@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  const contactSchema: WithContext<ContactPoint | Organization | Person> = {
+  const jsonLd: WithContext<ContactPoint | Organization | Person> = {
     '@context': 'https://schema.org',
     '@type': 'ContactPoint',
     contactType: 'Customer Support',
@@ -56,7 +56,7 @@ export default function Contact() {
       <Nav />
       <script
         type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       ></script>
       <section
         id='kontakt'
