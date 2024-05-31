@@ -4,9 +4,9 @@ import ContactHero from '@/components/kontakt/ContactHero';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'j-filipiak.pl | Skontaktuj się',
+  title: 'j-filipiak.pl | Skontaktuj się ze mną i uzyskaj wycene w 24h!',
   description:
-    'Masz pytanie? Napisz do mnie lub zadzwoń już teraz! (+48) 663 568 828',
+    'Porozmawiajmy o Twoim projekcie. Napisz do mnie lub zadzwoń już teraz! (+48) 663 568 828',
   keywords: [
     'projektowanie stron www',
     'projektowanie stron internetowych',
