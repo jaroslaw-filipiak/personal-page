@@ -30,6 +30,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/cennik`,
+      priority: 1,
+    },
+    {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/polityka-prywatnosci`,
       priority: 1,
     },
@@ -40,3 +44,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...postsEntries,
   ];
 }
+
+// TODO case studies entries
