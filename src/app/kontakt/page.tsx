@@ -2,6 +2,36 @@ import Nav from '@/components/Nav';
 import ContactHero from '@/components/kontakt/ContactHero';
 
 import type { Metadata } from 'next';
+import { WithContext, ContactPoint, Organization, Person } from 'schema-dts';
+
+const contactSchema: WithContext<ContactPoint | Organization | Person> = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPoint',
+  contactType: 'Customer Support',
+  telephone: '+48 663 568 828',
+  email: 'info@j-filipiak.pl',
+  areaServed: 'PL',
+  availableLanguage: ['Polish'],
+  url: 'https://j-filipiak.pl/kontakt',
+  sameAs: [
+    'https://www.facebook.com/jfilipiakpl',
+    'https://www.linkedin.com/showcase/j-filipiak-pl/',
+    'https://twitter.com/twojafirma',
+  ],
+  potentialAction: {
+    '@type': 'ReserveAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://calendly.com/jaroslaw-filipiak',
+      actionPlatform: [
+        'http://schema.org/DesktopWebPlatform',
+        'http://schema.org/IOSPlatform',
+        'http://schema.org/AndroidPlatform',
+      ],
+    },
+    name: 'Zarezerwuj rozmowę',
+  },
+};
 
 export const metadata: Metadata = {
   title: 'j-filipiak.pl | Skontaktuj się ze mną i uzyskaj wycene w 24h!',
