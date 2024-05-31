@@ -51,10 +51,13 @@ export default function Contact() {
       name: 'Zarezerwuj rozmowę',
     },
   };
-
   return (
     <>
       <Nav />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      ></script>
       <section
         id='kontakt'
         className='h-screen flex items-center justify-center bg-white'
