@@ -57,6 +57,7 @@ export default function Contact() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        key='contact-page-schema-jsonld'
       ></script>
       <section
         id='kontakt'
