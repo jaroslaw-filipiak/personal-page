@@ -282,7 +282,7 @@ export default function CheapSites() {
           <h4 className='pb-40 text-2xl mt-6'>
             Prosty i transparentny proces to podstawa
           </h4>
-          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center gap-y-12'>
+          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-between gap-y-12'>
             <li className='w-full lg:w-6/12'>
               <div className='flex flex-col'>
                 <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
