@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
 import Testimonials from '@/components/Testimonials';
@@ -235,9 +236,27 @@ export default function CheapSites() {
       <Testimonials />
       <section className='w-full'>
         <div className='container flex items-center justify-center flex-wrap gap-10 -mt-20'>
-          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
-            1
-          </div>
+          <Link
+            href='/case-studies/femmefab'
+            className='case-study w-full group'
+          >
+            <Image
+              alt='Femmefab'
+              src='/img/portfolio/femmefab/femmefab-square.png'
+              width={613}
+              height={613}
+              className='group-hover:opacity-80 transition-all'
+            ></Image>
+
+            <div className='pl-3 pr-3'>
+              <h4 className='text-lg mt-6 '>Femmefab.nl</h4>
+              <h5 className='text-2xl text-balance'>
+                Doskonały przykład, który pokazuje jak wyglądają autorskie,
+                dedykowane strony internetowe, lekkość, świeżość, nowoczesny
+                wygląd oraz przyjemne animacje.
+              </h5>
+            </div>
+          </Link>
           <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
             2
           </div>

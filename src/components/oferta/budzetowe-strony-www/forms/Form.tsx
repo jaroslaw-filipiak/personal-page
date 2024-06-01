@@ -48,13 +48,13 @@ export default function Form() {
   return (
     <div className='relative'>
       <Image
-        className='absolute left-0 top-0'
+        className='absolute hidden xl:flex xl:-left-[239px] xl:-top-[40px]'
         loading='lazy'
-        width={629}
-        height={429}
+        width={201}
+        height={629}
         role='presentation'
         alt='shadow png'
-        src='img/form-shadow.png'
+        src='img/form-shadow222.png'
       ></Image>
       <div className='text-2xl mb-14'>
         Porozmawiajmy o Twojej nowej stronie internetowej!
