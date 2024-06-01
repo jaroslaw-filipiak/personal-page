@@ -3,7 +3,15 @@ import Cta from '@/components/Cta';
 import Image from 'next/image';
 import Link from 'next/link';
 import HomeHero from '@/components/home/HomeHero';
+
 import { Metadata } from 'next';
+import {
+  WithContext,
+  ContactPoint,
+  Organization,
+  Person,
+  WebPage,
+} from 'schema-dts';
 
 export const metadata: Metadata = {
   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
@@ -12,6 +20,62 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const jsonLd: WithContext<ContactPoint | Organization | Person | WebPage> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Jarosław Filipiak',
+      url: 'https://j-filipiak.pl',
+      image: 'https://j-filipiak.pl/jaroslaw-filipiak-schema.jpg',
+      sameAs: [
+        'https://www.facebook.com/jfilipiakpl',
+        'https://www.linkedin.com/showcase/j-filipiak-pl/',
+        'https://twitter.com/twojafirma',
+      ],
+      jobTitle: 'Designer & FullStack Developer',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+48 663 568 828',
+        contactType: 'Kontakt',
+        availableLanguage: ['Polish'],
+      },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'j-filipiak',
+      url: 'https://j-filipiak.pl',
+      logo: 'https://j-filipiak.pl/logo-schema.jpg',
+    },
+    url: 'https://j-filipiak.pl',
+    name: 'j-filipiak.pl',
+    description:
+      'Zajmuje się projektowaniem oraz wdrażaniem stron interentowych, aplikacji mobilnych oraz pomagam firmom wspierając ich biznes w optymalizacji procesów firmowych z wykorzystaniem AI oraz automatyzacji. Tworzę rownież dedykowane oprogramowanie dla firm.',
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'O mnie',
+          item: 'https://j-filipiak.pl/o-mnie',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Cennik',
+          item: 'https://j-filipiak.pl/cennik',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Kontakt',
+          item: 'https://j-filipiak.pl/kontakt',
+        },
+      ],
+    },
+  };
+
   return (
     <>
       <Nav />

@@ -1,15 +1,67 @@
 import Image from 'next/image';
 import Cta from '@/components/Cta';
+
 import type { Metadata } from 'next';
+import { WithContext, Person } from 'schema-dts';
 
 export const metadata: Metadata = {
   title: 'O mnie - Jarosław Filipiak',
   description:
     'Nazywam się Jarosław Filipiak, jestem doświadczonym grafikiem oraz front-end developerem. Specjalizuje się w projektowaniu oraz kodowaniu stron internetowych a także kompleksowych aplikacji webowych. Dowiedz się więcej o mnie!',
+  keywords: [
+    'projektowanie stron www',
+    'projektowanie stron internetowych',
+    'projektowanie stron internetowych w Wordpress',
+    'Vue.js',
+    'Wordpress',
+    'Dedykowane oprogramowanie dla firm',
+  ],
+  generator: 'Next.js',
+  openGraph: {
+    images: ['ogimage-contact.jpg'],
+  },
 };
 export default function AboutMe() {
+  const aboutMeSchema: WithContext<Person> = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Jarosław Filipiak',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Kontakt',
+      telephone: '+48 663 568 828',
+      email: 'info@j-filipiak.pl',
+      areaServed: 'PL',
+      availableLanguage: ['Polish'],
+      url: 'https://www.j-filipiak.pl/kontakt',
+    },
+    sameAs: [
+      'https://www.facebook.com/jfilipiakpl',
+      'https://www.linkedin.com/showcase/j-filipiak-pl/',
+      'https://twitter.com/twojafirma',
+    ],
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://calendly.com/jaroslaw-filipiak',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/IOSPlatform',
+          'http://schema.org/AndroidPlatform',
+        ],
+      },
+      name: 'Zarezerwuj rozmowę',
+    },
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutMeSchema) }}
+        key='amout-me-page-schema-jsonld'
+      ></script>
       <section
         id='about'
         className='min-h-screen flex items-center justify-center bg-dark text-white'
