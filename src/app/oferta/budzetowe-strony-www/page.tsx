@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
+import Testimonials from '@/components/Testimonials';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -146,46 +147,46 @@ export default function CheapSites() {
           </div>
         </div>
       </section>
-      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full '>
+      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
-            Profesjonalna strona internetowa oparta o najpopularniajszy na
+            Profesjonalna strona internetowa oparta o najpopularniejszy na
             świecie system WordPress.
           </h3>
           <h4 className='pb-40 text-2xl mt-6'>
             43% sieci działa na WordPressie.
           </h4>
-          <ul className='flex flex-wrap flex-col lg:flex-row items-start justify-between gap-10'>
-            <li className='w-full lg:w-6/12'>
+          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center lg:gap-y-32'>
+            <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
                 <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Maksymalizuj liczbę potencjalnych klientów i konwersji Uzyskuj
-                  wyższej jakości kontakty do potencjalnych klientów i więcej
-                  wartościowych konwersji.
+                  Zarządzaj stroną z poziomu panelu administratora, edytuj
+                  stronę samodzielnie
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                zyskuj wyższej jakości kontakty do potencjalnych klientów
-                i więcej wartościowych konwersji.
-              </p>
-            </li>
-            <li className='w-full lg:w-6/12'>
-              <div className='flex flex-col'>
-                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
-                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Maksymalizuj liczbę potencjalnych klientów i konwersji Uzyskuj
-                  wyższej jakości kontakty do potencjalnych klientów i więcej
-                  wartościowych konwersji.
-                </h5>
-              </div>
-              <p className='text-sm text-gray text-balance'>
-                zyskuj wyższej jakości kontakty do potencjalnych klientów
-                i więcej wartościowych konwersji.
+                Dodawaj nowe podstrony, edytuj teksty oraz zdjęcia. Strona po
+                opublikowaniu należy do Ciebie i przejmujesz nad nią pełną
+                kontrolę!
               </p>
             </li>
 
-            <li className='w-full '>
+            <li className='w-full lg:w-5/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  Zarządzaj wszystkim co związane z SEO.
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Twoja strona będzie posiadała dostęp do narzędzia za pomocą
+                którego będziesz mógł kontrolować jak wyświetla się strona w
+                wynikach wyszukiwnia Google
+              </p>
+            </li>
+
+            <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
                 <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
@@ -193,11 +194,168 @@ export default function CheapSites() {
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Po wykonaniu strony otrzymasz od nas pełny dostęp do strony.
-                Dzięki czemu będiesz miał nad nią pełną kontrolę oraz
-                praktycznie nieograniczone możliwości rozbudowy. Dlatego strony
-                www oparte o system WordPress są doskonałym rozwiązaniem dla
-                naszych kientów
+                Po wykonaniu strony otrzymasz dostęp do panelu
+                administracyjnego. Dzięki czemu będiesz miał nad nią pełną
+                kontrolę oraz praktycznie nieograniczone możliwości rozbudowy.
+                Dlatego strony www oparte o system WordPress są doskonałym
+                rozwiązaniem dla naszych kientów
+              </p>
+            </li>
+
+            <li className='w-full lg:w-5/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  Gwarancja szybkości wczytywania, strony nastawione na
+                  błyskawiczne wczytywanie
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Twoja strona wczyta się poniżej 3 sekund. Jest to bardzo ważne
+                ponieważ 3s to granica, której przekroczenie może drastycznie
+                zmniejszyc ilośc wizyt na stronie
+              </p>
+            </li>
+          </ul>
+          <section>
+            <div>
+              <h5 className='text-5xl pt-40'>
+                Każdy biznes potrzebuje porządnej strony internetowej.
+              </h5>
+              <h6 className='text-2xl mt-6'>
+                Jeżeli tu jesteś to znaczy, że szukasz doświadczonej osoby do
+                wykonania solidnego projektu. Strony internetowe, które wychodzą
+                z pod mojej ręki są szybkie, bezpieczne i stabilne.
+              </h6>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <Testimonials />
+      <section className='w-full'>
+        <div className='container flex items-center justify-center flex-wrap gap-10 -mt-20'>
+          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
+            1
+          </div>
+          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
+            2
+          </div>
+          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
+            3
+          </div>
+          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
+            4
+          </div>
+        </div>
+      </section>
+      <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+        <div className='container'>
+          <h3 className='text-5xl text-center'>
+            Jakie strony internetowe wykonuje ?
+          </h3>
+          <h4 className='text-center text-lg mt-10'>
+            Wykonuje strony niezależnie od wymagań. Mam spore doświadczenie przy
+            większych projektach jako osoba, która na codzień obsługuję firmy
+            typu software-house / agencja kreatywna jestem w stanie wykonać
+            również i stronę internetową o złożonej funkcjonalnośći. Pracuje w
+            różnych technologiach a kwestię techologiczną dobieram zawsze do
+            potrzeb projektu.
+          </h4>
+        </div>
+      </section>
+      <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+        <div className='container'>
+          <h3 className='text-5xl'>
+            Jak wygląda proces realizacji strony internetowej?
+          </h3>
+          <h4 className='pb-40 text-2xl mt-6'>
+            Prosty i transparentny proces to podstawa
+          </h4>
+          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center gap-y-12'>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  1.Skontaktuj się ze mną.
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Porozmawiajmy na temat Twojego projektu, ja dowiem się o Twoich
+                wymaganiach a ty otrzymasz wycenę w ciągu 24 godzin.``
+              </p>
+            </li>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  2. Akceptacja warunków
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Jeżeli moja oferta jest zgodna z Twoimi wymaganiami to
+                konfiguruję niezbędne narzędzia do zarządzania projektem i
+                rozpocznamy współpracę.
+              </p>
+            </li>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  3. Proces realizacji projektu graficznego
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Pierwszy etap to przygotowanie projektu graficznego. Otrzymasz
+                dostęp do pierwszych widoków a po Twoich sugestiach projekt
+                będzie modyfikowany. W momencie gdy uznasz, że projekt graficzny
+                jest kompletny i zaspokaja całkowicie Twoje potrzeby to
+                przechodzimy do kolejnego etapu.
+              </p>
+            </li>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  4. Development
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Development to etap programistyczny, otrzymasz link do strony w
+                tzw: wesji stagingowej która jest widoczna tylko dla Ciebie.
+                Będziesz mógl sprawdzić jak działa Twoja strona na swoim
+                komputerze czy też na telefonie. Tutaj również będziesz miał
+                pełną kontrolę nad stroną i będziesz mógł zgłaszać poprawki.
+              </p>
+            </li>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  5. Testy przed wdrożeniowe
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Zanim Twoja strona zostanie umieszczona na docelowej domenie
+                musi przejśc ona jeszcze parę testów. Posiadam własne procedury
+                i sprawdzam wiele aspektów strony. W momencie gdy tzw:
+                'checklista wdrożeniowa' zostanie spełniona prechodzimy do
+                finalizacji czyli wdrożenia twojej strony internetowej
+              </p>
+            </li>
+            <li className='w-full lg:w-6/12'>
+              <div className='flex flex-col'>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <h5 className='text-xl lg:mt-4 text-balance mb-5'>
+                  6. Strona gotowa!
+                </h5>
+              </div>
+              <p className='text-sm text-gray text-balance'>
+                Otrzymasz gwarancję oraz zaproszenie do dalszej współpracy.
+                Obsługuję moich klientów kompleksowo a po zakończeniu współpracy
+                chętnie pomogę Tobie przy innych aspektach takich jak: stała
+                administracja , obsługa graficzna czy też kolejne pracę
+                programistyczne na stronie.
               </p>
             </li>
           </ul>

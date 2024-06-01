@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
@@ -45,7 +46,15 @@ export default function Form() {
   };
 
   return (
-    <>
+    <div>
+      <Image
+        loading='lazy'
+        width={629}
+        height={429}
+        role='presentation'
+        alt='shadow png'
+        src='img/form-shadow.png'
+      ></Image>
       <div className='text-2xl mb-14'>
         Porozmawiajmy o Twojej nowej stronie internetowej!
       </div>
@@ -111,6 +120,6 @@ export default function Form() {
         </div>
       </div>
       {message && <div className='h-4 mt-4 pb-10 pt-3'>{message}</div>}
-    </>
+    </div>
   );
 }
