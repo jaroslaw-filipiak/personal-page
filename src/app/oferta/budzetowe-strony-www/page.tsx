@@ -262,6 +262,16 @@ export default function CheapSites() {
             różnych technologiach a kwestię techologiczną dobieram zawsze do
             potrzeb projektu.
           </h4>
+          <ul className='flex items-start justify-center flex-wrap gap-10 mt-20 text-base'>
+            <li>Aplikacje internetowe dla firm</li>
+            <li>WordPress oraz WordPress jako headless CMS</li>
+            <li>Landing page</li>
+            <li>Strony typu One Page</li>
+            <li>Sklepy internetowe</li>
+            <li>
+              Strony z automatyzacją , zapisy na newsletter, zbieranie leadów
+            </li>
+          </ul>
         </div>
       </section>
       <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full'>
