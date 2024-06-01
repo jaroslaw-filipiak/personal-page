@@ -46,8 +46,9 @@ export default function Form() {
   };
 
   return (
-    <div>
+    <div className='relative'>
       <Image
+        className='absolute left-0 top-0'
         loading='lazy'
         width={629}
         height={429}
