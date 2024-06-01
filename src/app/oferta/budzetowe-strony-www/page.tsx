@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
 import Testimonials from '@/components/Testimonials';
 import Script from 'next/script';
+import FaqItem from '@/components/FaqItem';
 
 export const metadata: Metadata = {
   title: 'Tanie / Budżetowe strony www od j-filipiak.pl',
@@ -238,34 +239,48 @@ export default function CheapSites() {
         <div className='container flex items-center justify-center flex-wrap gap-10 -mt-20'>
           <Link
             href='/case-studies/femmefab'
-            className='case-study w-full group'
+            className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
           >
             <Image
               alt='Femmefab'
               src='/img/portfolio/femmefab/femmefab-square.png'
               width={613}
               height={613}
-              className='group-hover:opacity-80 transition-all'
             ></Image>
-
-            <div className='pl-3 pr-3'>
-              <h4 className='text-lg mt-6 '>Femmefab.nl</h4>
-              <h5 className='text-2xl text-balance'>
-                Doskonały przykład, który pokazuje jak wyglądają autorskie,
-                dedykowane strony internetowe, lekkość, świeżość, nowoczesny
-                wygląd oraz przyjemne animacje.
-              </h5>
-            </div>
           </Link>
-          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
-            2
-          </div>
-          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
-            3
-          </div>
-          <div className='border aspect-square flex items-center w-full lg:w-5/12 bg-red-500'>
-            4
-          </div>
+          <Link
+            href='/case-studies/femmefab'
+            className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
+          >
+            <Image
+              alt='Femmefab'
+              src='/img/portfolio/femmefab/femmefab-square.png'
+              width={613}
+              height={613}
+            ></Image>
+          </Link>
+          <Link
+            href='/case-studies/femmefab'
+            className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
+          >
+            <Image
+              alt='Femmefab'
+              src='/img/portfolio/femmefab/femmefab-square.png'
+              width={613}
+              height={613}
+            ></Image>
+          </Link>
+          <Link
+            href='/case-studies/femmefab'
+            className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
+          >
+            <Image
+              alt='Femmefab'
+              src='/img/portfolio/femmefab/femmefab-square.png'
+              width={613}
+              height={613}
+            ></Image>
+          </Link>
         </div>
       </section>
       <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full'>
@@ -293,7 +308,7 @@ export default function CheapSites() {
           </ul>
         </div>
       </section>
-      <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+      <section className='pt-32 pb-40 lg:pb-40 2xl:pb-42 w-full bg-lightGray'>
         <div className='container'>
           <h3 className='text-5xl'>
             Jak wygląda proces realizacji strony internetowej?
@@ -388,6 +403,22 @@ export default function CheapSites() {
               </p>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section className='pb-40 lg:pb-40 2xl:pb-42 w-full bg-lightGray'>
+        <div className='container'>
+          <h3 className='text-5xl'>FAQ</h3>
+          <h4 className='pb-40 text-2xl mt-6'>
+            Czyli najczęściej zadawane pytania
+          </h4>
+          <div className='faq__wrapper'>
+            <div className='faq__inner flex flex-col gap-6'>
+              <FaqItem active={false} />
+              <FaqItem active={true} />
+              <FaqItem active={false} />
+            </div>
+          </div>
         </div>
       </section>
 
