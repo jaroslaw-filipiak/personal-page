@@ -7,6 +7,7 @@ import Hero from '@/components/oferta/budzetowe-strony-www/Hero';
 import Testimonials from '@/components/Testimonials';
 import Script from 'next/script';
 import FaqItem from '@/components/FaqItem';
+import Cta from '@/components/Cta';
 
 export const metadata: Metadata = {
   title: 'Tanie / Budżetowe strony www od j-filipiak.pl',
@@ -498,7 +499,7 @@ export default function CheapSites() {
         </div>
       </section>
 
-      <section className='pb-40 lg:pb-40 2xl:pb-42 w-full bg-lightGray'>
+      <section className='w-full bg-lightGray'>
         <div className='container'>
           <h3 className='text-5xl'>FAQ</h3>
           <h4 className='pb-40 text-2xl mt-6'>
@@ -520,7 +521,7 @@ export default function CheapSites() {
         </div>
       </section>
 
-      <Script src='/js/confetti.js' />
+      <Cta />
     </>
   );
 }

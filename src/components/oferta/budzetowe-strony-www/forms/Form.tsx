@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
+
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Form() {
@@ -14,6 +15,7 @@ export default function Form() {
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState(null);
   const [validationErr, setValidationErr] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   const sendForm = async () => {
     setValidationErr([]);
@@ -39,6 +41,7 @@ export default function Form() {
       setStatus(res.status);
       setLoading(false);
       setMessage(res?.message);
+      setIsVisible(true);
     } catch (e) {
       console.log(e);
       setLoading(false);
@@ -72,7 +75,6 @@ export default function Form() {
           <ValidationMessage errors={validationErr} field_key='your-name' />
         )}
       </div>
-
       <div>
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
@@ -86,7 +88,6 @@ export default function Form() {
           <ValidationMessage errors={validationErr} field_key='your-email' />
         )}
       </div>
-
       <div>
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
@@ -100,7 +101,6 @@ export default function Form() {
           <ValidationMessage errors={validationErr} field_key='tel-548' />
         )}
       </div>
-
       <div className='mt-12 flex flex-col items-start gap-6'>
         <input
           onClick={sendForm}
