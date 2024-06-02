@@ -92,7 +92,7 @@ export default function CheapSites() {
     {
       id: 13,
       title: 'Czy można dowiedzieć się więcej o tobie?',
-      content: `Jasne! Zapraszam do odwiedzenia tej strony : <a target='_blank' href="https://j-filipiak.pl/o-mnie"/>www.j-filipiak.pl/about</a>`,
+      content: `Jasne! Zapraszam do odwiedzenia tej strony : <a target='_blank' href="https://j-filipiak.pl/o-mnie"/>j-filipiak.pl/about</a>`,
       active: false,
     },
     {

@@ -33,7 +33,7 @@ export default function AboutMe() {
       email: 'info@j-filipiak.pl',
       areaServed: 'PL',
       availableLanguage: ['Polish'],
-      url: 'https://www.j-filipiak.pl/kontakt',
+      url: 'https://j-filipiak.pl/kontakt',
     },
     sameAs: [
       'https://www.facebook.com/jfilipiakpl',
