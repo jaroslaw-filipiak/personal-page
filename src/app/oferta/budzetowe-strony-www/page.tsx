@@ -28,18 +28,21 @@ export default function CheapSites() {
       title: 'Ile poprawek mogę zgłosić w trakcie prac nad stroną?',
       content:
         'Nie stosuje limitów poprawek. W ramach usługi wykonuje wszystkie poprawki do momentu akceptacji projektu przez klienta.',
+      active: false,
     },
     {
       id: 4,
       title: 'Czy mój projekt będzie indywidualny?',
       content:
         'Tak oczywiście. Każdy projekt jest tworzony od podstaw na podstawie briefu od klienta. Layout strony oraz poszczególne sekcje są tworzone w oparciu o przesłane materiały dzięki czemu strona jest w pełni spersonalizowana',
+      active: false,
     },
     {
       id: 5,
       title: 'Czy mogę edytować swoją stronę www?',
       content:
         'Tak, wraz ze stroną otrzymasz dostęp do panelu administracyjnego, z poziomu którego będzie można w pełni edytować stronę, jej treśći i grafikę a także dodawać nowe podstrony oraz o wiele więcej.',
+      active: false,
     },
 
     {
@@ -47,6 +50,7 @@ export default function CheapSites() {
       title: 'Czy strony są dopasowane do urządzeń mobilnych?',
       content:
         'Tak, wszystkie strony są w pełni responsywne i dopasowane do urządzeń mobilnych. Oznacza to, że poprawnie wyświetlają się nie tylko na laptopie i komputerze ale i na telefonie komórkowym oraz tabletach',
+      active: false,
     },
     {
       id: 7,
@@ -54,45 +58,53 @@ export default function CheapSites() {
         'Czy strony są zoptymalizowane pod kątem SEO i będą one widoczne w Google?',
       content:
         'Tak, wszystkie strony są zoptymalizowane pod kątem SEO. Każda strona otrzymuje ode mnie wyprawkę w postaci rozwiązań ułatwiających przyszłe pozycjonowanie strony www czyli: prawidłowe oznaczenie tagów na stronie (min. kluczowy tag h1 na każdej podstronie), przygotowanie sitemap.xml oraz robots.txt, skonfigurowanie wtyczki do SEO. Jeżeli jest taka potrzeba to mogę również skonfigurować Google Analytics oraz Google Search Console i poprosić o szybszą indeksację strony www.',
+      active: false,
     },
     {
       id: 9,
       title: 'Czy strony mogą mieć wiele języków?',
       content:
         'Tak można dodać obsługę wielu języków samodzielnie za pomocą wtyczki lub zlecić mi to zadanie. W przypadku zlecenia mi tego zadania, proszę o kontakt w celu dodatkowej wyceny.',
+      active: false,
     },
     {
       id: 10,
       title: 'Czy otrzymam gwarancję na stronę? ',
       content:
         'Oczywiście. Strona jest objęta 2 letnią gwarancją. W przypadku problemów ze stroną należy złosić ten fakt bezpośrednio na maila. Gdy jednak okaże się, że strona nie działa prawidłowo z winy klienta oraz jego działań naliczam dodatkową płatnośc za obługę',
+      active: false,
     },
     {
       id: 11,
       title: 'Co muszę dostarczyć przed rozpoczęciem współpracy?',
       content:
         'Po zakupie dostarcze specjalny formularz który pozwoli poznać Państwa wymagania, preferowaną kolorystykę oraz kilka innych aspektów. Poproszę również o dostarczenie tekstów , informacji kontaktowych oraz grafik, które powinny zostać użyte na stronie. Dostarczanie grafk nie jest obowiązkowe, w przypadku ich braku wykorzystam grafiki ze stocków.',
+      active: false,
     },
     {
       id: 12,
       title: 'W jakich technologiach są tworzone strony?',
       content:
         'Stack technologiczny dobieram do klienta oraz jego budżetu i wymagań. Zdecydowana większość stron zostaje wykonana w technologii WordPress. Po stronie frontendu korzystam głownie z ekosystemu Vue czyli Vue.js oraz Nuxt.js. Korzystam również z React.js oraz Next.js. Systemy CMS w zależności od budżetu. Z płatnych rozwiązań Strapi, Contentfull, Ghost. Bezpłatne - WordPress',
+      active: false,
     },
     {
       id: 13,
       title: 'Czy można dowiedzieć się więcej o tobie?',
       content: `Jasne! Zapraszam do odwiedzenia tej strony : <a target='_blank' href="https://j-filipiak.pl/o-mnie"/>www.j-filipiak.pl/about</a>`,
+      active: false,
     },
     {
       id: 14,
       title: 'Ile trwa realizacja strony?',
       content: `Jest to niezwykle trudne pytanie na które nie da się udielić jednoznacznej odpowiedzi. Każdy projekt jest indywidualny jednakże wraz z ofertą otrzymasz informację o szacownym czasie realizacji projektu.`,
+      active: false,
     },
     {
       id: 15,
       title: 'Ile kosztuje strona www?',
       content: `W przypadku wszelkich projektów informatycznych pytanie o budżet jest zasadne. Ofertę przygotowuję w zależności od budżetu i wymagań projektu. Im wyższy budzet tym lepsze rozwiazania technologiczne jestem w stanie zaproponować.`,
+      active: false,
     },
   ];
   return (
