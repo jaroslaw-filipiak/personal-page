@@ -1,0 +1,43 @@
+.cta {
+  &--wrapper {
+    // background-image: url('@/assets/uploads/cta-bg.jpg');
+    @apply bg-cover bg-no-repeat min-h-screen flex items-center bg-fixed;
+  }
+
+  &--inner {
+    @apply w-full lg:w-11/12 mx-auto pl-8 pr-8 mt-20 pb-20;
+  }
+
+  &--header {
+    @apply pb-8 mb-5;
+    h4 {
+      @apply text-3xl lg:text-6xl mb-10 mt-5  text-dark;
+
+      span {
+        @apply relative inline-block;
+      }
+
+      img {
+        @apply relative hidden lg:block -left-20 lg:left-52 top-3;
+      }
+    }
+  }
+
+  &--middle {
+    @apply flex flex-col lg:flex-row items-center justify-start pb-8  lg:pb-20 gap-4 lg:gap-12 text-dark;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    div {
+      @apply flex items-center;
+    }
+  }
+
+  &--footer {
+    @apply flex flex-col lg:flex-row items-start justify-between gap-3 p-8;
+
+    p {
+      @apply w-full lg:w-4/12 lg:text-lg text-dark;
+    }
+  }
+}

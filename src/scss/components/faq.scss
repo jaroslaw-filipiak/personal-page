@@ -1,0 +1,13 @@
+.faq-item {
+  &__title {
+    @apply flex items-center justify-between pr-6 pl-6;
+
+    h6 {
+      @apply cursor-pointer;
+    }
+  }
+  &__content {
+    overflow: hidden;
+    @apply pr-6 pl-6;
+  }
+}

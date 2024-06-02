@@ -1,14 +1,16 @@
 @import './vendors/hamburgers/hamburgers.scss';
 @import './vendors/cookieconsent/cookies';
 @import './pages/single_blog.scss';
+@import './components/faq.scss';
+@import './components/cta.scss';
 
 .has-bg--circle {
-    @apply relative border;
+  @apply relative border;
 
-    &::after {
-        content: '';
-        @apply block absolute left-[50%] top-[50%] bg-lightGray w-10/12 aspect-square rounded-full;
-        transform: translate(-50%, -50%);
-        z-index: -99999999999;
-    }
+  &::after {
+    content: '';
+    @apply block absolute left-[50%] top-[50%] bg-lightGray w-10/12 aspect-square rounded-full;
+    transform: translate(-50%, -50%);
+    z-index: -99999999999;
+  }
 }
