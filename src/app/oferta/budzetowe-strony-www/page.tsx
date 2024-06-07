@@ -127,7 +127,7 @@ export default function CheapSites() {
                   width={166}
                   height={166}
                   loading='lazy'
-                  src='/img/1.svg'
+                  src='/img/icon_1.svg'
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
