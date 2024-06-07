@@ -150,7 +150,7 @@ export default function CheapSites() {
                   width={166}
                   height={166}
                   loading='lazy'
-                  src='/img/wp.svg'
+                  src='/img/icon_2.svg'
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
@@ -177,7 +177,7 @@ export default function CheapSites() {
                   width={166}
                   height={166}
                   loading='lazy'
-                  src='/img/wp.svg'
+                  src='/img/icon_3.svg'
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
@@ -199,7 +199,7 @@ export default function CheapSites() {
                   width={166}
                   height={166}
                   loading='lazy'
-                  src='/img/wp.svg'
+                  src='/img/icon_4.svg'
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
