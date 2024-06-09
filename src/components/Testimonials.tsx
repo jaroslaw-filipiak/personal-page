@@ -53,7 +53,7 @@ export default function Testimonials(props: dataProps) {
             }}
           >
             {props.data.map((testimonial: TestimonialsData) => (
-              <SwiperSlide>
+              <SwiperSlide key={testimonial.id}>
                 <Testimonial
                   key={testimonial.id}
                   text={testimonial.text}
@@ -62,7 +62,7 @@ export default function Testimonials(props: dataProps) {
               </SwiperSlide>
             ))}
             <SwiperNavigation
-              key={activeIndex}
+              keyactiveIndex}iveIndex}
               activeIndex={activeIndex}
               author={props.data[activeIndex - 1].author}
               length={props.data.length}
