@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
+import confetti from 'canvas-confetti';
 
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -35,9 +36,7 @@ export default function Form() {
         }
       );
       const res = await response.json();
-      console.log(res);
       setValidationErr(res['invalid_fields']);
-      console.log(validationErr);
       setStatus(res.status);
       setLoading(false);
       setMessage(res?.message);
