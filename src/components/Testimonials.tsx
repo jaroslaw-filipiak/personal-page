@@ -62,6 +62,7 @@ export default function Testimonials(props: dataProps) {
               </SwiperSlide>
             ))}
             <SwiperNavigation
+              key={activeIndex}
               activeIndex={activeIndex}
               author={props.data[activeIndex - 1].author}
               length={props.data.length}

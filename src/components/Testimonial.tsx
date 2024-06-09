@@ -5,7 +5,10 @@ type TestimonialsProps = {
 
 export default function Testimonial(props: TestimonialsProps) {
   return (
-    <article className='mb-20 xl:mb-32 flex items-center justify-center'>
+    <article
+      key={props.text}
+      className='mb-20 xl:mb-32 flex items-center justify-center'
+    >
       <blockquote cite={props.cite}>
         <p className='text-3xl '>{props.text}</p>
       </blockquote>
