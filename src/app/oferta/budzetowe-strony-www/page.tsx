@@ -8,17 +8,46 @@ import Testimonials from '@/components/Testimonials';
 import Script from 'next/script';
 import FaqItem from '@/components/FaqItem';
 import Cta from '@/components/Cta';
+import Head from 'next/head';
 
 import { TestimonialsData } from '@/js/testimonials';
-import { IconCircleNumber1 } from '@tabler/icons-react';
+import { WithContext, Offer, Person, Service, Place } from 'schema-dts';
 
 export const metadata: Metadata = {
-  title: 'Tanie / Budżetowe strony www od j-filipiak.pl',
+  title: 'Budżetowe strony www oparte o gotowe rozwiązania',
   description:
-    'Potrzebujesz prostej strony internetowej i nie masz wysokiego budżetu? Skorzystaj z mojej oferty na tanie strony www oparte o gotowe rozwiązania. Tanie strony www oparte o system WordPress to idealne rozwiązanie na start swojego biznesu',
+    'Potrzebujesz prostej strony internetowej i nie masz wysokiego budżetu? Skorzystaj z mojej oferty na budżetowe strony www oparte o gotowe rozwiązania. Tanie strony www oparte o system WordPress to idealne rozwiązanie na start swojego biznesu',
 };
 
 export default function CheapSites() {
+  const websiteCreationOfferSchema: WithContext<Offer> = {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: 'Budżetowe strony www oparte o gotowe rozwiązania',
+    description:
+      'Potrzebujesz prostej strony internetowej i nie masz wysokiego budżetu? Skorzystaj z mojej oferty na budżetowe strony www oparte o gotowe rozwiązania. Tanie strony www oparte o system WordPress to idealne rozwiązanie na start swojego biznesu',
+    url: 'https://j-filipiak.pl/oferta/budzetowe-strony-www',
+    priceCurrency: 'PLN',
+    price: '3000.00',
+    seller: {
+      '@type': 'Person',
+      name: 'Jarosław Filipiak',
+      url: 'https://j-filipiak.pl',
+      image: 'https://j-filipiak.pl/jaroslaw-filipiak-schema.jpg',
+      sameAs: [
+        'https://www.facebook.com/jfilipiakpl',
+        'https://www.linkedin.com/showcase/j-filipiak-pl/',
+        'https://twitter.com/twojafirma',
+      ],
+      jobTitle: 'Designer & FullStack Developer',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+48 663 568 828',
+        contactType: 'Kontakt',
+        availableLanguage: ['Polish'],
+      },
+    },
+  };
   type FaqItem = {
     id: number;
     title: string;
@@ -95,13 +124,13 @@ export default function CheapSites() {
     {
       id: 13,
       title: 'Czy można dowiedzieć się więcej o tobie?',
-      content: `Jasne! Zapraszam do odwiedzenia tej strony : <a target='_blank' href="https://j-filipiak.pl/o-mnie"/>j-filipiak.pl/about</a>`,
+      content: `Jasne! Zapraszam do odwiedzenia tej strony : <a target='_blank' href="https://j-filipiak.pl/o-mnie"/>j-filipiak.pl/o-mnie</a>`,
       active: false,
     },
     {
       id: 14,
       title: 'Ile trwa realizacja strony?',
-      content: `Jest to niezwykle trudne pytanie na które nie da się udielić jednoznacznej odpowiedzi. Każdy projekt jest indywidualny jednakże wraz z ofertą otrzymasz informację o szacownym czasie realizacji projektu.`,
+      content: `Jest to niezwykle trudne pytanie na które nie da się udielić jednoznacznej odpowiedzi. Każdy projekt jest indywidualny jednakże wraz z ofertą otrzymasz informację o szacowanym czasie realizacji projektu.`,
       active: false,
     },
     {
@@ -113,6 +142,14 @@ export default function CheapSites() {
   ];
   return (
     <>
+      <Head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteCreationOfferSchema),
+          }}
+        />
+      </Head>
       <Nav />
       <Hero />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
@@ -254,7 +291,7 @@ export default function CheapSites() {
           <h4 className='pb-40 text-2xl mt-6'>
             43% sieci działa na WordPressie.
           </h4>
-          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center lg:gap-y-32'>
+          <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center gap-y-12 lg:gap-y-32'>
             <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
                 <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'>
@@ -306,7 +343,26 @@ export default function CheapSites() {
 
             <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
-                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    className='icon icon-tabler icons-tabler-outline icon-tabler-seo'
+                  >
+                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                    <path d='M7 8h-3a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-3' />
+                    <path d='M14 16h-4v-8h4' />
+                    <path d='M11 12h2' />
+                    <path d='M17 8m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z' />
+                  </svg>
+                </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
                   Zarządzaj wszystkim co związane z SEO.
                 </h5>
@@ -320,7 +376,27 @@ export default function CheapSites() {
 
             <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
-                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    className='icon icon-tabler icons-tabler-outline icon-tabler-apps'
+                  >
+                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                    <path d='M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z' />
+                    <path d='M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z' />
+                    <path d='M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z' />
+                    <path d='M14 7l6 0' />
+                    <path d='M17 4l0 6' />
+                  </svg>
+                </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
                   Dowolnie rozszerzaj funkcjonalności swojej strony
                 </h5>
@@ -336,7 +412,24 @@ export default function CheapSites() {
 
             <li className='w-full lg:w-5/12'>
               <div className='flex flex-col'>
-                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'></div>
+                <div className='w-28 h-28 bg-lightGray rounded-full flex items-center justify-center mb-5 lg:mb-0'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    className='icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right'
+                  >
+                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                    <path d='M7 7l5 5l-5 5' />
+                    <path d='M13 7l5 5l-5 5' />
+                  </svg>
+                </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
                   Gwarancja szybkości wczytywania, strony nastawione na
                   błyskawiczne wczytywanie
@@ -368,6 +461,7 @@ export default function CheapSites() {
 
       <section className='w-full'>
         <div className='container flex items-center justify-center flex-wrap gap-10 -mt-20'>
+          {/* femmefab */}
           <Link
             href='/case-studies/femmefab'
             className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
@@ -379,35 +473,38 @@ export default function CheapSites() {
               height={613}
             ></Image>
           </Link>
+          {/* siborsoft */}
           <Link
-            href='/case-studies/femmefab'
+            href='/case-studies/siborsoft'
             className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
           >
             <Image
-              alt='Femmefab'
-              src='/img/portfolio/femmefab/femmefab-square.png'
+              alt='siborsoft'
+              src='/img/portfolio/siborsoft/siborsoft-square.jpg'
               width={613}
               height={613}
             ></Image>
           </Link>
+          {/* 23knots */}
           <Link
-            href='/case-studies/femmefab'
+            href='/case-studies/23knots'
             className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
           >
             <Image
-              alt='Femmefab'
-              src='/img/portfolio/femmefab/femmefab-square.png'
+              alt='23knots'
+              src='/img/portfolio/23knots/23knots-square.png'
               width={613}
               height={613}
             ></Image>
           </Link>
+          {/* promise */}
           <Link
-            href='/case-studies/femmefab'
+            href='/case-studies/promise4cloud'
             className='case-study w-full lg:w-5/12 group aspect-square hover:scale-[101%] scale-100 transition-all'
           >
             <Image
-              alt='Femmefab'
-              src='/img/portfolio/femmefab/femmefab-square.png'
+              alt='promise4cloud'
+              src='/img/portfolio/promise4cloud/promise-square.png'
               width={613}
               height={613}
             ></Image>
@@ -427,14 +524,114 @@ export default function CheapSites() {
             różnych technologiach a kwestię techologiczną dobieram zawsze do
             potrzeb projektu.
           </h4>
-          <ul className='flex items-start justify-center flex-wrap gap-10 mt-20 text-base'>
-            <li>Aplikacje internetowe dla firm</li>
-            <li>WordPress oraz WordPress jako headless CMS</li>
-            <li>Landing page</li>
-            <li>Strony typu One Page</li>
-            <li>Sklepy internetowe</li>
-            <li>
-              Strony z automatyzacją , zapisy na newsletter, zbieranie leadów
+          <ul className='flex flex-col lg:flex-row items-center lg:items-start justify-center flex-wrap gap-10 mt-20 text-base'>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              Aplikacje internetowe dla firm
+            </li>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              WordPress oraz WordPress jako headless CMS
+            </li>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              Landing page
+            </li>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              Strony typu One Page
+            </li>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              Sklepy internetowe
+            </li>
+            <li className='flex items-center gap-1'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='icon icon-tabler icons-tabler-outline icon-tabler-check'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
+              </svg>
+              Zapisy na newsletter, automatyzacje
             </li>
           </ul>
         </div>

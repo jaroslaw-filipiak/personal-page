@@ -3,20 +3,46 @@ import Cta from '@/components/Cta';
 import Image from 'next/image';
 import Link from 'next/link';
 import HomeHero from '@/components/home/HomeHero';
+import Head from 'next/head';
 
 import { Metadata } from 'next';
+
 import {
+  Thing,
   WithContext,
-  ContactPoint,
-  Organization,
+  Offer,
   Person,
-  WebPage,
+  Place,
+  Organization,
 } from 'schema-dts';
 
 export const metadata: Metadata = {
   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
   description:
     'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
+};
+
+export const websiteCreationOfferSchema: WithContext<Offer> = {
+  '@context': 'https://schema.org',
+  '@type': 'Offer',
+  name: 'Website Creation Service',
+  description: 'Professional website creation services tailored to your needs.',
+  url: 'https://example.com/offer/website-creation',
+  priceCurrency: 'USD',
+  price: '999.99',
+  seller: {
+    '@type': 'Organization',
+    name: 'Awesome Web Solutions',
+    url: 'https://example.com',
+  },
+  itemOffered: {
+    '@type': 'Service',
+    name: 'Website Creation',
+    description:
+      'We create custom websites for businesses, ensuring a unique and professional online presence.',
+  },
+  availability: 'https://schema.org/InStock',
+  validFrom: '2024-01-01T00:00:00Z',
 };
 
 export default function Home() {
@@ -78,6 +104,14 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteCreationOfferSchema),
+          }}
+        />
+      </Head>
       <Nav />
       <HomeHero />
       <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
@@ -298,12 +332,6 @@ export default function Home() {
       </section>
       <div className='pt-6 0 bg-white'></div>
       <Cta />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
-      />
     </>
   );
 }

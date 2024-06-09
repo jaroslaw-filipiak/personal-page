@@ -10,7 +10,7 @@ export default function SwiperNavigation(props: swiperNavigationProps) {
   const swiper = useSwiper();
   return (
     <div
-      className='flex items-center justify-start gap-5'
+      className='flex flex-col lg:flex-row items-center justify-start gap-5  relative -top-12 lg:static'
       onClick={() => swiper.slideNext()}
     >
       <div className='flex items-center gap-4'>

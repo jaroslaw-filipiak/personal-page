@@ -54,7 +54,10 @@ export default function FaqItem(props: FaqItemProps) {
           }`}
         >
           <div className='w-10/12'>
-            <p className='text-base pt-6'>{props.content}</p>
+            <p
+              className='text-base pt-6'
+              dangerouslySetInnerHTML={{ __html: props.content }}
+            ></p>
           </div>
         </div>
       </div>
