@@ -22,29 +22,6 @@ export const metadata: Metadata = {
     'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
 };
 
-export const websiteCreationOfferSchema: WithContext<Offer> = {
-  '@context': 'https://schema.org',
-  '@type': 'Offer',
-  name: 'Website Creation Service',
-  description: 'Professional website creation services tailored to your needs.',
-  url: 'https://example.com/offer/website-creation',
-  priceCurrency: 'USD',
-  price: '999.99',
-  seller: {
-    '@type': 'Organization',
-    name: 'Awesome Web Solutions',
-    url: 'https://example.com',
-  },
-  itemOffered: {
-    '@type': 'Service',
-    name: 'Website Creation',
-    description:
-      'We create custom websites for businesses, ensuring a unique and professional online presence.',
-  },
-  availability: 'https://schema.org/InStock',
-  validFrom: '2024-01-01T00:00:00Z',
-};
-
 export default function Home() {
   const jsonLd: WithContext<ContactPoint | Organization | Person | WebPage> = {
     '@context': 'https://schema.org',
