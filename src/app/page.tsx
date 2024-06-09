@@ -25,72 +25,48 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const jsonLd: WithContext<ContactPoint | Organization | Person | WebPage> = {
+  const homepageSchema: WithContext<Person> = {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    mainEntity: {
-      '@type': 'Person',
-      name: 'Jarosław Filipiak',
-      url: 'https://j-filipiak.pl',
-      image: 'https://j-filipiak.pl/jaroslaw-filipiak-schema.jpg',
-      sameAs: [
-        'https://www.facebook.com/jfilipiakpl',
-        'https://www.linkedin.com/showcase/j-filipiak-pl/',
-        'https://twitter.com/twojafirma',
-      ],
-      jobTitle: 'Designer & FullStack Developer',
-      contactPoint: {
-        '@type': 'ContactPoint',
-        telephone: '+48 663 568 828',
-        contactType: 'Kontakt',
-        availableLanguage: ['Polish'],
+    '@type': 'Person',
+    name: 'Jarosław Filipiak',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Kontakt',
+      telephone: '+48 663 568 828',
+      email: 'info@j-filipiak.pl',
+      areaServed: 'PL',
+      availableLanguage: ['Polish'],
+      url: 'https://j-filipiak.pl/kontakt',
+    },
+    sameAs: [
+      'https://www.facebook.com/jfilipiakpl',
+      'https://www.linkedin.com/showcase/j-filipiak-pl/',
+      'https://twitter.com/twojafirma',
+    ],
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://calendly.com/jaroslaw-filipiak',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/IOSPlatform',
+          'http://schema.org/AndroidPlatform',
+        ],
       },
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'j-filipiak',
-      url: 'https://j-filipiak.pl',
-      logo: 'https://j-filipiak.pl/logo-schema.jpg',
-    },
-    url: 'https://j-filipiak.pl',
-    name: 'j-filipiak.pl',
-    description:
-      'Zajmuje się projektowaniem oraz wdrażaniem stron interentowych, aplikacji mobilnych oraz pomagam firmom wspierając ich biznes w optymalizacji procesów firmowych z wykorzystaniem AI oraz automatyzacji. Tworzę rownież dedykowane oprogramowanie dla firm.',
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'O mnie',
-          item: 'https://j-filipiak.pl/o-mnie',
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Cennik',
-          item: 'https://j-filipiak.pl/cennik',
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'Kontakt',
-          item: 'https://j-filipiak.pl/kontakt',
-        },
-      ],
+      name: 'Zarezerwuj rozmowę',
     },
   };
 
   return (
     <>
-      <Head>
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
-      </Head>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageSchema),
+        }}
+      />
+
       <Nav />
       <HomeHero />
       <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
