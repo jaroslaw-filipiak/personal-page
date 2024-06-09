@@ -96,7 +96,7 @@ export default function Home() {
       <section id='uslugi' className='bg-dark pt-20 pb-20 min-h-screen'>
         <div className='container  text-white'>
           <h3 className='text-5xl pb-40'>W tym mogę Tobie pomóc</h3>
-          <div className='flex flex-col lg:flex-row items-stretch justify-between gap-10'>
+          <div className='flex flex-col lg:flex-row items-start justify-start gap-10'>
             {/* projektowanie graficzne */}
             <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all '>
               <div>
@@ -135,9 +135,9 @@ export default function Home() {
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
-              <div className='flex flex-col items-start gap-5'>
+              <div className='flex flex-col items-start gap-5 group pb-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                  Autorskie wdrażanie projektów graficznych do systemu WordPress
+                  Strony internetowe z systemem CMS WordPress i nie tylko
                 </h4>
                 <p className='text-sm text-gray text-balance'>
                   WordPress to moja główna specjalność. Wdrażam projekty
@@ -146,9 +146,16 @@ export default function Home() {
                   ładowania strony, responsywność. Potrzebujesz specjalisty od
                   WordPressa ? jestem do usług!.
                 </p>
-                <button className='underline underline-offset-[10px] lg:opacity-0 group-hover:opacity-100 transition-all hidden'>
-                  więcej
-                </button>
+
+                <ul>
+                  <li></li>
+                </ul>
+                <Link
+                  href='oferta/budzetowe-strony-www'
+                  className='hover:underline underline-offset-[10px]  transition-all'
+                >
+                  Budżetowe strony internetowe
+                </Link>
               </div>
             </div>
             {/* wsparcie */}
