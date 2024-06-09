@@ -14,6 +14,8 @@ import {
   Person,
   Place,
   Organization,
+  ContactPoint,
+  WebPage,
 } from 'schema-dts';
 
 export const metadata: Metadata = {
