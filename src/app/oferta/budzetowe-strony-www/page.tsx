@@ -12,6 +12,7 @@ import Head from 'next/head';
 
 import { TestimonialsData } from '@/js/testimonials';
 import { WithContext, Offer, Person, Service, Place } from 'schema-dts';
+import { NextSeo } from 'next-seo';
 
 export const metadata: Metadata = {
   title: 'Budżetowe strony www oparte o gotowe rozwiązania',
@@ -142,14 +143,13 @@ export default function CheapSites() {
   ];
   return (
     <>
-      <Head>
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteCreationOfferSchema),
-          }}
-        />
-      </Head>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteCreationOfferSchema),
+        }}
+      />
+
       <Nav />
       <Hero />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
