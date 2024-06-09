@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <>
       <footer className='bg-dark text-white h-screen w-screen flex flex-col items-center justify-center fixed left-0 bottom-0'>
-        <div className='w-full h-full  flex items-center justify-center '>
+        <div className='w-full h-full flex items-center justify-center '>
           <ul className='text-5xl text-center flex flex-col gap-5'>
             <li>
               <Link

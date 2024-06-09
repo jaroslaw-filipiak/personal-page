@@ -1,28 +1,72 @@
-export default function Testimonials() {
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperNavigation from './swiper/SwiperNavigaton';
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectCards,
+  EffectFade,
+} from 'swiper/modules';
+import { useState, useRef } from 'react';
+
+import Testimonial from './Testimonial';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+type TestimonialsData = {
+  id: number;
+  text: string;
+  author: string;
+  cite: string;
+};
+
+type dataProps = {
+  data: TestimonialsData[];
+};
+
+export default function Testimonials(props: dataProps) {
+  const [activeIndex, setActiveIndex] = useState(1);
   return (
     <>
-      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full bg-black text-white testimonials overflow-hidden'>
-        <div>
-          <div className='container'>
-            {/* article to będzie props tablica  */}
-
-            <article>
-              <blockquote cite='https://g.co/kgs/gRRiwC5'>
-                <p className='text-3xl mb-32 '>
-                  Bardzo dobry kontakt i duża wiedza. Znalazłam kontakt do pana
-                  Jarosława przy wykonywaniu jednego zlecenia, natomiast szybko
-                  postanowiłam skorzystać z jego pomocy również przy współpracy
-                  z innym klientem. Landing page wykonane starannie, a wszelkie
-                  poprawki były wprowadzone niezwłocznie po ich zgłoszeniu.
-                  Zdecydowanie jest to osoba, do której wraca się w przypadku
-                  kolejnych zleceń. Polecam i pozdrawiam :)
-                </p>
-                <div className='flex items-center gap-20'>
-                  <footer> Malwina Nowakowska, Opinia z Google</footer>
-                </div>
-              </blockquote>
-            </article>
-          </div>
+      <section
+        className={` text-white flex items-center py-20 lg:py-40 transition-all  ${
+          activeIndex === props.data.length
+            ? 'bg-black text-center '
+            : 'bg-black'
+        }`}
+      >
+        <div className='container '>
+          <Swiper
+            className='swiper-testimonials '
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={10}
+            slidesPerView={1}
+            onSlideChange={(swiper) => {
+              setActiveIndex(swiper.activeIndex + 1);
+            }}
+          >
+            {props.data.map((testimonial: TestimonialsData) => (
+              <SwiperSlide>
+                <Testimonial
+                  key={testimonial.id}
+                  text={testimonial.text}
+                  cite={testimonial.cite}
+                />
+              </SwiperSlide>
+            ))}
+            <SwiperNavigation
+              activeIndex={activeIndex}
+              author={props.data[activeIndex - 1].author}
+              length={props.data.length}
+            />
+          </Swiper>
         </div>
       </section>
     </>

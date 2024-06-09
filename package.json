@@ -12,6 +12,7 @@
     "@next/font": "^14.1.4",
     "@next/third-parties": "^14.2.1",
     "@studio-freight/lenis": "^1.0.42",
+    "@tabler/icons-react": "^3.5.0",
     "canvas-confetti": "^1.9.3",
     "framer-motion": "^11.0.25",
     "lightgallery": "^2.7.2",
@@ -22,6 +23,7 @@
     "react-canvas-confetti": "^2.0.7",
     "react-dom": "^18",
     "schema-dts": "^1.1.2",
+    "swiper": "^11.1.4",
     "tailwindcss-fluid-type": "^2.0.6",
     "vanilla-cookieconsent": "^3.0.1",
     "zustand": "^4.5.2"

@@ -35,7 +35,7 @@ export default function Cta({
             <div>
               <Link
                 className='bg-dark hover:opacity-80 transition-all text-white block pt-5 pb-5 pr-10 pl-10  items-center justify-center text-center'
-                href='kontakt'
+                href='/kontakt'
               >
                 Strona kontaktowa
               </Link>

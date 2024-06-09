@@ -298,6 +298,12 @@ export default function Home() {
       </section>
       <div className='pt-6 0 bg-white'></div>
       <Cta />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
     </>
   );
 }
