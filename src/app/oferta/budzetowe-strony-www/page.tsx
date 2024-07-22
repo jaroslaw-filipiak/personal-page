@@ -60,6 +60,7 @@ export default function CheapSites() {
     id: number;
     title: string;
     content: string;
+    active: boolean;
   };
 
   const allFaqItems: Array<FaqItem> = [
