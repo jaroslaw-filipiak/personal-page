@@ -10,17 +10,12 @@ import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterF
 import LHbanner from '@/components/sidebar/LHbanner';
 import Share from '@/components/blog/Share';
 
-// or Dynamic metadata
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  // read route params
   const slug = params.slug;
 
-  // fetch data
   const post = await fetch(
     `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${slug}`
   ).then((res) => res.json());
-
-  // optionally access and extend (rather than replace) parent metadata
 
   return {
     title: post[0].title?.rendered,
@@ -29,44 +24,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     // },
   };
 }
-
-// export async function generateMetadata({ params }: any) {
-//   const slug = `slug:${params.slug}`;
-//   const post = await fetch(
-//     `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
-//   ).then((res) => res.json());
-
-//   return {
-//     title: post.title.rendered,
-//   };
-// }
-
-// export const metadata: Metadata = {
-//   title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
-//   description:
-//     'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
-//   openGraph: {
-//     title: 'Next.js',
-//     description: 'The React Framework for the Web',
-//     url: 'https://nextjs.org',
-//     siteName: 'Next.js',
-//     images: [
-//       {
-//         url: 'https://nextjs.org/og.png', // Must be an absolute URL
-//         width: 800,
-//         height: 600,
-//       },
-//       {
-//         url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
-//         width: 1800,
-//         height: 1600,
-//         alt: 'My custom alt',
-//       },
-//     ],
-//     locale: 'en_US',
-//     type: 'website',
-//   },
-// };
 
 export async function generateStaticParams() {
   const posts = await fetch(
@@ -89,6 +46,28 @@ export default async function Page({
   const post = await fetch(
     `https://j-filipiak.pl/api/wp-json/wp/v2/posts?slug=${params.slug}`
   ).then((res) => res.json());
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post[0].title.rendered,
+    image: post[0].acf.main_photo,
+    author: {
+      '@type': 'Person',
+      name: post[0].author_name, // assuming you have author_name field in ACF
+    },
+    datePublished: post[0].date,
+    articleBody: post[0].content.rendered,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Your Site Name',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://your-site-url.com/logo.jpg', // replace with your actual logo URL
+      },
+    },
+  };
+
   return (
     <>
       <Nav />
@@ -127,6 +106,10 @@ export default async function Page({
 
       <Cta />
       <Script src='/js/mailerlite.js' />
+      <Script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </>
   );
 }
