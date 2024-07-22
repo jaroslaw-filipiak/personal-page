@@ -107,6 +107,7 @@ export default async function Page({
       <Cta />
       <Script src='/js/mailerlite.js' />
       <Script
+        id='schemaData'
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
