@@ -16,7 +16,16 @@ export default function BlogHero() {
           className='container flex flex-col items-start relative  '
         >
           <div>
-            <h1 className='text-5xl text-balance pb-10'>Blog</h1>
+            <h1 className='text-5xl text-balance pb-10'>
+              Blog o tworzeniu nowoczesnych stron internetowych WordPress,
+              Node.js, Vue.js, Next.js
+            </h1>
+            <h2>
+              Porady i nowinki dla osób zainteresowanych Tworzeniem stron
+              internetowych. Automatyzacje procesów firmowych, ciekawe narzędzia
+              a także najlepsze praktyki SEO i UX. Optymalizacja stron pod kątem
+              szybkości ładowania i bezpieczeństwa oraz o wiele więcej.
+            </h2>
           </div>
         </motion.div>
       </div>
