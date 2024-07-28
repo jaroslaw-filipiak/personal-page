@@ -7,17 +7,27 @@ import { WithContext, Person } from 'schema-dts';
 export const metadata: Metadata = {
   title: 'O mnie - Jarosław Filipiak',
   description:
-    'Nazywam się Jarosław Filipiak, jestem doświadczonym grafikiem oraz front-end developerem. Specjalizuje się w projektowaniu oraz kodowaniu stron internetowych a także kompleksowych aplikacji webowych. Dowiedz się więcej o mnie!',
+    'Projektuję oraz wdrażam strony internetowe WordPress, Vue.js, Next.js oraz aplikacje webowe SPA (Vue.js, Next.js, Node.js, Mongo DB). Dowiedz się więcej o mnie!',
   keywords: [
     'projektowanie stron www',
     'projektowanie stron internetowych',
     'projektowanie stron internetowych w Wordpress',
     'Vue.js',
-    'Wordpress',
+    'Next.js',
+    'Node.js',
+    'WordPress',
     'Dedykowane oprogramowanie dla firm',
+    'Aplikacje webowe SPA',
+    'Aplikacje webowe PWA',
+    'Aplikacje webowe SSR',
   ],
   generator: 'Next.js',
   openGraph: {
+    type: 'website',
+    url: 'https://j-filipiak.pl/o-mnie',
+    title: 'O mnie - Jarosław Filipiak',
+    description:
+      'Projektuję oraz wdrażam strony internetowe WordPress, Vue.js, Next.js oraz aplikacje webowe SPA (Vue.js, Next.js, Node.js, Mongo DB). Dowiedz się więcej o mnie!',
     images: ['ogimage-contact.jpg'],
   },
 };
@@ -130,6 +140,7 @@ export default function AboutMe() {
                 ></Image>
               </div>
               <div className='lg:flex-1'>
+                Image
                 <h3 className='text-5xl text-balance pb-10 lg:pb-24'>
                   Oferuje indywidualne , partnerskie podejście w kameralnym
                   gronie, ogromne doświadczenie oraz jasne warunki współpracy.
