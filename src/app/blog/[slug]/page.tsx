@@ -94,7 +94,7 @@ export default async function Page({
               <h2 className='text-xl lg:text-xl text-balance pb-10 lg:pb-20 opacity-60 text-center'>
                 {post[0].acf.subtitle}
               </h2>
-              <Image src={post[0].acf.main_photo} alt={params.slug} />
+              <img src={post[0].acf.main_photo} alt={params.slug} />
             </div>
           </div>
         </div>
