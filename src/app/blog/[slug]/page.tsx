@@ -18,10 +18,15 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   ).then((res) => res.json());
 
   return {
-    title: post[0].title?.rendered,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
+    title: `${post[0].title?.rendered} - j-filipiak.pl`,
+    description: post[0].excerpt?.rendered,
+    category:
+      '"WordPress, Programming, Front-End Development, SEO, Website Optimization, Vue.js, React.js, Next.js, Node.js',
+    openGraph: {
+      type: 'article',
+      images: [post[0].title?.featured_media_src_url],
+      publishedTime: post[0].modified,
+    },
   };
 }
 
@@ -54,20 +59,27 @@ export default async function Page({
     image: post[0].acf.main_photo,
     author: {
       '@type': 'Person',
-      name: post[0].author_name, // assuming you have author_name field in ACF
+      name: 'Jarosław Filipiak',
     },
-    datePublished: post[0].date,
+    datePublished: post[0].date, // Use original publish date instead of modified
+    dateModified: post[0].modified, // Add date modified
     articleBody: post[0].content.rendered,
     publisher: {
       '@type': 'Organization',
-      name: 'j-',
+      name: 'j-filipiak',
       logo: {
         '@type': 'ImageObject',
         url: 'https://your-site-url.com/logo.jpg', // replace with your actual logo URL
       },
     },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://j-filipiak.pl/blog/${params.slug}`, // URL of the blog post
+    },
+    description: post[0].excerpt.rendered, // Add description
+    //TODO: tags z api
+    // keywords: post[0].tags.map(tag => tag.name).join(", "),
   };
-  // TODO:SCHEMA!
 
   return (
     <>
@@ -82,7 +94,7 @@ export default async function Page({
               <h2 className='text-xl lg:text-xl text-balance pb-10 lg:pb-20 opacity-60 text-center'>
                 {post[0].acf.subtitle}
               </h2>
-              <img src={post[0].acf.main_photo} alt={params.slug} />
+              <Image src={post[0].acf.main_photo} alt={params.slug} />
             </div>
           </div>
         </div>
