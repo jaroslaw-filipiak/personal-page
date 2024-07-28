@@ -60,13 +60,14 @@ export default async function Page({
     articleBody: post[0].content.rendered,
     publisher: {
       '@type': 'Organization',
-      name: 'Your Site Name',
+      name: 'j-',
       logo: {
         '@type': 'ImageObject',
         url: 'https://your-site-url.com/logo.jpg', // replace with your actual logo URL
       },
     },
   };
+  // TODO:SCHEMA!
 
   return (
     <>
