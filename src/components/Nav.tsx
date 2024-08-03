@@ -86,6 +86,14 @@ export default function Nav() {
                       Budżetowe strony www oparte o system WordPress
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      className='hover:underline underline-offset-[6px] transition-all'
+                      href='/oferta/administracja-stronami-internetowymi'
+                    >
+                   Administracja stronami internetowymi WordPress
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}

@@ -16,21 +16,21 @@ import { WithContext, Offer, Person, Service, Place } from 'schema-dts';
 import { NextSeo } from 'next-seo';
 
 export const metadata: Metadata = {
-  title: 'Budżetowe strony www oparte o gotowe rozwiązania',
+  title: 'Administracja stronami internetowymi WordPress - j-filipiak.pl',
   description:
-    'Potrzebujesz prostej strony internetowej i nie masz wysokiego budżetu? Skorzystaj z mojej oferty na budżetowe strony www oparte o gotowe rozwiązania. Tanie strony www oparte o system WordPress to idealne rozwiązanie na start swojego biznesu',
+    'Strony oparte o system WordPress potrzebują stałej administracji. Oferta obejmuje wszelkie poprawki, aktualizacje, backupy oraz monitoring strony a także pracę programistyczne',
 };
 
 export default function CheapSites() {
-  const websiteCreationOfferSchema: WithContext<Offer> = {
+  const administartionWebsitesSchema: WithContext<Offer> = {
     '@context': 'https://schema.org',
     '@type': 'Offer',
-    name: 'Budżetowe strony www oparte o gotowe rozwiązania',
+    name: 'Administracja stronami internetowymi WordPress',
     description:
-      'Potrzebujesz prostej strony internetowej i nie masz wysokiego budżetu? Skorzystaj z mojej oferty na budżetowe strony www oparte o gotowe rozwiązania. Tanie strony www oparte o system WordPress to idealne rozwiązanie na start swojego biznesu',
-    url: 'https://j-filipiak.pl/oferta/budzetowe-strony-www',
+      'Strony oparte o system WordPress potrzebują stałej administracji. Oferta obejmuje wszelkie poprawki, aktualizacje, backupy oraz monitoring strony a także pracę programistyczne',
+    url: 'https://j-filipiak.pl/oferta/administracja-stronami-internetowymi',
     priceCurrency: 'PLN',
-    price: '3000.00',
+    price: '499.00',
     seller: {
       '@type': 'Person',
       name: 'Jarosław Filipiak',
@@ -66,67 +66,55 @@ export default function CheapSites() {
   const allFaqItems: Array<FaqItem> = [
     {
       id: 3,
-      title: 'Ile poprawek mogę zgłosić w trakcie prac nad stroną?',
+      title: 'Ile to kosztuje? Czy są jakieś dodatkowe opłaty?',
       content:
-        'Nie stosuje limitów poprawek. W ramach usługi wykonuje wszystkie poprawki do momentu akceptacji projektu przez klienta.',
+        'Oferta stałej administracji wyceniania jest indywidualnie w zależności od potrzeb i wymagań klienta. Najniższy pakiet obejmujący administrację oraz czuwanie nad stroną to 499 zł netto miesięcznie. W cenie jest zawarte wsparcie techniczne 24/7, aktualizacje systemu WordPress oraz wtyczek, poprawki bezpieczeństwa, administracja stronami internetowymi oraz monitoring dostępności. W przypadku dodatkowych prac programistycznych prace rozliczane są na podstawie ilośći przepracowanych godzin.',
       active: false,
     },
     {
       id: 4,
-      title: 'Czy mój projekt będzie indywidualny?',
+      title: 'Czy oferujecie wsparcie w nagłych wypadkach',
       content:
-        'Tak oczywiście. Każdy projekt jest tworzony od podstaw na podstawie briefu od klienta. Layout strony oraz poszczególne sekcje są tworzone w oparciu o przesłane materiały dzięki czemu strona jest w pełni spersonalizowana',
+        'Czas reakcji na usterki oraz godziny dostępności ustalane są indywidualnie.',
       active: false,
     },
-    {
-      id: 5,
-      title: 'Czy mogę edytować swoją stronę www?',
-      content:
-        'Tak, wraz ze stroną otrzymasz dostęp do panelu administracyjnego, z poziomu którego będzie można w pełni edytować stronę, jej treśći i grafikę a także dodawać nowe podstrony oraz o wiele więcej.',
-      active: false,
-    },
+   
 
     {
       id: 6,
-      title: 'Czy strony są dopasowane do urządzeń mobilnych?',
+      title: 'Jakie usługi są zawarte w pakiecie administracyjnym?',
       content:
-        'Tak, wszystkie strony są w pełni responsywne i dopasowane do urządzeń mobilnych. Oznacza to, że poprawnie wyświetlają się nie tylko na laptopie i komputerze ale i na telefonie komórkowym oraz tabletach',
+        'W standardowym pakiecie administracyjnym znajdują się następujące usługi:Regularne aktualizacje WordPress, motywów i wtyczek,Codzienne kopie zapasowe strony,Monitorowanie bezpieczeństwa,Optymalizacja prędkości ładowania strony, Wsparcie techniczne i pomoc przy edytowaniu treści,Analityka i raportowanie wydajności strony',
       active: false,
     },
     {
       id: 7,
       title:
-        'Czy strony są zoptymalizowane pod kątem SEO i będą one widoczne w Google?',
+        'Czy oferujecie regularne aktualizacje WordPress, motywów i wtyczek?',
       content:
-        'Tak, wszystkie strony są zoptymalizowane pod kątem SEO. Każda strona otrzymuje ode mnie wyprawkę w postaci rozwiązań ułatwiających przyszłe pozycjonowanie strony www czyli: prawidłowe oznaczenie tagów na stronie (min. kluczowy tag h1 na każdej podstronie), przygotowanie sitemap.xml oraz robots.txt, skonfigurowanie wtyczki do SEO. Jeżeli jest taka potrzeba to mogę również skonfigurować Google Analytics oraz Google Search Console i poprosić o szybszą indeksację strony www.',
+        'Tak, zapewnieni bezpieczeństwo i sprawność działania strony to nasz priorytet. Każdy klient otrzymuje indywidualny harmonogram aktualizacji',
       active: false,
     },
-    {
-      id: 9,
-      title: 'Czy strony mogą mieć wiele języków?',
-      content:
-        'Tak można dodać obsługę wielu języków samodzielnie za pomocą wtyczki lub zlecić mi to zadanie. W przypadku zlecenia mi tego zadania, proszę o kontakt w celu dodatkowej wyceny.',
-      active: false,
-    },
+   
     {
       id: 10,
-      title: 'Czy otrzymam gwarancję na stronę? ',
+      title: 'Czy wykonujecie kopie zapasowe strony, i jak często?',
       content:
-        'Oczywiście. Strona jest objęta 2 letnią gwarancją. W przypadku problemów ze stroną należy złosić ten fakt bezpośrednio na maila. Gdy jednak okaże się, że strona nie działa prawidłowo z winy klienta oraz jego działań naliczam dodatkową płatnośc za obługę',
+        'Zawsze posiadamy kopie zapasową strony oraz dedykowane repozytorium kodu na platformie Gitlab. Kopie zapasowe na serwerze wykonywane są codziennie, dodatkowo raz w tygodniu wykonujemy niezależną kopie zapasową na zewnętrznym serwerze oraz codzienne kopie zapasowe bazy danych. Każdy projekt posiada również odrębne środowisko stagingowe',
       active: false,
     },
     {
       id: 11,
-      title: 'Co muszę dostarczyć przed rozpoczęciem współpracy?',
+      title: 'Jakie środki bezpieczeństwa wdrażacie, aby chronić moją stronę?',
       content:
-        'Po zakupie dostarcze specjalny formularz który pozwoli poznać Państwa wymagania, preferowaną kolorystykę oraz kilka innych aspektów. Poproszę również o dostarczenie tekstów , informacji kontaktowych oraz grafik, które powinny zostać użyte na stronie. Dostarczanie grafk nie jest obowiązkowe, w przypadku ich braku wykorzystam grafiki ze stocków.',
+        'Jest tego dosyć sporo. Po stronie serwera odpowienia koniguracja firewalla/WAF, optymalizacja ustawień .htacces oraz konfiguracja serwera. Po stronie WordPress - zabezpieczenie przed atakami brute-force, ograniczenie dostępu do panelu logowania, zabezpieczenie plików konfiguracyjnych, regularne skanowanie strony pod kątem złośliwego oprogramowania, szyfrowanie połączenia SSL, regularne aktualizacje WordPress, motywów i wtyczek, regularne kopie zapasowe',
       active: false,
     },
     {
       id: 12,
-      title: 'W jakich technologiach są tworzone strony?',
+      title: 'Czy pomagacie w optymalizacji prędkości ładowania strony??',
       content:
-        'Stack technologiczny dobieram do klienta oraz jego budżetu i wymagań. Zdecydowana większość stron zostaje wykonana w technologii WordPress. Po stronie frontendu korzystam głownie z ekosystemu Vue czyli Vue.js oraz Nuxt.js. Korzystam również z React.js oraz Next.js. Systemy CMS w zależności od budżetu. Z płatnych rozwiązań Strapi, Contentfull, Ghost. Bezpłatne - WordPress',
+        'Tak, każda strona którą się zajmujemy jest optymalizowana pod tym kątem i z czasem przyspiesza. Klienci otrzymują również raporty z prac optymalizacyjnych a po kilku miesiącach współpracy widać znaczącą poprawę w szybkości ładowania strony',
       active: false,
     },
     {
@@ -137,53 +125,48 @@ export default function CheapSites() {
     },
     {
       id: 14,
-      title: 'Ile trwa realizacja strony?',
-      content: `Jest to niezwykle trudne pytanie na które nie da się udielić jednoznacznej odpowiedzi. Każdy projekt jest indywidualny jednakże wraz z ofertą otrzymasz informację o szacowanym czasie realizacji projektu.`,
+      title: 'Czy mogę liczyć na pomoc przy tworzeniu i edytowaniu treści na stronie?',
+      content: `Tak, oferuje wsparcie w tworzeniu i edytowaniu treści na stronie, aby zapewnić, że treści są aktualne, angażujące i zgodne z najlepszymi praktykami SEO. Współpracuję  również z agencją copywriterską, która może pomóc w tworzeniu treści na stronę internetową. Mam też dedykowane osoby do tworzenia treści w języku angielskim czy też do uzupełniania strony o treści`,
       active: false,
     },
     {
       id: 15,
-      title: 'Ile kosztuje strona www?',
-      content: `W przypadku wszelkich projektów informatycznych pytanie o budżet jest zasadne. Ofertę przygotowuję w zależności od budżetu i wymagań projektu. Im wyższy budzet tym lepsze rozwiazania technologiczne jestem w stanie zaproponować.`,
+      title: 'Jakie macie doświadczenie w administracji stron WordPress?',
+      content: `Przez ponad 10 lat zaktualizowałem, zmodyfikowałem, zabezpieczyłem oraz wdrożyłem od podstaw mnóstwo stron. W tym również wiele stron dla ogromnych firm firm. Współpracowałem z wieloma agencjami kreatywnymi oraz firmami software-house a to oznacza pracę dla globalnych marek.`,
       active: false,
     },
   ];
-  const processSteps: Array<ProcessItem> = [
-    {
-      id: 1,
-      title: 'Skontaktuj się ze mną',
-      content:
-        'Nie stosuje limitów poprawek. W ramach usługi wykonuje wszystkie poprawki do momentu akceptacji projektu przez klienta.',
-      active: false,
-    },
+  
+
+  const features = [
+    'Wsparcie techniczne 24/7',
+    'Administracja stronami internetowymi oraz monitoring dostępności',
+    'Aktualizacje systemu WordPress oraz wtyczek, poprawki bezpieczeństwa',
   ];
-  const features = [  'Szybki termin realizacji',
-    'Strona w pełni responsywna oraz przygotowana pod SEO',
-    'Panel administratora',];
   return (
     <>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteCreationOfferSchema),
+          __html: JSON.stringify(administartionWebsitesSchema),
         }}
       />
 
       <Nav />
-      <Hero title='Profesjonalna strona www w przystępnej cenie ?'
-        subtitle='Dostarcze Tobie profesjonalną stronę www w pełni przygotowaną pod SEO. Wraz z panelem administratora. Bezpieczna, szybka i stabilna strona www'
+      <Hero
+        title='Zadbam o Twoją stronę internetową na WordPress'
+        subtitle='Strony oparte o system WordPress potrzebują stałej administracji. Oferta administracji obejmuje wszelkie poprawki, aktualizacje, backupy oraz monitoring strony a także pracę programistyczne'
         features={features}
-        formTitle='Porozmawiajmy o Twojej nowej stronie www' />
+        formTitle='Porozmawiajmy o stałej administracji Twojej witryny'
+      />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl pb-40'>
-            Strony typu One Page z realizacją już w kilka dni roboczych to
-            idealne rozwiązanie dla osób, które potrzebują tzw: “stronę
-            wizytówkę”
+          Administracja stronami internetowymi to niesamowita usługa, dzięki której zyskasz całodobowy monitoring strony oraz bieżące wsparcie w cenie niższej niż tworzenie nowego etatu
           </h3>
           <div className='flex flex-col lg:flex-row gap-20 lg:gap-0'>
             {/* Profesjonalna strona www wraz z dostępem do Panelu administracyjnego */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-6/12  group relative top-0 transition-all '>
+            <div className='flex flex-col items-start justify-start w-full xl:w-6/12  xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -193,20 +176,18 @@ export default function CheapSites() {
                   alt='wordpress, ikona informacyjna'
                 />
               </div>
-              <div className='flex flex-col items-start gap-5'>
+              <div className='flex flex-col items-start gap-5 '>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                  Profesjonalna strona www wraz z dostępem do Panelu
-                  administracyjnego
+                Dbanie o bieżące aktualizację i poprawki bezpieczeństwa
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Dzięki czemu będziesz mógl / mogła samodzielnie zarządzać
-                  swoją stroną, dodawać nowe podstrony oraz funkcjonalnośći
+                Dbamy o częste wykonywnie kopii zapasowych oraz aktualizację systemu i wtyczek. Ustalamy z góry harmonogram aktualizacji strony i nigdy nie robimy tego w sposób automatyczny
                 </p>
               </div>
             </div>
 
-            {/* Idealne wyświetlanie na telefonach i tabletach */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-6/12  group relative top-0 transition-all '>
+            {/* Kopie zapasowe w dedykowanym środowisku*/}
+            <div className='flex flex-col items-start justify-start w-full xl:w-5/12  xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -218,13 +199,10 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                  Idealne wyświetlanie na telefonach i tabletach czyl pełna
-                  responsywność Twojej strony
+                Kopie zapasowe w dedykowanym środowisku
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Czyli technologia RWD. Zadbam o to aby Twoja nowa strona
-                  idealnie prezentowała się na każdym możliwym urządzeniu. To
-                  niezwykle ważne
+                Tworzymy kopie zapasowe na własnych serwerach. Posiadamy skrypty dzięki którym jestesmy w stanie odzyskać stronę w ekspresowym tempie.
                 </p>
               </div>
             </div>
@@ -232,8 +210,8 @@ export default function CheapSites() {
           <div className='spacer border-b-[1px] border-lightGray mt-32 mb-6 border-opacity-35'></div>
           <p className='text-lg mt-4 mb-40'>Dodatkowo</p>
           <div className='flex flex-col lg:flex-row gap-20 lg:gap-0'>
-            {/* Wyprawka SEO */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  group relative top-0 transition-all '>
+            {/* Monitoring widoczności strony www */}
+            <div className='flex flex-col items-start justify-start w-full xl:w-4/12 xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -244,18 +222,15 @@ export default function CheapSites() {
                 />
               </div>
               <div className='flex flex-col items-start gap-5'>
-                <h4 className='text-xl lg:mt-14 text-balance'>Wyprawka SEO</h4>
+                <h4 className='text-xl lg:mt-14 text-balance'>Monitoring widoczności strony www</h4>
                 <p className='text-sm text-gray text-balance'>
-                  Porządny pakiet SEO czyli przygotowanie Twojej strony pod
-                  przyszłe pozycjonowanie. W skład pakietu min: semantyczne tagi
-                  html , przygotowanie mapy witryny, konfiguracja wtyczki SEO,
-                  usatwienie og: image, favicon meta description
+                Za pomocą specjalnych skryptów sprawdzamy dostępność strony internetowej co minutę. Dzięki czemu w minute po awarii mamy jej świadomośc i działamy od razu
                 </p>
               </div>
             </div>
 
-            {/* Idealne wyświetlanie na telefonach i tabletach */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  group relative top-0 transition-all '>
+            {/* Optymalizacja szybkości */}
+            <div className='flex flex-col items-start justify-start w-full xl:w-4/12 xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -267,18 +242,16 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                  Optymalizacja szybkości
+                Optymalizacja szybkości
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Dzięki czemu Twoja strona będzie szybka jak błyskawica.
-                  Optymalizuje obrazki na stronie oraz ustawiam odpowiednie
-                  reguły cachowania aby Twoja strona była szybka jak błyskawica!
+                W ramach pakietów administracji stronami internetowymi dbamy o takie aspekty jak szybkość wczytywnia oraz poprawne SEO. Dzięki czemu strona z miesiąca na miesiąc jest w coraz lepszej kondycji
                 </p>
               </div>
             </div>
 
-            {/* Idealne wyświetlanie na telefonach i tabletach */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  group relative top-0 transition-all '>
+            {/* Pakiet bezpieczeńśtwa */}
+            <div className='flex flex-col items-start justify-start w-full xl:w-4/12 xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
               <div>
                 <Image
                   width={166}
@@ -290,14 +263,10 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                  Pakiet bezpieczeństwa
+                Pakiet bezpieczeńśtwa
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                  Strony tworze w pełni natywnie w tym co oferuje system
-                  WordPress ,ograniczam liczbę dodatków. Wraz z instalacją
-                  strony usatwiam specjalne reguły w pliku .htacce dzięki czemu
-                  ogarniczam ruch z podejrzanych adresów IP, Zabezpieczam
-                  również formularze i oddaje stronę w idealnej kondycji
+                Przejmując obowiązki zwiazane z dbaniem o stronę wykonujemy szereg czynności zabezpieczających dzięki czemu strona jest na tyle bezpieczna na ile to tylko możliwe. Regularnie skanujemy strony za pomocą narzędzi typu wp-scan
                 </p>
               </div>
             </div>
@@ -307,11 +276,10 @@ export default function CheapSites() {
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
-            Profesjonalna strona internetowa oparta o najpopularniejszy na
-            świecie system WordPress.
+          Dlaczego strony oparte o system WordPress powinny być cały czas nadzorowane?
           </h3>
           <h4 className='pb-40 text-2xl mt-6'>
-            43% sieci działa na WordPressie.
+          WordPress to najpopularniejszy system na świecie, dlatego jest głównym celem ataków.Warto aby nad Twoją stroną stale ktoś czuwał.
           </h4>
           <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center gap-y-12 lg:gap-y-32'>
             <li className='w-full lg:w-5/12'>
@@ -352,14 +320,11 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Zarządzaj stroną z poziomu panelu administratora, edytuj
-                  stronę samodzielnie
+                 Bezpieczeństwo Twojej strony oraz danych
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Dodawaj nowe podstrony, edytuj teksty oraz zdjęcia. Strona po
-                opublikowaniu należy do Ciebie i przejmujesz nad nią pełną
-                kontrolę!
+              Czy zdajesz sobie sprawę z tego, że nieuprawniony dostęp do Twojej strony to tak naprawdę dostęp do całego serwera? Strona musi być stale monitorowane oraz zabezpieczana. W ramach usługi otrzymujesz stały monitoring strony oraz podatności 
               </p>
             </li>
 
@@ -386,13 +351,11 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Zarządzaj wszystkim co związane z SEO.
+               Aktualizacje zawsze na czas
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Twoja strona będzie posiadała dostęp do narzędzia za pomocą
-                którego będziesz mógł kontrolować jak wyświetla się strona w
-                wynikach wyszukiwnia Google
+               W przypadku podatności w popularnej wtyczce aktualizację należy wykonywać natychmiast.Każda luka w zabezpieczeniach jest wykorzysytwana przez hakerów w trybie natychmiastowym. Dlatego aktualizacje są tak ważne a w ramach stałej administracji będa one wykonywane na bieżąco.
               </p>
             </li>
 
@@ -420,15 +383,11 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Dowolnie rozszerzaj funkcjonalności swojej strony
+              Prace optymalizacyjne
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Po wykonaniu strony otrzymasz dostęp do panelu
-                administracyjnego. Dzięki czemu będiesz miał nad nią pełną
-                kontrolę oraz praktycznie nieograniczone możliwości rozbudowy.
-                Dlatego strony www oparte o system WordPress są doskonałym
-                rozwiązaniem dla naszych kientów
+                W każdym miesiącu wydzielamy czas na optymalizację strony. Dzięki temu strona jest coraz szybsza oraz lepiej widoczna w Google. W ramach usługi otrzymujesz również raporty z prac optymalizacyjnych
               </p>
             </li>
 
@@ -453,26 +412,21 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                  Gwarancja szybkości wczytywania, strony nastawione na
-                  błyskawiczne wczytywanie
+                Niezależne kopie zapasowe
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Twoja strona wczyta się poniżej 3 sekund. Jest to bardzo ważne
-                ponieważ 3s to granica, której przekroczenie może drastycznie
-                zmniejszyc ilośc wizyt na stronie
+                Wszystkie kopie zapasowe są przechowywane na naszych serwerach. Dzięki temu w przypadku awarii serwera jesteśmy w stanie odzyskać stronę w ekspresowym tempie.
               </p>
             </li>
           </ul>
           <section>
             <div>
               <h5 className='text-5xl pt-40'>
-                Każdy biznes potrzebuje porządnej strony internetowej.
+              Obsługa stron opartych o system CMS WordPress obejmuje kompleksowy pakiet usług
               </h5>
               <h6 className='text-2xl mt-6'>
-                Jeżeli tu jesteś to znaczy, że szukasz doświadczonej osoby do
-                wykonania solidnego projektu. Strony internetowe, które wychodzą
-                z pod mojej ręki są szybkie, bezpieczne i stabilne.
+              Zakres prac obejmuje zarówno standardowe działania wykonywane cykliczne w ramach dbania o “higiene” całego systemu jak i prace związane z przyspieszeniem działania strony, optymalizację pod SEO czy też rozwój nowych funkcjonalności oraz autorskich modułów.Stała obsługa to rów
               </h6>
             </div>
           </section>

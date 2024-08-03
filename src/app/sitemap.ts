@@ -41,6 +41,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/oferta/budzetowe-strony-www`,
       priority: 1,
     },
+    {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/oferta/administracja-stronami-internetowymi`,
+      priority: 1,
+    },
     ...postsEntries,
   ];
 }

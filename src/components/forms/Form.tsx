@@ -4,11 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
-import confetti from 'canvas-confetti';
+
 
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-export default function Form() {
+type formProps = { 
+  title: string;
+}
+
+export default function Form(props: formProps) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState();
   const [name, setName] = useState('');
@@ -59,7 +63,7 @@ export default function Form() {
         src='img/form-shadow222.png'
       ></Image>
       <div className='text-2xl mb-14'>
-        Porozmawiajmy o Twojej nowej stronie internetowej!
+       {props.title}
       </div>
       <div>
         <input
