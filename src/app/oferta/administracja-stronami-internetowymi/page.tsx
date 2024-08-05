@@ -38,7 +38,7 @@ export default function CheapSites() {
       image: 'https://j-filipiak.pl/jaroslaw-filipiak-schema.jpg',
       sameAs: [
         'https://www.facebook.com/jfilipiakpl',
-        'https://www.linkedin.com/showcase/j-filipiak-pl/',
+        'https://www.linkedin.com/showcase/j-filipiak-pl',
         'https://twitter.com/twojafirma',
       ],
       jobTitle: 'Designer & FullStack Developer',
@@ -78,7 +78,6 @@ export default function CheapSites() {
         'Czas reakcji na usterki oraz godziny dostępności ustalane są indywidualnie.',
       active: false,
     },
-   
 
     {
       id: 6,
@@ -95,7 +94,7 @@ export default function CheapSites() {
         'Tak, zapewnieni bezpieczeństwo i sprawność działania strony to nasz priorytet. Każdy klient otrzymuje indywidualny harmonogram aktualizacji',
       active: false,
     },
-   
+
     {
       id: 10,
       title: 'Czy wykonujecie kopie zapasowe strony, i jak często?',
@@ -125,7 +124,8 @@ export default function CheapSites() {
     },
     {
       id: 14,
-      title: 'Czy mogę liczyć na pomoc przy tworzeniu i edytowaniu treści na stronie?',
+      title:
+        'Czy mogę liczyć na pomoc przy tworzeniu i edytowaniu treści na stronie?',
       content: `Tak, oferuje wsparcie w tworzeniu i edytowaniu treści na stronie, aby zapewnić, że treści są aktualne, angażujące i zgodne z najlepszymi praktykami SEO. Współpracuję  również z agencją copywriterską, która może pomóc w tworzeniu treści na stronę internetową. Mam też dedykowane osoby do tworzenia treści w języku angielskim czy też do uzupełniania strony o treści`,
       active: false,
     },
@@ -136,7 +136,6 @@ export default function CheapSites() {
       active: false,
     },
   ];
-  
 
   const features = [
     'Wsparcie techniczne 24/7',
@@ -162,7 +161,9 @@ export default function CheapSites() {
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl pb-40'>
-          Administracja stronami internetowymi to niesamowita usługa, dzięki której zyskasz całodobowy monitoring strony oraz bieżące wsparcie w cenie niższej niż tworzenie nowego etatu
+            Administracja stronami internetowymi to niesamowita usługa, dzięki
+            której zyskasz całodobowy monitoring strony oraz bieżące wsparcie w
+            cenie niższej niż tworzenie nowego etatu
           </h3>
           <div className='flex flex-col lg:flex-row gap-20 lg:gap-0'>
             {/* Profesjonalna strona www wraz z dostępem do Panelu administracyjnego */}
@@ -178,10 +179,12 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5 '>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                Dbanie o bieżące aktualizację i poprawki bezpieczeństwa
+                  Dbanie o bieżące aktualizację i poprawki bezpieczeństwa
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                Dbamy o częste wykonywnie kopii zapasowych oraz aktualizację systemu i wtyczek. Ustalamy z góry harmonogram aktualizacji strony i nigdy nie robimy tego w sposób automatyczny
+                  Dbamy o częste wykonywnie kopii zapasowych oraz aktualizację
+                  systemu i wtyczek. Ustalamy z góry harmonogram aktualizacji
+                  strony i nigdy nie robimy tego w sposób automatyczny
                 </p>
               </div>
             </div>
@@ -199,10 +202,12 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                Kopie zapasowe w dedykowanym środowisku
+                  Kopie zapasowe w dedykowanym środowisku
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                Tworzymy kopie zapasowe na własnych serwerach. Posiadamy skrypty dzięki którym jestesmy w stanie odzyskać stronę w ekspresowym tempie.
+                  Tworzymy kopie zapasowe na własnych serwerach. Posiadamy
+                  skrypty dzięki którym jestesmy w stanie odzyskać stronę w
+                  ekspresowym tempie.
                 </p>
               </div>
             </div>
@@ -222,9 +227,13 @@ export default function CheapSites() {
                 />
               </div>
               <div className='flex flex-col items-start gap-5'>
-                <h4 className='text-xl lg:mt-14 text-balance'>Monitoring widoczności strony www</h4>
+                <h4 className='text-xl lg:mt-14 text-balance'>
+                  Monitoring widoczności strony www
+                </h4>
                 <p className='text-sm text-gray text-balance'>
-                Za pomocą specjalnych skryptów sprawdzamy dostępność strony internetowej co minutę. Dzięki czemu w minute po awarii mamy jej świadomośc i działamy od razu
+                  Za pomocą specjalnych skryptów sprawdzamy dostępność strony
+                  internetowej co minutę. Dzięki czemu w minute po awarii mamy
+                  jej świadomośc i działamy od razu
                 </p>
               </div>
             </div>
@@ -242,10 +251,13 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                Optymalizacja szybkości
+                  Optymalizacja szybkości
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                W ramach pakietów administracji stronami internetowymi dbamy o takie aspekty jak szybkość wczytywnia oraz poprawne SEO. Dzięki czemu strona z miesiąca na miesiąc jest w coraz lepszej kondycji
+                  W ramach pakietów administracji stronami internetowymi dbamy o
+                  takie aspekty jak szybkość wczytywnia oraz poprawne SEO.
+                  Dzięki czemu strona z miesiąca na miesiąc jest w coraz lepszej
+                  kondycji
                 </p>
               </div>
             </div>
@@ -263,10 +275,13 @@ export default function CheapSites() {
               </div>
               <div className='flex flex-col items-start gap-5'>
                 <h4 className='text-xl lg:mt-14 text-balance'>
-                Pakiet bezpieczeńśtwa
+                  Pakiet bezpieczeńśtwa
                 </h4>
                 <p className='text-sm text-gray text-balance'>
-                Przejmując obowiązki zwiazane z dbaniem o stronę wykonujemy szereg czynności zabezpieczających dzięki czemu strona jest na tyle bezpieczna na ile to tylko możliwe. Regularnie skanujemy strony za pomocą narzędzi typu wp-scan
+                  Przejmując obowiązki zwiazane z dbaniem o stronę wykonujemy
+                  szereg czynności zabezpieczających dzięki czemu strona jest na
+                  tyle bezpieczna na ile to tylko możliwe. Regularnie skanujemy
+                  strony za pomocą narzędzi typu wp-scan
                 </p>
               </div>
             </div>
@@ -276,10 +291,12 @@ export default function CheapSites() {
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
-          Dlaczego strony oparte o system WordPress powinny być cały czas nadzorowane?
+            Dlaczego strony oparte o system WordPress powinny być cały czas
+            nadzorowane?
           </h3>
           <h4 className='pb-40 text-2xl mt-6'>
-          WordPress to najpopularniejszy system na świecie, dlatego jest głównym celem ataków.Warto aby nad Twoją stroną stale ktoś czuwał.
+            WordPress to najpopularniejszy system na świecie, dlatego jest
+            głównym celem ataków.Warto aby nad Twoją stroną stale ktoś czuwał.
           </h4>
           <ul className='flex flex-col lg:flex-row flex-wrap items-start justify-center gap-y-12 lg:gap-y-32'>
             <li className='w-full lg:w-5/12'>
@@ -320,11 +337,14 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                 Bezpieczeństwo Twojej strony oraz danych
+                  Bezpieczeństwo Twojej strony oraz danych
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-              Czy zdajesz sobie sprawę z tego, że nieuprawniony dostęp do Twojej strony to tak naprawdę dostęp do całego serwera? Strona musi być stale monitorowane oraz zabezpieczana. W ramach usługi otrzymujesz stały monitoring strony oraz podatności 
+                Czy zdajesz sobie sprawę z tego, że nieuprawniony dostęp do
+                Twojej strony to tak naprawdę dostęp do całego serwera? Strona
+                musi być stale monitorowane oraz zabezpieczana. W ramach usługi
+                otrzymujesz stały monitoring strony oraz podatności
               </p>
             </li>
 
@@ -351,11 +371,15 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-               Aktualizacje zawsze na czas
+                  Aktualizacje zawsze na czas
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-               W przypadku podatności w popularnej wtyczce aktualizację należy wykonywać natychmiast.Każda luka w zabezpieczeniach jest wykorzysytwana przez hakerów w trybie natychmiastowym. Dlatego aktualizacje są tak ważne a w ramach stałej administracji będa one wykonywane na bieżąco.
+                W przypadku podatności w popularnej wtyczce aktualizację należy
+                wykonywać natychmiast.Każda luka w zabezpieczeniach jest
+                wykorzysytwana przez hakerów w trybie natychmiastowym. Dlatego
+                aktualizacje są tak ważne a w ramach stałej administracji będa
+                one wykonywane na bieżąco.
               </p>
             </li>
 
@@ -383,11 +407,14 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-              Prace optymalizacyjne
+                  Prace optymalizacyjne
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                W każdym miesiącu wydzielamy czas na optymalizację strony. Dzięki temu strona jest coraz szybsza oraz lepiej widoczna w Google. W ramach usługi otrzymujesz również raporty z prac optymalizacyjnych
+                W każdym miesiącu wydzielamy czas na optymalizację strony.
+                Dzięki temu strona jest coraz szybsza oraz lepiej widoczna w
+                Google. W ramach usługi otrzymujesz również raporty z prac
+                optymalizacyjnych
               </p>
             </li>
 
@@ -412,21 +439,28 @@ export default function CheapSites() {
                   </svg>
                 </div>
                 <h5 className='text-xl lg:mt-4 text-balance mb-5'>
-                Niezależne kopie zapasowe
+                  Niezależne kopie zapasowe
                 </h5>
               </div>
               <p className='text-sm text-gray text-balance'>
-                Wszystkie kopie zapasowe są przechowywane na naszych serwerach. Dzięki temu w przypadku awarii serwera jesteśmy w stanie odzyskać stronę w ekspresowym tempie.
+                Wszystkie kopie zapasowe są przechowywane na naszych serwerach.
+                Dzięki temu w przypadku awarii serwera jesteśmy w stanie
+                odzyskać stronę w ekspresowym tempie.
               </p>
             </li>
           </ul>
           <section>
             <div>
               <h5 className='text-5xl pt-40'>
-              Obsługa stron opartych o system CMS WordPress obejmuje kompleksowy pakiet usług
+                Obsługa stron opartych o system CMS WordPress obejmuje
+                kompleksowy pakiet usług
               </h5>
               <h6 className='text-2xl mt-6'>
-              Zakres prac obejmuje zarówno standardowe działania wykonywane cykliczne w ramach dbania o “higiene” całego systemu jak i prace związane z przyspieszeniem działania strony, optymalizację pod SEO czy też rozwój nowych funkcjonalności oraz autorskich modułów.Stała obsługa to rów
+                Zakres prac obejmuje zarówno standardowe działania wykonywane
+                cykliczne w ramach dbania o “higiene” całego systemu jak i prace
+                związane z przyspieszeniem działania strony, optymalizację pod
+                SEO czy też rozwój nowych funkcjonalności oraz autorskich
+                modułów.Stała obsługa to rów
               </h6>
             </div>
           </section>

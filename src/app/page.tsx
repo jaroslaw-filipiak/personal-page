@@ -40,7 +40,7 @@ export default function Home() {
     },
     sameAs: [
       'https://www.facebook.com/jfilipiakpl',
-      'https://www.linkedin.com/showcase/j-filipiak-pl/',
+      'https://www.linkedin.com/showcase/j-filipiak-pl',
       'https://twitter.com/twojafirma',
     ],
     potentialAction: {

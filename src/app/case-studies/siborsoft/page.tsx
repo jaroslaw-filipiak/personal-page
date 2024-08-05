@@ -4,10 +4,103 @@ import Nav from '@/components/Nav';
 import Link from 'next/link';
 import Cta from '@/components/Cta';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+import {
+  Thing,
+  WithContext,
+  Offer,
+  Person,
+  Place,
+  Organization,
+  ContactPoint,
+  WebPage,
+} from 'schema-dts';
+
+export const metadata: Metadata = {
+  title: 'Siborsoft - Case Study projektu - j-filipiak.pl',
+  description:
+    'Siborsoft to niezwykła strona internetowa z implementacją html history API na WordPress. Zobacz jak można zrobić coś innego niż wszystkie strony internetowe!',
+  keywords: [
+    'projektowanie stron www w Figmie',
+    'projektowanie stron WordPress',
+    'auktorskie kodowanie stron www , html, js, css, sass, webpack, vite.js, next.js, vue.js, wordpress, node.js, dedykowane oprogramowanie dla firm, aplikacje webowe spa, aplikacje webowe pwa, aplikacje webowe ssr, szybkie strony internetowe',
+    'Webpack',
+    'Next.js',
+    'Node.js',
+    'WordPress',
+    'Dedykowane oprogramowanie dla firm',
+    'Aplikacje webowe SPA',
+    'Aplikacje webowe PWA',
+    'Aplikacje webowe SSR',
+    'Szybkie strony internetowe',
+  ],
+  generator: 'Next.js',
+  openGraph: {
+    type: 'website',
+    url: 'https://j-filipiak.pl/case-studies/siborsoft',
+    title: 'Siborsoft - Case Study projektu - j-filipiak.pl',
+    description:
+      'Siborsoft to niezwykła strona internetowa z implementacją html history API na WordPressie. Zobacz jak można zrobić coś innego niż wszystkie strony internetowe!',
+    images: ['ogimage-contact.jpg'],
+    // TODO: og images per page
+  },
+};
 
 export default function Home() {
+  const caseStudySchema: WithContext<WebPage> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Case Study: Siborsoft',
+    description: 'Zobacz case study projektu strony internetowej dla Siborsoft',
+    url: 'https://j-filipiak.pl/case-studies/siborsoft',
+    author: {
+      '@type': 'Person',
+      name: 'Jarosław Filipiak',
+      url: 'https://j-filipiak.pl/about-me',
+      sameAs: [
+        'https://www.facebook.com/jfilipiakpl',
+        'https://www.linkedin.com/showcase/j-filipiak-pl',
+        'https://twitter.com/twojafirma',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'Professional',
+        telephone: '+48 663 568 828',
+        email: 'info@j-filipiak.pl',
+        areaServed: 'PL',
+        availableLanguage: ['Polish'],
+        url: 'https://j-filipiak.pl/kontakt',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'CreativeWork',
+      creator: {
+        '@type': 'Person',
+        name: 'Jarosław Filipiak',
+      },
+    },
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://calendly.com/jaroslaw-filipiak',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/IOSPlatform',
+          'http://schema.org/AndroidPlatform',
+        ],
+      },
+      name: 'Zarezerwuj rozmowę',
+    },
+  };
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(caseStudySchema),
+        }}
+      />
       <Nav />
       <section
         id='case-study-hero'

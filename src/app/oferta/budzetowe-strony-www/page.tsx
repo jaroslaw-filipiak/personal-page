@@ -38,7 +38,7 @@ export default function CheapSites() {
       image: 'https://j-filipiak.pl/jaroslaw-filipiak-schema.jpg',
       sameAs: [
         'https://www.facebook.com/jfilipiakpl',
-        'https://www.linkedin.com/showcase/j-filipiak-pl/',
+        'https://www.linkedin.com/showcase/j-filipiak-pl',
         'https://twitter.com/twojafirma',
       ],
       jobTitle: 'Designer & FullStack Developer',
@@ -157,9 +157,11 @@ export default function CheapSites() {
       active: false,
     },
   ];
-  const features = [  'Szybki termin realizacji',
+  const features = [
+    'Szybki termin realizacji',
     'Strona w pełni responsywna oraz przygotowana pod SEO',
-    'Panel administratora',];
+    'Panel administratora',
+  ];
   return (
     <>
       <script
@@ -170,10 +172,12 @@ export default function CheapSites() {
       />
 
       <Nav />
-      <Hero title='Profesjonalna strona www w przystępnej cenie ?'
+      <Hero
+        title='Profesjonalna strona www w przystępnej cenie ?'
         subtitle='Dostarcze Tobie profesjonalną stronę www w pełni przygotowaną pod SEO. Wraz z panelem administratora. Bezpieczna, szybka i stabilna strona www'
         features={features}
-        formTitle='Porozmawiajmy o Twojej nowej stronie www' />
+        formTitle='Porozmawiajmy o Twojej nowej stronie www'
+      />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl pb-40'>
