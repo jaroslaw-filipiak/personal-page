@@ -67,6 +67,7 @@ export default async function Page({
     publisher: {
       '@type': 'Organization',
       name: 'j-filipiak',
+
       logo: {
         '@type': 'ImageObject',
         url: 'https://your-site-url.com/logo.jpg', // replace with your actual logo URL
@@ -77,7 +78,7 @@ export default async function Page({
       '@id': `https://j-filipiak.pl/blog/${params.slug}`, // URL of the blog post
     },
     description: post[0].excerpt.rendered, // Add description
-    //TODO: tags z api
+    //TODO: tags z api + logo
     // keywords: post[0].tags.map(tag => tag.name).join(", "),
   };
 

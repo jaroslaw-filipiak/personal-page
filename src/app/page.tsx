@@ -19,9 +19,9 @@ import {
 } from 'schema-dts';
 
 export const metadata: Metadata = {
-  title: 'Projektowanie stron www - tylko profesjonalne strony firmowe',
+  title: 'Strony internetowe WordPress oraz aplikacje webowe',
   description:
-    'od 2017 r. wdrażam profesjonale strony internetowe, aplikacje mobilne oraz dedykowane oprogramowanie wspierające biznes. Sprawdź moje realizacje!',
+    'Strony internetowe min. WordPress. Projekt graficzny, wdrożenie, skuteczne SEO. Aplikacje webowe, systemy CRM, konfiguratory, kalkulatory. Zadzwoń',
 };
 
 export default function Home() {
