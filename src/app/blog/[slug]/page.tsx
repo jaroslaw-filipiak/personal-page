@@ -12,10 +12,10 @@ import Share from '@/components/blog/Share';
 
 // Utility function to strip HTML tags
 function stripHtmlTags(html: string): string {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = html;
-  return tempDiv.textContent || tempDiv.innerText || '';
+  return html.replace(/<[^>]+>/g, '');
 }
+
+// TODO: opengraphimages 1200x630 ?
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: any): Promise<Metadata> {

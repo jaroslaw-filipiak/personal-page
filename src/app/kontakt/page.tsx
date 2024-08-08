@@ -7,13 +7,13 @@ import { WithContext, ContactPoint, Organization, Person } from 'schema-dts';
 export const metadata: Metadata = {
   title: 'j-filipiak.pl | Skontaktuj się ze mną i uzyskaj wycene w 24h!',
   description:
-    'Porozmawiajmy o Twoim projekcie. Napisz do mnie lub zadzwoń już teraz! (+48) 663 568 828',
+    'Potrzebujesz storny opartej o WordPress lub Vue.js? Aplikacje dedykowane dla firm? Skontaktuj się ze mną, a otrzymasz wycenę w 24h!',
   keywords: [
     'projektowanie stron www',
     'projektowanie stron internetowych',
     'projektowanie stron internetowych w Wordpress',
     'Vue.js',
-    'Wordpress',
+    'WordPress',
     'Dedykowane oprogramowanie dla firm',
   ],
   generator: 'Next.js',
