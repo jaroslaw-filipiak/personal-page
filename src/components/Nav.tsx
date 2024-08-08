@@ -55,7 +55,7 @@ export default function Nav() {
           <li>
             <Link
               className='hover:underline underline-offset-[6px] transition-all'
-              href='/#case-studies'
+              href='#case-studies'
             >
               Case studies
             </Link>
@@ -91,7 +91,7 @@ export default function Nav() {
                       className='hover:underline underline-offset-[6px] transition-all'
                       href='/oferta/administracja-stronami-internetowymi'
                     >
-                   Administracja stronami internetowymi WordPress
+                      Administracja stronami internetowymi WordPress
                     </Link>
                   </li>
                 </ul>
