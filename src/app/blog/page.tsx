@@ -1,7 +1,7 @@
 import Nav from '@/components/Nav';
 import BlogHero from '@/components/blog/BlogHero';
 import BlogPosts from '@/components/blog/BlogPosts';
-import { Blog, WithContext } from 'schema-dts';
+import { Blog, WithContext, Person } from 'schema-dts';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -45,6 +45,25 @@ export default function blogPage() {
     url: 'https://j-filipiak.pl/blog',
     description:
       'Porady i nowinki dla osób zainteresowanych Tworzeniem stron internetowych. Automatyzacje procesów firmowych, ciekawe narzędzia a także najlepsze praktyki SEO i UX. Optymalizacja stron pod kątem szybkości ładowania i bezpieczeństwa oraz o wiele więcej.',
+    author: {
+      '@type': 'Person',
+      name: 'Jarosław Filipiak',
+      url: 'https://j-filipiak.pl/about-me',
+      sameAs: [
+        'https://www.facebook.com/jfilipiakpl',
+        'https://www.linkedin.com/showcase/j-filipiak-pl',
+        'https://twitter.com/twojafirma',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'Professional',
+        telephone: '+48 663 568 828',
+        email: 'info@j-filipiak.pl',
+        areaServed: 'PL',
+        availableLanguage: ['Polish'],
+        url: 'https://j-filipiak.pl/kontakt',
+      },
+    },
   };
 
   return (
