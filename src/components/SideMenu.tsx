@@ -35,15 +35,33 @@ export default function SideMenu() {
               Oferta
             </div>
             {showDropdown && (
-              <div className='selection:bg-transparent border bg-black text-accent mt-6'>
-                <ul className='flex flex-col items-start gap-1 w-full text-lg'>
-                  <li className='pt-1 pb-1 pl-2 pr-2'>
+              <div className='selection:bg-transparent mt-6'>
+                <ul className='flex flex-col items-center gap-3 w-full text-lg'>
+                  <li className='pt-1 pb-1 pl-2 pr-2 bg-black text-accent'>
                     <Link
                       onClick={toggleMenu}
                       className='transition-all hover:no-underline '
                       href='/oferta/budzetowe-strony-www'
                     >
                       Budżetowe strony www oparte o system WordPress
+                    </Link>
+                  </li>
+                  <li className='pt-1 pb-1 pl-2 pr-2 bg-black text-accent'>
+                    <Link
+                      onClick={toggleMenu}
+                      className='transition-all hover:no-underline '
+                      href='/oferta/administracja-stronami-internetowymi/'
+                    >
+                      Administracja stronami internetowymi WordPress
+                    </Link>
+                  </li>
+                  <li className='pt-1 pb-1 pl-2 pr-2 bg-black text-accent'>
+                    <Link
+                      onClick={toggleMenu}
+                      className='transition-all hover:no-underline '
+                      href='/oferta/usuwanie-wirusow-wordpress'
+                    >
+                      Usuwanie wirusów WordPress
                     </Link>
                   </li>
                 </ul>
