@@ -170,7 +170,7 @@ export default async function Page({
       </div>
 
       <Cta />
-      <Script src='/js/mailerlite.js' />
+      <Script data-category='marketing' src='/js/mailerlite.js' />
       <Script
         id='schemaData'
         type='application/ld+json'

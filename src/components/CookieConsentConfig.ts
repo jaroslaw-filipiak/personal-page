@@ -39,8 +39,19 @@ const pluginConfig: CookieConsentConfig = {
           {
             name: /^(_ga|_gid)/,
           },
+
+          {
+            name: /^CLID/,
+          },
+          {
+            name: /^MUID/,
+          },
         ],
       },
+    },
+    marketing: {
+      readOnly: false,
+      enabled: false,
     },
   },
 
@@ -174,6 +185,26 @@ const pluginConfig: CookieConsentConfig = {
                     domain: 'www.clarity.ms',
                     description: 'Microsoft Clarity',
                     expiration: '1 rok',
+                  },
+                ],
+              },
+            },
+            {
+              title: 'Marketingowe',
+              linkedCategory: 'marketing',
+              cookieTable: {
+                headers: {
+                  name: 'Nazwa',
+                  domain: 'Usługa',
+                  description: 'Opis',
+                  expiration: 'Wygaśnięcie',
+                },
+                body: [
+                  {
+                    name: '_ga',
+                    domain: 'Google Analytics',
+                    description: 'Cookie Google Analytics.',
+                    expiration: '2 lata',
                   },
                 ],
               },

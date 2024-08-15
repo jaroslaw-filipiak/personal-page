@@ -1,14 +1,61 @@
 import Nav from '@/components/Nav';
 import type { Metadata } from 'next';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Polityka prywatności',
-  description: 'jfilipiak.pl',
+  description:
+    'Polityka dotycząca serwisu www, funkcjonującego pod adresem url: j-filipiak.pl',
+};
+
+type PrivacyPolicy = {
+  '@context': string;
+  '@type': string;
+  name: string;
+  description: string;
+  url: string;
+  provider: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+  policyCoverage: {
+    '@type': string;
+    name: string;
+    email: string;
+  };
+};
+
+const privacyPolicySchema: PrivacyPolicy = {
+  '@context': 'https://schema.org',
+  '@type': 'PrivacyPolicy',
+  name: 'Polityka prywatności',
+  description:
+    'Polityka dotycząca serwisu www, funkcjonującego pod adresem url: j-filipiak.pl',
+  url: 'https:/j-filipiak.pl/polityka-prywatnosci',
+  provider: {
+    '@type': 'Organization',
+    name: 'j-filipiak.pl',
+    url: 'https:/j-filipiak.pl',
+  },
+  policyCoverage: {
+    '@type': 'DataProtectionOfficer',
+    name: 'Jarosław Filipioak',
+    email: 'info@j-filipiak.pl',
+  },
 };
 
 export default function PrivacyPolicy() {
   return (
     <>
+      <Head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(privacyPolicySchema),
+          }}
+        />
+      </Head>
       <Nav />
       <section className='pt-52 pb-20 flex items-center justify-center bg-white '>
         <div className='container'>
@@ -31,7 +78,7 @@ export default function PrivacyPolicy() {
               </li>
               <li>
                 Operatorem serwisu oraz Administratorem danych osobowych jest:
-                Jarosław Filipiak Staszica 3 , 4-330 Opalenica
+                Jarosław Filipiak Staszica 3 , 64-330 Opalenica
               </li>
 
               <li>
@@ -224,7 +271,7 @@ export default function PrivacyPolicy() {
               </li>
               <li>
                 Serwis może zapisać informacje o parametrach połączenia
-                (oznaczenie czasu, adres IP).
+                (oznaczenie czasu, , User-Agent, adres IP).
               </li>
               <li>
                 Serwis, w niektórych wypadkach, może zapisać informację
@@ -364,8 +411,211 @@ export default function PrivacyPolicy() {
                 siedzibą w USA), Twitter (Twitter Inc. z siedzibą w USA).
               </li>
             </ol>
+            <h2 className='pb-3 pt-12 text-3xl'>
+              9. Szczegółowe informacje o plikach cookies
+            </h2>
+            <h3 className='text-xl pb-12'>
+              Niniejsza dokumentacja zawiera informacje na temat ciasteczek
+              używanych na stronie internetowej, w tym ich kategorie,
+              przykładowe wartości oraz powiązane domeny. Ciasteczka są
+              stosowane do różnych celów, takich jak poprawa funkcjonalności
+              strony, analiza danych oraz zarządzanie sesjami użytkowników.
+            </h3>
+
+            <h4 className='pb-4 pt-4 text-lg'>1. Ciasteczka niezbędne</h4>
+            <ol>
+              <li>
+                ANON
+                <ul className='pl-6'>
+                  <li>
+                    Przykładowa wartość:
+                    b4907189458U&7Wbd355648ec9SC.20U081420250814
+                  </li>
+                  <li>Domena: .clarity.ms</li>
+                  <li>
+                    Opis: Używane do zarządzania sesjami i zapewnienia
+                    podstawowych funkcji strony.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                wp-settings-1
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: UF1527Đ089KAB1</li>
+                  <li>Domena: .clarity.ms</li>
+                  <li>
+                    Opis: Używane przez WordPress do przechowywania ustawień
+                    użytkownika.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                ftp
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 100001231090906</li>
+                  <li>Domena: j-filipiak.pl</li>
+                  <li>
+                    Opis: Może być używane do podstawowych funkcji związanych z
+                    transferem plików lub sesjami.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                csrftoken
+                <ul className='pl-6'>
+                  <li>
+                    Przykładowa wartość: e1757db4-6aOe-4aee-92ô38S5ebd695fe
+                  </li>
+                  <li>Domena: j-filipioak.pl</li>
+                  <li>
+                    Opis: Używane do ochrony przed atakami CSRF (Cross-Site
+                    Request Forgery).
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h4 className='pb-4 pt-4 text-lg'>2. Ciasteczka Analityczne</h4>
+            <ol>
+              <li>
+                _ga_
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: GAI.1.145Đoeon1714663331</li>
+                  <li>Domena: .clarity.ms</li>
+                  <li>
+                    Opis: Ciasteczko Google Analytics używane do śledzenia
+                    interakcji użytkowników na stronie.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                _pk_id, _pk_ses
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 723&1605290178858322962340329</li>
+                  <li>Domena: piwik.pro</li>
+                  <li>
+                    Ciasteczko Matomo (dawniej Piwik) używane do analizy
+                    zachowań użytkowników(id) oraz sesji (ses).
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h4 className='pb-4 pt-4 text-lg'>3. Ciasteczka Marketingowe</h4>
+            <ol>
+              <li>
+                MUID
+                <ul className='pl-6'>
+                  <li>
+                    PPrzykładowa wartość: NBN9 pa g ufC LG RcExwWOS 1
+                    GaCyhFBv06vD2gqbM pc_posthog
+                  </li>
+                  <li>Domena: .facebook.com</li>
+                  <li>
+                    Opis: Używane do śledzenia działań użytkownika w celu
+                    targetowania reklam.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                intercom-device-id-k893q3vr
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: Ae68ZtCB6zSPTMp..OlaEHVIX</li>
+                  <li>Domena: .mailerlite.com</li>
+                  <li>
+                    Opis: Używane przez Intercom do identyfikacji urządzenia
+                    użytkownika i zarządzania sesjami.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h4 className='pb-4 pt-4 text-lg'>4. Ciasteczka Funkcjonalne</h4>
+            <ol>
+              <li>
+                CUD
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 7929ef10cE541 leeĐ28c35d7ff16d9</li>
+                  <li>Domena: j-filipiak.piwik.pro</li>
+                  <li>
+                    Opis: Może być używane do różnych celów funkcjonalnych,
+                    takich jak zarządzanie sesjami, ustawieniami użytkownika lub
+                    personalizacją treści.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                lp_custom
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 9-28Zon2S7hUb0B_ŔDjMLH</li>
+                  <li>Domena: j-filipiak.pl</li>
+                  <li>
+                    Opis: Może być używane do przechowywania niestandardowych
+                    ustawień i preferencji użytkownika.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h4 className='pb-4 pt-4 text-lg'>5. Ciasteczka Specjalne</h4>
+            <ol>
+              <li>
+                NAP
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: RjosCbuSeCCbS3yeWMGYhhtzayq7</li>
+                  <li>Domena: .mailerlite.com</li>
+                </ul>
+              </li>
+              <li>
+                presence
+                <ul className='pl-6'>
+                  <li>
+                    Przykładowa wartość: e17S7db4-6aOe-a.aee-92ó-38SS*d69Sfe
+                  </li>
+                  <li>Domena: .mailerlite.com</li>
+                  <li>
+                    Opis: Używane do zarządzania stanem obecności użytkowników i
+                    sesji.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h4 className='pb-4 pt-4 text-lg'>
+              6. Ciasteczka Sesyjne i Preferencyjne
+            </h4>
+            <ol>
+              <li>
+                stg_last_interaction
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 2293*1197</li>
+                  <li>Domena: .mailerlite.com</li>
+                  <li>
+                    Opis: Używane do śledzenia ostatnich interakcji użytkownika
+                    z witryną
+                  </li>
+                </ul>
+              </li>
+              <li>
+                stg_retuming_visitor
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 1714747551</li>
+                  <li>Domena: .mailerlite.com</li>
+                  <li>
+                    Opis: Używane do identyfikacji powracających użytkowników i
+                    personalizacji doświadczenia.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                stg_traffic_source_priority
+                <ul className='pl-6'>
+                  <li>Przykładowa wartość: 36</li>
+                  <li>Domena: .mailerlite.com</li>
+                  <li>
+                    Opis: Używane do priorytetyzacji źródeł ruchu w celu lepszej
+                    analizy i raportowania.
+                  </li>
+                </ul>
+              </li>
+            </ol>
             <h2 className='pb-12 pt-12 text-3xl'>
-              9. Zarządzanie plikami cookies – jak w praktyce wyrażać i cofać
+              10. Zarządzanie plikami cookies – jak w praktyce wyrażać i cofać
               zgodę?
             </h2>
             <ol>
