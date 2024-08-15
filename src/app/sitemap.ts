@@ -45,6 +45,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/oferta/administracja-stronami-internetowymi`,
       priority: 1,
     },
+    {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/oferta/usuwanie-wirusow-wordpress`,
+      priority: 1,
+    },
     ...postsEntries,
   ];
 }
