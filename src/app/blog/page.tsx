@@ -52,7 +52,6 @@ export default function blogPage() {
       sameAs: [
         'https://www.facebook.com/jfilipiakpl',
         'https://www.linkedin.com/showcase/j-filipiak-pl',
-        'https://twitter.com/twojafirma',
       ],
       contactPoint: {
         '@type': 'ContactPoint',
