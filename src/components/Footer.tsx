@@ -92,6 +92,15 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+        <div className='w-full pb-5 opacity-60'>
+          <div className='container flex flex-col lg:flex-row justify-center text-gray text-xs pl-10 pr-10'>
+            <p className='text-center'>Copyright 2014 - 2024</p>
+            <p className='text-center lg:pl-4'>INCREMENT POLAND</p>
+            <p className='text-center lg:pl-4'>
+              Jarosław Filipiak | NIP: 7881922096
+            </p>
+          </div>
+        </div>
       </footer>
     </>
   );

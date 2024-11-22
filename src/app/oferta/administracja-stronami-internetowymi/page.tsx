@@ -68,14 +68,14 @@ export default function CheapSites() {
       id: 3,
       title: 'Ile to kosztuje? Czy są jakieś dodatkowe opłaty?',
       content:
-        'Oferta stałej administracji wyceniania jest indywidualnie w zależności od potrzeb i wymagań klienta. Najniższy pakiet obejmujący administrację oraz czuwanie nad stroną to 499 zł netto miesięcznie. W cenie jest zawarte wsparcie techniczne 24/7, aktualizacje systemu WordPress oraz wtyczek, poprawki bezpieczeństwa, administracja stronami internetowymi oraz monitoring dostępności. W przypadku dodatkowych prac programistycznych prace rozliczane są na podstawie ilośći przepracowanych godzin.',
+        'Oferta stałej administracji wyceniania jest indywidualnie w zależności od potrzeb i wymagań klienta. Najniższy pakiet obejmujący administrację oraz czuwanie nad stroną to 249 zł netto miesięcznie. W  tej cenie zabezpieczymy stornę oraz zadbamy o to, by strona była na bieżąco aktualizowana.Do dyspozycji masz również dodatkową godzinę prcy specjalisty ds. WordPress w cenie pakietu. W przypadku dodatkowych prac programistycznych prace rozliczane są na podstawie ilośći przepracowanych godzin.',
       active: false,
     },
     {
       id: 4,
       title: 'Czy oferujecie wsparcie w nagłych wypadkach',
       content:
-        'Czas reakcji na usterki oraz godziny dostępności ustalane są indywidualnie.',
+        'Czas reakcji na usterki oraz godziny dostępności ustalane są indywidualnie. Mamy również klientów, którzy oczekują dostępności 24/7. W takim przypadku ustalamy dodatkowe stawki za dostępność w godzinach nocnych. W umowie ustalamy również czas reakcji na zgłoszenia awaryjne w zależności od priorytetu zgłoszenia',
       active: false,
     },
 
@@ -83,7 +83,7 @@ export default function CheapSites() {
       id: 6,
       title: 'Jakie usługi są zawarte w pakiecie administracyjnym?',
       content:
-        'W standardowym pakiecie administracyjnym znajdują się następujące usługi:Regularne aktualizacje WordPress, motywów i wtyczek,Codzienne kopie zapasowe strony,Monitorowanie bezpieczeństwa,Optymalizacja prędkości ładowania strony, Wsparcie techniczne i pomoc przy edytowaniu treści,Analityka i raportowanie wydajności strony',
+        'W standardowym pakiecie administracyjnym znajdują się następujące usługi:Regularne aktualizacje WordPress, motywów i wtyczek.  kopie zapasowe wg. ustalonego harmonogramu ,monitorowanie bezpieczeństwa,optymalizacja prędkości ładowania strony, wsparcie techniczne i pomoc przy edytowaniu treści,analityka i raportowanie wydajności strony. Wszystkie usługi są dostosowywane do potrzeb klienta',
       active: false,
     },
     {
@@ -91,7 +91,7 @@ export default function CheapSites() {
       title:
         'Czy oferujecie regularne aktualizacje WordPress, motywów i wtyczek?',
       content:
-        'Tak, zapewnieni bezpieczeństwo i sprawność działania strony to nasz priorytet. Każdy klient otrzymuje indywidualny harmonogram aktualizacji',
+        'Tak, bezpieczeństwo i sprawność działania strony to nasz priorytet. Każdy klient otrzymuje indywidualny harmonogram aktualizacji. Wszelkie aktualizacje są testowane na środowisku stagingowym przed wdrożeniem na stronę produkcyjną. Dzięki temu unikamy problemów z działaniem strony po aktualizacji.',
       active: false,
     },
 
@@ -156,7 +156,7 @@ export default function CheapSites() {
         title='Zadbam o Twoją stronę internetową na WordPress'
         subtitle='Strony oparte o system WordPress potrzebują stałej administracji. Oferta administracji obejmuje wszelkie poprawki, aktualizacje, backupy oraz monitoring strony a także pracę programistyczne'
         features={features}
-        formTitle='Porozmawiajmy o stałej administracji Twojej witryny'
+        formTitle='Porozmawiajmy o opiece nad Twoją stroną lub sklepem'
       />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
