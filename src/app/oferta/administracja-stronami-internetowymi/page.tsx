@@ -82,8 +82,30 @@ export default function CheapSites() {
     {
       id: 6,
       title: 'Jakie usługi są zawarte w pakiecie administracyjnym?',
-      content:
-        'W standardowym pakiecie administracyjnym znajdują się następujące usługi:Regularne aktualizacje WordPress, motywów i wtyczek.  kopie zapasowe wg. ustalonego harmonogramu ,monitorowanie bezpieczeństwa,optymalizacja prędkości ładowania strony, wsparcie techniczne i pomoc przy edytowaniu treści,analityka i raportowanie wydajności strony. Wszystkie usługi są dostosowywane do potrzeb klienta',
+      content: `
+
+      <p>W standardowym pakiecie administracyjnym WordPress znajdują się następujące usługi:</p>
+
+       <ul class="py-6 pl-10 list-disc">
+        <li>Regularne aktualizacje WordPress, motywów i wtyczek oraz monitoring ich kompatybilności</li>
+        <li>Automatyczne kopie zapasowe według ustalonego harmonogramu z możliwością szybkiego przywrócenia danych. Również kopie zapasowe w niezależnej lokalizacji poza serwerem</li>
+        <li>Kompleksowe monitorowanie bezpieczeństwa, w tym skanowanie malware i ochrona przed atakami </li>
+        <li> Zaawansowana optymalizacja prędkości ładowania strony i dostosowywanie wydajności serwera</li>
+        <li>Profesjonalne wsparcie techniczne i pomoc przy edytowaniu treści, w tym wprowadzanie zmian na stronie </li>
+        <li>Szczegółowa analityka i cykliczne raportowanie wydajności strony </li>
+       </ul>
+
+       <p>Dodatkowo, w zależności od potrzeb klienta, oferujemy:</p>
+
+       <ul class="py-6 pl-10 list-disc">
+        <li>Edycję i tworzenie nowych podstron zgodnie z wytycznymi</li>
+        <li>Optymalizację SEO i dostosowywanie treści pod wyszukiwarki</li>
+        <li>Modyfikacje kodu (HTML, CSS, PHP) i customizację motywów</li>
+        <li>Integrację z narzędziami analitycznymi i marketingowymi</li>
+        <li>Audyty bezpieczeństwa i wydajności</li>
+       </ul>
+
+       <p>Wszystkie usługi są elastycznie dostosowywane do indywidualnych potrzeb i specyfiki projektu klienta. Zapewniamy stałe wsparcie i szybką reakcję na zgłoszenia.</p>`,
       active: false,
     },
     {

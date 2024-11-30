@@ -50,7 +50,7 @@ export default function FaqItem(props: FaqItemProps) {
 
         <div
           className={`faq-item__content selection:bg-transparent transition-all ${
-            !active ? 'max-h-0' : 'max-h-[333px]'
+            !active ? 'max-h-0' : 'max-h-max'
           }`}
         >
           <div className='w-10/12'>
