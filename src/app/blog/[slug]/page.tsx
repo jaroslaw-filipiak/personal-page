@@ -9,6 +9,7 @@ import { Metadata } from 'next';
 import MailerLiteNewsletterForm from '@/components/sidebar/MailerLiteNewsletterForm';
 import LHbanner from '@/components/sidebar/LHbanner';
 import Share from '@/components/blog/Share';
+import BlogComments from '@/components/blog/BlogComments';
 
 // Utility function to strip HTML tags
 function stripHtmlTags(html: string): string {
@@ -159,6 +160,7 @@ export default async function Page({
             }}
           ></div>
           <Share />
+          <BlogComments postId={post[0]?.id} />
         </main>
 
         <aside className='hidden lg:block lg:w-5/12 xl:w-3/12 sticky top-14'>
