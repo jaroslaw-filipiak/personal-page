@@ -158,6 +158,8 @@ export default function CheapSites() {
         subtitle='Szybko i sprawnie usunę wirusa / złośliwe oprogramowanie z Twojej strony opartej o system WordPress oraz zabezpiecze Twoją stronę przed przyszłymi atakami'
         features={features}
         formTitle='Porozmawiajmy o oczyszczeniu Twojego WordPressa'
+        hasForm={true}
+        formId={539}
       />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>

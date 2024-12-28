@@ -177,6 +177,8 @@ export default function CheapSites() {
         subtitle='Dostarcze Tobie profesjonalną stronę www w pełni przygotowaną pod SEO. Wraz z panelem administratora. Bezpieczna, szybka i stabilna strona www'
         features={features}
         formTitle='Porozmawiajmy o Twojej nowej stronie www'
+        hasForm={true}
+        formId={183}
       />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>

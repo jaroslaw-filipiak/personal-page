@@ -36,7 +36,7 @@ export default function Nav() {
       <nav
         className={`fixed hidden lg:flex left-0  w-screen transition-all z-10 ${
           scrollDirection === 'up'
-            ? 'nav--visible bg-white top-0'
+            ? 'nav--visible bg-transparent top-0'
             : 'nav--hidden -top-[90px]'
         }`}
       >

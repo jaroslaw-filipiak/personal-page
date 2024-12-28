@@ -179,6 +179,8 @@ export default function CheapSites() {
         subtitle='Strony oparte o system WordPress potrzebują stałej administracji. Oferta administracji obejmuje wszelkie poprawki, aktualizacje, backupy oraz monitoring strony a także pracę programistyczne'
         features={features}
         formTitle='Porozmawiajmy o opiece nad Twoją stroną lub sklepem'
+        hasForm={true}
+        formId={358}
       />
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>

@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
 
-
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-type formProps = { 
+type formProps = {
   title: string;
-}
+  formId: number;
+};
 
 export default function Form(props: formProps) {
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ export default function Form(props: formProps) {
       formData.append('tel-548', phone);
 
       const response = await fetch(
-        `${NEXT_PUBLIC_BASE_URL}/api/wp-json/contact-form-7/v1/contact-forms/183/feedback`,
+        `${NEXT_PUBLIC_BASE_URL}/api/wp-json/contact-form-7/v1/contact-forms/${props.formId}/feedback`,
         {
           method: 'POST',
           body: formData,
@@ -62,9 +62,7 @@ export default function Form(props: formProps) {
         alt='shadow png'
         src='img/form-shadow222.png'
       ></Image>
-      <div className='text-2xl mb-14'>
-       {props.title}
-      </div>
+      <div className='text-2xl mb-14'>{props.title}</div>
       <div>
         <input
           className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'

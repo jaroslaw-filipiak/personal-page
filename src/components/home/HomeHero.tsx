@@ -4,7 +4,10 @@ export default function HomeHero() {
   return (
     <section
       id='start'
-      className='pt-32 lg:pt-40 2xl:pt-72 pb-40 lg:pb-40 2xl:pb-72  '
+      className='pt-32 lg:pt-40 2xl:pt-72 pb-40 lg:pb-40 2xl:pb-72'
+      // style={{
+      //   background: 'url(/img/hero2.png) no-repeat center center/cover',
+      // }}
     >
       <div className='flex items-center justify-center'>
         <div className='container flex flex-col items-start relative'>
