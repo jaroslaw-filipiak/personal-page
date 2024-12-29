@@ -170,10 +170,10 @@ export default function howMuchDoesItCost() {
       <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
-            Ile kosztuje strona interentowa? skorzystaj z konfiguratora i
+            Ile kosztuje strona internetowa? skorzystaj z konfiguratora i
             dowiedz się jaki budżet powinieneś zabezpieczyć na jej wykonanie
           </h3>
-          <h4 className='text-2xl mt-6'>
+          <h4 className='text-lg mt-6 max-w-5xl'>
             Nasz konfigurator pomoże Ci zorientować się w przedziale cenowym
             Twojego projektu. Pamiętaj, że ostateczna wycena może się różnić w
             zależności od szczegółowych wymagań.

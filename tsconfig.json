@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/sitemap.ts",
-    "src/components/pricingConfigurator/PricingConfigurator.jsx"
+    "src/components/pricingConfigurator/PricingConfigurator.tsx"
   ],
   "exclude": ["node_modules"]
 }
