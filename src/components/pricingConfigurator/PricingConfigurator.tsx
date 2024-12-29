@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
 
 // import { Card, CardContent } from '@/components/ui/card';
 // import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -733,125 +734,104 @@ export default function PricingConfigurator() {
         </div>
       )}
 
-      {/* Szczegóły projektu */}
       {step === 'step2' && (
-        <>
-          <div className='flex items-center mb-6 text-sm'>
-            <button
-              onClick={() => setStep('approach')}
-              className='text-blue-600 hover:text-blue-800'
-            >
-              ← Wróć do wyboru podejścia
-            </button>
+        <div>
+          <div className='mb-6 container flex items-start justify-center  border border-opacity-20 border-black p-6 gap-12'>
+            <div className=' w-8/12'>
+              Wybrałeś:
+              <span className='font-semibold pl-1 pr-1'>
+                {websiteTypes[selectedOptions.websiteType].name}.
+              </span>
+              Taką stronę można stworzyć na wiele różnych sposobów a każdy z
+              nich różni sie zarówno czasem realizacji jak i kosztami.Wybierz
+              podejście, które najlepiej pasuje do Twoich wymagań. W każdym
+              elemencie wyszczególniłem listę zalet oraz wad takiego
+              podejścia.Jeżeli chciałbyś sie dowiedzieć więcej o róznych
+              podejściach zapoznaj się z dedykowanym wpisem gdzie barddziej
+              szczegółowo opisane są różnice podejść.
+            </div>
+
+            <div>
+              {' '}
+              <Link href='/blog/podejscia-do-tworzenia-stron-internetowych'>
+                <span className='text-black hover:text-opacity-80 flex items-start hover:underline'>
+                  Dowiedz się więcej o różnych podejściach do tworzenia stron
+                  internetowych
+                </span>
+              </Link>
+            </div>
           </div>
 
-          {/* Typ strony */}
-          <div className='mb-6'>
-            <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>Typ strony</h3>
-              <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                {Object.entries(websiteTypes).map(([key, type]) => (
-                  <div
-                    key={key}
-                    className={`p-4 border rounded-lg cursor-pointer transition-colors
-                      ${
-                        selectedOptions.websiteType === key
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-blue-300'
-                      }`}
-                    onClick={() =>
-                      setSelectedOptions((prev) => ({
-                        ...prev,
-                        websiteType: key,
-                      }))
-                    }
-                  >
-                    <h4 className='font-semibold mb-2'>{type.name}</h4>
-                    <p className='text-sm text-gray-600'>{type.description}</p>
+          <div>
+            {/* Slot for Previous Arrow */}
+            <div className='flex items-center justify-between container relative top-[30px] z-10 '>
+              <div
+                className='w-36 transition-all text-white py-4 px-10 bg-black cursor-pointer  flex items-center justify-center hover:opacity-80 selection:bg-transparent'
+                onClick={() => sliderRef.current.slickPrev()}
+              >
+                Wstecz
+              </div>
+
+              {/* Slot for Next Arrow */}
+              <div
+                className='w-36 transition-all text-white py-4 px-10 bg-black cursor-pointer  flex items-center justify-center hover:opacity-80 selection:bg-transparent'
+                onClick={() => sliderRef.current.slickNext()}
+              >
+                Dalej
+              </div>
+            </div>
+
+            <Slider {...settings} ref={sliderRef}>
+              {Object.entries(approaches).map(([key, approach]) => (
+                <div
+                  key={key}
+                  className={`transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 
+                  ${activeApproach === key ? 'bg-slate-100 ' : 'bg-lightGray'}
+                  ${
+                    activeApproach === key ? 'bg-slate-100 relative border' : ''
+                  }
+                  `}
+                  onClick={() => {
+                    setActiveApproach(key);
+                  }}
+                >
+                  <div className='p-6'>
+                    <h3 className='text-3xl  mb-2'>{approach.name}</h3>
+                    <p className='text-gray-600 mb-4'>{approach.description}</p>
+                    <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
+
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                      <div>
+                        <h4 className='font-semibold text-green-600 mb-2'>
+                          Zalety:
+                        </h4>
+                        <ul className='list-disc pl-5'>
+                          {approach.pros.map((pro, index) => (
+                            <li key={index} className='text-sm'>
+                              {pro}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className='font-semibold text-red-600 mb-2'>
+                          Wady:
+                        </h4>
+                        <ul className='list-disc pl-5'>
+                          {approach.cons.map((con, index) => (
+                            <li key={index} className='text-sm'>
+                              {con}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Liczba podstron */}
-          <div className='mb-6'>
-            <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>Liczba podstron</h3>
-              <input
-                type='number'
-                min='1'
-                max='20'
-                value={selectedOptions.pagesCount}
-                onChange={(e) =>
-                  setSelectedOptions((prev) => ({
-                    ...prev,
-                    pagesCount: parseInt(e.target.value) || 1,
-                  }))
-                }
-                className='w-24 p-2 border rounded'
-              />
-            </div>
-          </div>
-
-          {/* Dodatkowe funkcjonalności */}
-          <div className='mb-6'>
-            <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>
-                Dodatkowe funkcjonalności
-              </h3>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                {Object.entries(additionalFeatures).map(([key, feature]) => (
-                  <div
-                    key={key}
-                    className={`p-4 border rounded-lg cursor-pointer transition-colors
-                      ${
-                        selectedOptions.additionalFeatures.includes(key)
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-blue-300'
-                      }`}
-                    onClick={() =>
-                      setSelectedOptions((prev) => ({
-                        ...prev,
-                        additionalFeatures: prev.additionalFeatures.includes(
-                          key
-                        )
-                          ? prev.additionalFeatures.filter(
-                              (item) => item !== key
-                            )
-                          : [...prev.additionalFeatures, key],
-                      }))
-                    }
-                  >
-                    <h4 className='font-semibold mb-2'>{feature.name}</h4>
-                    <p className='text-sm text-gray-600'>
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Podsumowanie */}
-          {selectedOptions.websiteType && (
-            <div className='mb-6 bg-blue-50'>
-              <div className='p-6'>
-                <h3 className='text-xl font-semibold mb-4'>
-                  Szacunkowa wycena
-                </h3>
-                <div className='text-2xl font-bold mb-4'>
-                  {totalEstimate.min.toLocaleString()} -{' '}
-                  {totalEstimate.max.toLocaleString()} PLN
                 </div>
-                <div>
-                  <div className='h-4 w-4' />
-                  <div className='whitespace-pre-line'>{generateSummary()}</div>
-                </div>
-              </div>
-            </div>
-          )}
-        </>
+              ))}
+            </Slider>
+          </div>
+        </div>
       )}
     </div>
   );
