@@ -21,16 +21,16 @@ export default function howMuchDoesItCost() {
   return (
     <div className='how-much-cost-page'>
       <Nav />
-      <Hero
+      {/* <Hero
         title='Ile kosztuje strona internetowa?'
         subtitle='Dlaczego podobna strona kosztuje 500 zł u jednego wykonawcy, a  5000 zł u kolejnego? Poznaj rzeczywiste składniki ceny i dowiedz się co wpływa na koszt strony internetowej korzystając z mojego konfiguratora'
         features={features}
         hasForm={true}
         formTitle='Potrzebujesz indywidualnej oferty?'
         formId={536}
-      />
+      /> */}
       {/* Dlaczego ceny tak bardzo sie roznia */}
-      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
+      <section className='hidden pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl max-w-5xl'>
             Dlaczego ceny stron internetowych tak bardzo się różnią?
@@ -167,7 +167,8 @@ export default function howMuchDoesItCost() {
         </div>
       </section>
       {/* Konfigurator */}
-      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+      <div className='pt-[100px]'></div>
+      <section className='hidden pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
             Ile kosztuje strona internetowa? skorzystaj z konfiguratora i
