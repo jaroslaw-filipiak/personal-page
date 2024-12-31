@@ -50,11 +50,74 @@ interface WebsiteTypes {
   [key: string]: WebsiteType;
 }
 
+const websiteTypes: WebsiteTypes = {
+  landing: {
+    name: 'Landing Page',
+    description:
+      'Pojedyncza, długa strona skupiająca się na konkretnym celu (np. sprzedaż produktu, zapis na newsletter). Idealna do kampanii marketingowych i prezentacji pojedynczego produktu/usługi.',
+    basePrice: { min: 999, max: 4000 },
+  },
+  small_website: {
+    name: 'Prosta strona tzw: wizytówka',
+    description:
+      'Jej rozmiar to zazwyczaj strona główna oraz strona kontaktowa. Idealna dla małych firm, freelancerów czy osób prywatnych chcących zaistnieć w internecie.',
+    basePrice: { min: 1499, max: 6000 },
+  },
+  business: {
+    name: 'Strona firmowa',
+    description:
+      'Rozbudowana wizytówka firmy z podstronami zawierającymi informacje o firmie, usługach, realizacjach i dane kontaktowe. Świetna dla firm chcących zaznaczyć swoją obecność w internecie.',
+    basePrice: { min: 4000, max: 8000 },
+  },
+  shop: {
+    name: 'Sklep internetowy',
+    description:
+      'Pełnoprawna platforma e-commerce z katalogiem produktów, koszykiem, systemem płatności i panelem administracyjnym. Niezbędna dla firm prowadzących sprzedaż online.',
+    basePrice: { min: 8000, max: 15000 },
+  },
+  portfolio: {
+    name: 'Portfolio/Blog',
+    description:
+      'Strona prezentująca prace, projekty lub treści w formie bloga. Idealna dla twórców, fotografów, architektów czy freelancerów chcących pokazać swoje dokonania.',
+    basePrice: { min: 3000, max: 6000 },
+  },
+  coursesPlatform: {
+    name: 'Platforma edukacyjna',
+    description:
+      'System do prowadzenia kursów online z modułami do zarządzania treścią, postępami uczniów, płatnościami za kursy i komunikacją. Doskonała dla edukatorów i firm szkoleniowych.',
+    basePrice: { min: 8000, max: 30000 },
+  },
+  reservation: {
+    name: 'System rezerwacji',
+    description:
+      'Platforma do zarządzania rezerwacjami z kalendarzem, systemem powiadomień i płatnościami. Idealna dla restauracji, salonów, gabinetów czy hoteli.',
+    basePrice: { min: 10000, max: 20000 },
+  },
+  realEstate: {
+    name: 'Portal nieruchomości',
+    description:
+      'Specjalistyczna platforma z zaawansowaną wyszukiwarką, filtrowaniem, mapami i systemem zarządzania ofertami. Dedykowana dla agencji nieruchomości i deweloperów. Możliwość integracji z systemami typu Asari CMS itp.',
+    basePrice: { min: 8000, max: 30000 },
+  },
+  jobBoard: {
+    name: 'Portal ogłoszeń pracy',
+    description:
+      'System z zarządzaniem ogłoszeniami pracy, profilami kandydatów, aplikacjami i komunikacją między pracodawcami a kandydatami.',
+    basePrice: { min: 14000, max: 25000 },
+  },
+  customApp: {
+    name: 'Aplikacja webowa',
+    description:
+      'Zaawansowana aplikacja internetowa z dedykowanymi funkcjami biznesowymi, intergracjami i złożoną logiką. Dla firm potrzebujących specjalistycznego oprogramowania.',
+    basePrice: { min: 25000, max: 100000 },
+  },
+};
+
 const approaches: Approaches = {
   static: {
-    name: 'Tradycyjne strony statyczne',
+    name: 'Wersja statyczna (bez systemu CMS)',
     description:
-      'Najprostsze podejście oparte na czystym HTML, CSS i JavaScript. Strony są przechowywane jako pliki na serwerze i wysyłane bezpośrednio do przeglądarki.',
+      'Najprostsze podejście oparte na czystym HTML, CSS i JavaScript. Strony są przechowywane jako pliki .html na serwerze i wysyłane bezpośrednio do przeglądarki. Brak systemu CMS uniemożliwia samodzielną edycję strony',
     budget: 'od 1500 PLN',
     forWho: [
       'Proste strony wizytówkowe',
@@ -78,7 +141,7 @@ const approaches: Approaches = {
     ],
     priceModifier: 1,
     recommended: 'Dla: małych projektów, stron wizytówkowych, landing page',
-    showForSelectedWebsiteType: ['landing'],
+    showForSelectedWebsiteType: ['landing', 'small_website'],
   },
   wp_theme: {
     name: 'WordPress - Gotowe motywy',
@@ -113,6 +176,7 @@ const approaches: Approaches = {
       'reservation',
       'jobBoard',
       'landing',
+      'small_website',
     ],
   },
   wp_custom: {
@@ -149,6 +213,7 @@ const approaches: Approaches = {
       'reservation',
       'realEstate',
       'jobBoard',
+      'small_website',
     ],
   },
   wp_headless: {
@@ -184,6 +249,7 @@ const approaches: Approaches = {
       'portfolio',
       'realEstate',
       'jobBoard',
+      'small_website',
     ],
   },
   spa: {
@@ -220,6 +286,7 @@ const approaches: Approaches = {
       'realEstate',
       'jobBoard',
       'customApp',
+      'small_website',
     ],
   },
   nextjs: {
@@ -256,6 +323,7 @@ const approaches: Approaches = {
       'reservation',
       'jobBoard',
       'customApp',
+      'small_website',
     ],
   },
   jamstack: {
@@ -292,80 +360,13 @@ const approaches: Approaches = {
       'realEstate',
       'jobBoard',
       'customApp',
+      'small_website',
     ],
-  },
-};
-
-const websiteTypes: WebsiteTypes = {
-  landing: {
-    name: 'Landing Page',
-    description:
-      'Pojedyncza, długa strona skupiająca się na konkretnym celu (np. sprzedaż produktu, zapis na newsletter). Idealna do kampanii marketingowych i prezentacji pojedynczego produktu/usługi.',
-    basePrice: { min: 999, max: 4000 },
-  },
-  business: {
-    name: 'Strona firmowa',
-    description:
-      'Rozbudowana wizytówka firmy z podstronami zawierającymi informacje o firmie, usługach, realizacjach i dane kontaktowe. Świetna dla firm chcących zaznaczyć swoją obecność w internecie.',
-    basePrice: { min: 4000, max: 8000 },
-  },
-  shop: {
-    name: 'Sklep internetowy',
-    description:
-      'Pełnoprawna platforma e-commerce z katalogiem produktów, koszykiem, systemem płatności i panelem administracyjnym. Niezbędna dla firm prowadzących sprzedaż online.',
-    basePrice: { min: 8000, max: 15000 },
-  },
-  portfolio: {
-    name: 'Portfolio/Blog',
-    description:
-      'Strona prezentująca prace, projekty lub treści w formie bloga. Idealna dla twórców, fotografów, architektów czy freelancerów chcących pokazać swoje dokonania.',
-    basePrice: { min: 3000, max: 6000 },
-  },
-  coursesPlatform: {
-    name: 'Platforma edukacyjna',
-    description:
-      'System do prowadzenia kursów online z modułami do zarządzania treścią, postępami uczniów, płatnościami za kursy i komunikacją. Doskonała dla edukatorów i firm szkoleniowych.',
-    basePrice: { min: 8000, max: 30000 },
-  },
-  reservation: {
-    name: 'System rezerwacji',
-    description:
-      'Platforma do zarządzania rezerwacjami z kalendarzem, systemem powiadomień i płatnościami. Idealna dla restauracji, salonów, gabinetów czy hoteli.',
-    basePrice: { min: 10000, max: 20000 },
-  },
-  realEstate: {
-    name: 'Portal nieruchomości',
-    description:
-      'Specjalistyczna platforma z zaawansowaną wyszukiwarką, filtrowaniem, mapami i systemem zarządzania ofertami. Dedykowana dla agencji nieruchomości i deweloperów.',
-    basePrice: { min: 8000, max: 30000 },
-  },
-  jobBoard: {
-    name: 'Portal ogłoszeń pracy',
-    description:
-      'System z zarządzaniem ogłoszeniami pracy, profilami kandydatów, aplikacjami i komunikacją między pracodawcami a kandydatami.',
-    basePrice: { min: 14000, max: 25000 },
-  },
-  customApp: {
-    name: 'Aplikacja webowa',
-    description:
-      'Zaawansowana aplikacja internetowa z dedykowanymi funkcjami biznesowymi, intergracjami i złożoną logiką. Dla firm potrzebujących specjalistycznego oprogramowania.',
-    basePrice: { min: 25000, max: 100000 },
   },
 };
 
 const additionalFeatures = {
   // RWD w różnych wariantach
-  rwd_basic: {
-    name: 'RWD - Wariant Podstawowy',
-    description:
-      'Dostosowanie strony do 3 podstawowych breakpointów (mobile, tablet, desktop). Zapewnia podstawową responsywność strony.',
-    details: [
-      'Obsługa 3 głównych breakpointów',
-      'Podstawowe testy na popularnych urządzeniach',
-      'Optymalizacja podstawowych elementów interfejsu',
-    ],
-    price: { min: 1000, max: 1500 },
-  },
   rwd_advanced: {
     name: 'RWD - Wariant Zaawansowany',
     description:
@@ -377,19 +378,6 @@ const additionalFeatures = {
       'Dostosowanie do orientacji poziomej/pionowej',
     ],
     price: { min: 2000, max: 3000 },
-  },
-  rwd_premium: {
-    name: 'RWD - Wariant Premium',
-    description:
-      'Kompleksowe podejście do responsywności z wykorzystaniem zaawansowanych narzędzi testowych i szczegółową optymalizacją.',
-    details: [
-      'Obsługa 7+ breakpointów z uwzględnieniem nietypowych rozdzielczości',
-      'Automatyczne testy screenshotowe (LambdaTest)',
-      'Testy na fizycznych urządzeniach',
-      'Optymalizacja wydajnościowa dla urządzeń mobilnych',
-      'Raport z testów responsywności',
-    ],
-    price: { min: 3500, max: 5000 },
   },
 
   // SEO w różnych wariantach
@@ -677,9 +665,7 @@ const StepItem = ({
 }) => (
   <li
     className={`cursor-pointer opacity-70 hover:opacity-100 group ${
-      clickable
-        ? 'cursor-pointer'
-        : 'pointer-events-none cursor-not-allowed  opacity-15'
+      clickable ? 'cursor-pointer' : 'pointer-events-none blur-[2px] opacity-15'
     }`}
     onClick={onClick}
   >
@@ -823,7 +809,7 @@ export default function PricingConfigurator() {
               currentStep={step}
               activeApproach={activeApproach}
               onClick={() => setStep('step1')}
-              isActiveStep={step === 'step1' && websiteTypeKey !== ''}
+              isActiveStep={websiteTypeKey !== ''}
               clickable={true}
             />
             <StepItem
@@ -899,8 +885,8 @@ export default function PricingConfigurator() {
       {step === 'step1' && (
         <div>
           <div className='mb-6 container   text-center'>
-            <div className='inline-flex items-center gap-2 border border-opacity-20 border-black p-6 '>
-              <span>
+            <div className='inline-flex items-start gap-4 border border-opacity-20 border-black p-6 '>
+              <div>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='24'
@@ -912,10 +898,21 @@ export default function PricingConfigurator() {
                   <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                   <path d='M19 2a3 3 0 0 1 2.995 2.824l.005 .176v14a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h14zm-7 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z' />
                 </svg>
-              </span>
-              Zanim przejdziemy do szczegółów, wybierz typ strony interentowej,
-              którą chcesz stworzyć. Wyróżniamy kilka typów stron internetowych.
-              Każdy ma swój własny cel oraz przeznaczenie.
+              </div>
+              <div>
+                <p>
+                  {' '}
+                  Zanim przejdziemy do szczegółów, wybierz{' '}
+                  <strong>typ strony internetowej</strong>, którą chcesz
+                  stworzyć.
+                </p>
+
+                <p>
+                  {' '}
+                  Wyróżniamy kilka typów stron internetowych. Każdy ma swój
+                  własny cel oraz przeznaczenie.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -942,7 +939,7 @@ export default function PricingConfigurator() {
               {Object.entries(websiteTypes).map(([key, type]) => (
                 <div
                   key={key}
-                  className={`transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100  z-20
+                  className={`relative overflow-visible transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100  z-20
                   ${
                     selectedOptions.websiteType === key
                       ? 'bg-slate-100 '
@@ -961,37 +958,19 @@ export default function PricingConfigurator() {
                     }));
                   }}
                 >
-                  <div className='p-6'>
-                    <h3 className='text-3xl  mb-2'>{type.name}</h3>
+                  <div className='p-6 overflow-visible'>
+                    <div
+                      className={`${
+                        selectedOptions.websiteType === key
+                          ? 'block absolute right-5 top-5'
+                          : 'hidden'
+                      }`}
+                    >
+                      <ActiveApproachCheckmark />
+                    </div>
+                    <h3 className='text-2xl mb-2'>{type.name}</h3>
                     <p className='text-gray-600 mb-4'>{type.description}</p>
                     <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
-
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 hidden'>
-                      <div>
-                        <h4 className='font-semibold text-green-600 mb-2'>
-                          Zalety:
-                        </h4>
-                        <ul className='list-disc pl-5'>
-                          {/* {approach.pros.map((pro, index) => (
-                            <li key={index} className='text-sm'>
-                              {pro}
-                            </li>
-                          ))} */}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className='font-semibold text-red-600 mb-2'>
-                          Wady:
-                        </h4>
-                        <ul className='list-disc pl-5'>
-                          {/* {approach.cons.map((con, index) => (
-                            <li key={index} className='text-sm'>
-                              {con}
-                            </li>
-                          ))} */}
-                        </ul>
-                      </div>
-                    </div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                       <div>
@@ -1015,29 +994,19 @@ export default function PricingConfigurator() {
 
       {step === 'step2' && (
         <div>
-          <div className='mb-6 container flex items-start justify-center  border border-opacity-20 border-black p-6 gap-12'>
-            <div className=' w-8/12'>
-              Wybrałeś:
-              <span className='font-semibold pl-1 pr-1'>
-                {websiteTypes[selectedOptions.websiteType].name}.
-              </span>
-              Taką stronę można stworzyć na wiele różnych sposobów a każdy z
-              nich różni sie zarówno czasem realizacji jak i kosztami.Wybierz
-              podejście, które najlepiej pasuje do Twoich wymagań. W każdym
-              elemencie wyszczególniłem listę zalet oraz wad takiego
-              podejścia.Jeżeli chciałbyś sie dowiedzieć więcej o róznych
-              podejściach zapoznaj się z dedykowanym wpisem gdzie barddziej
-              szczegółowo opisane są różnice podejść.
-            </div>
-
+          <div className='mb-6 container max-w-4xl flex items-start justify-center  border border-opacity-20 border-black p-6 gap-12'>
             <div>
-              {' '}
-              <Link href='/blog/podejscia-do-tworzenia-stron-internetowych'>
-                <span className='text-black hover:text-opacity-80 flex items-start hover:underline'>
-                  Dowiedz się więcej o różnych podejściach do tworzenia stron
-                  internetowych
-                </span>
-              </Link>
+              <p>
+                Wybrałeś:{' '}
+                <strong>
+                  {websiteTypes[selectedOptions.websiteType].name}.
+                </strong>
+                Taką stronę można stworzyć na wiele różnych sposobów a każdy z
+                nich, jak w poprzednim kroku różni sie zarówno czasem realizacji
+                jak i kosztami. Wybierz podejście, które najlepiej pasuje do
+                Twoich wymagań. W każdym elemencie wyszczególniłem listę zalet
+                oraz wad takiego podejścia. [claude_response]
+              </p>
             </div>
           </div>
 
@@ -1070,10 +1039,12 @@ export default function PricingConfigurator() {
                 .map(([key, approach]) => (
                   <div
                     key={key}
-                    className={`transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 
+                    className={`relative transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 
                   ${activeApproach === key ? 'bg-slate-100 ' : 'bg-lightGray'}
                   ${
-                    activeApproach === key ? 'bg-slate-100 relative border' : ''
+                    activeApproach === key
+                      ? 'bg-slate-100 relative border'
+                      : 'border border-transparent'
                   }
                   `}
                     onClick={() => {
@@ -1084,6 +1055,15 @@ export default function PricingConfigurator() {
                       }));
                     }}
                   >
+                    <div
+                      className={`${
+                        activeApproach === key
+                          ? 'block absolute right-5 top-5'
+                          : 'hidden'
+                      }`}
+                    >
+                      <ActiveApproachCheckmark />
+                    </div>
                     <div className='p-6'>
                       <h3 className='text-3xl  mb-2'>{approach.name}</h3>
                       <p className='text-gray-600 mb-4'>
@@ -1091,7 +1071,8 @@ export default function PricingConfigurator() {
                       </p>
                       <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
 
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                      <div className='flex flex-col gap-6'>
+                        {/* zalety */}
                         <div>
                           <h4 className='font-semibold text-green-600 mb-2'>
                             Zalety:
@@ -1104,6 +1085,7 @@ export default function PricingConfigurator() {
                             ))}
                           </ul>
                         </div>
+                        {/* wady */}
                         <div>
                           <h4 className='font-semibold text-red-600 mb-2'>
                             Wady:
@@ -1148,81 +1130,86 @@ export default function PricingConfigurator() {
           <div className='mb-6 container flex items-start justify-center  border border-opacity-20 border-black p-6 gap-12'>
             <div className=' w-8/12'>
               Wybrałeś:
+              <span className='font-semibold pl-1'>
+                {websiteTypes[selectedOptions.websiteType].name}
+              </span>{' '}
+              a podejście z którego zdecydowałeś się skorzystać to:{' '}
               <span className='font-semibold pl-1 pr-1'>
-                {websiteTypes[selectedOptions.websiteType].name}.
+                {approaches[selectedOptions.approach].name}.{' '}
               </span>
+              <p>
+                Szacunkowy budżet jaki należy zabezpieczyć:{' '}
+                <strong>
+                  {' '}
+                  {totalEstimate.min.toLocaleString()} PLN -{' '}
+                  {totalEstimate.max.toLocaleString()} PLN
+                </strong>
+              </p>
             </div>
-
-            {/* <div>
-              {' '}
-              <Link href='/blog/podejscia-do-tworzenia-stron-internetowych'>
-                <span className='text-black hover:text-opacity-80 flex items-start hover:underline'>
-                  Dowiedz się więcej o różnych podejściach do tworzenia stron
-                  internetowych
-                </span>
-              </Link>
-            </div> */}
+            [claude_response]
           </div>
 
-          {/* Liczba podstron */}
-          <div>
-            <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>
-                Przybliżona liczba podstron
-              </h3>
-              <input
-                type='number'
-                min='1'
-                max='20'
-                value={selectedOptions.pagesCount}
-                onChange={(e) =>
-                  setSelectedOptions((prev) => ({
-                    ...prev,
-                    pagesCount: parseInt(e.target.value) || 1,
-                  }))
-                }
-                className='w-24 p-2 border rounded'
-              />
-            </div>
-          </div>
+          <div className='grid grid-cols-1 lg:grid-cols-2'>
+            {/* Liczba podstron */}
+            <div>
+              <div className='p-6 flex items-center gap-3'>
+                <div className='flex flex-col'>
+                  <h3 className='text-lg font-semibold'>
+                    Przybliżona liczba podstron
+                  </h3>
+                  <div className='max-w-lg text-sm'>
+                    <p className='p-0 m-0'>
+                      {' '}
+                      Maksymalna liczba podstron została ustawiona na 30
+                    </p>
 
-          {/* Liczba unikalnych widoków */}
-          <div>
-            <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>
-                Przybliżona liczba unikalnych widoków
-              </h3>
-              <input
-                type='number'
-                min='1'
-                max='20'
-                value={selectedOptions.viewsCount}
-                onChange={(e) =>
-                  setSelectedOptions((prev) => ({
-                    ...prev,
-                    viewsCount: parseInt(e.target.value) || 1,
-                  }))
-                }
-                className='w-24 p-2 border rounded'
-              />
+                    <p className='p-0 m-0'>
+                      W przypadku większej ilości zalecana jest indywidualna
+                      wycena.
+                    </p>
+                  </div>
+                </div>
+                <input
+                  type='number'
+                  min='1'
+                  max='30'
+                  value={selectedOptions.pagesCount}
+                  onChange={(e) =>
+                    setSelectedOptions((prev) => ({
+                      ...prev,
+                      pagesCount:
+                        parseInt(e.target.value) > 30
+                          ? 30
+                          : parseInt(e.target.value) || 1,
+                    }))
+                  }
+                  className='w-20 p-2 border rounded'
+                />
+                {selectedOptions.pagesCount > 30 && (
+                  <div>
+                    Maksymalna liczba podstron została ustawiona na 30. W
+                    przypadku większej ilości zalecana jest indywidualna wycena
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Dodatkowe funkcjonalności */}
           <div className='mb-6'>
             <div className='p-6'>
-              <h3 className='text-xl font-semibold mb-4'>
+              <h3 className='text-xl font-semibold mb-6'>
                 Dodatkowe funkcjonalności
               </h3>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+              <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
                 {Object.entries(additionalFeatures).map(([key, feature]) => (
                   <div
                     key={key}
-                    className={`p-4 border rounded-lg cursor-pointer transition-colors
+                    className={`relative py-12 px-6  cursor-pointer transition-colors
                       ${
                         selectedOptions.additionalFeatures.includes(key)
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-blue-300'
+                          ? 'bg-slate-100 border'
+                          : 'bg-lightGray border border-transparent'
                       }`}
                     onClick={() =>
                       setSelectedOptions((prev) => ({
@@ -1237,8 +1224,19 @@ export default function PricingConfigurator() {
                       }))
                     }
                   >
-                    <h4 className='font-semibold mb-2'>{feature.name}</h4>
-                    <p className='text-sm text-gray-600'>
+                    <div
+                      className={`${
+                        selectedOptions.additionalFeatures.includes(key)
+                          ? 'block absolute right-5 top-5'
+                          : 'hidden'
+                      }`}
+                    >
+                      <ActiveApproachCheckmark />
+                    </div>
+                    <h4 className='font-semibold mb-2 selection:bg-transparent'>
+                      {feature.name}
+                    </h4>
+                    <p className='text-sm text-gray-600 selection:bg-transparent'>
                       {feature.description}
                     </p>
                   </div>
@@ -1253,8 +1251,8 @@ export default function PricingConfigurator() {
         <>
           {/* Podsumowanie */}
 
-          <div className='mb-6 bg-blue-50 container'>
-            <div className='p-6'>
+          <div className='mb-6 bg-slate-100 container'>
+            <div className='px-6 py-12'>
               <h3 className='text-xl mb-4'>Szacunkowa wycena</h3>
               <div className='text-2xl  mb-4'>
                 <span className='font-semibold'>
