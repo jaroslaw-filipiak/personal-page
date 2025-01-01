@@ -24,21 +24,36 @@ export const ClaudeResponse = ({
   className = 'claude-response p-4',
   loadingText = 'Generuję odpowiedź...',
 }: ClaudeResponseProps) => {
-  const [response, setResponse] = useState<string>('');
+  const [fullResponse, setFullResponse] = useState<string>('');
+  const [displayedResponse, setDisplayedResponse] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Handle typewriter effect
+  useEffect(() => {
+    if (!fullResponse || currentIndex >= fullResponse.length) return;
+
+    const timer = setTimeout(() => {
+      setDisplayedResponse((prev) => prev + fullResponse[currentIndex]);
+      setCurrentIndex((prev) => prev + 1);
+    }, 30);
+
+    return () => clearTimeout(timer);
+  }, [fullResponse, currentIndex]);
+
+  // Generate response
   useEffect(() => {
     const generateResponse = async () => {
       if (messages.length === 0) return;
 
-      console.log('Starting to generate response');
       setIsLoading(true);
       setError(null);
-      setResponse('');
+      setFullResponse('');
+      setDisplayedResponse('');
+      setCurrentIndex(0);
 
       try {
-        console.log('Sending API request');
         const res = await fetch('/api/claude', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -50,25 +65,23 @@ export const ClaudeResponse = ({
         });
 
         const data = await res.json();
-        console.log('Received API response:', data);
 
         if (!res.ok) {
           throw new Error(data.error || 'Failed to generate response');
         }
 
-        console.log('Setting response state');
-        setResponse(data.content || '');
         setIsLoading(false);
+        setFullResponse(data.content || '');
 
         if (onResponseReceived) {
           onResponseReceived(data.content);
         }
       } catch (error) {
-        console.error('Error generating response:', error);
         const errorMessage =
           error instanceof Error
             ? error.message
             : 'An unexpected error occurred';
+        console.error('Error generating response:', error);
         setError(errorMessage);
         setIsLoading(false);
 
@@ -81,13 +94,7 @@ export const ClaudeResponse = ({
     generateResponse();
   }, [JSON.stringify(messages), model, maxTokens]);
 
-  console.log('Current state:', {
-    isLoading,
-    error,
-    responseLength: response.length,
-  });
-
-  if (isLoading) {
+  if (isLoading && !displayedResponse) {
     return <div className='animate-pulse p-4'>{loadingText}</div>;
   }
 
@@ -95,5 +102,5 @@ export const ClaudeResponse = ({
     return <div className='text-red-500 p-4'>Błąd: {error}</div>;
   }
 
-  return <div className={className}>{response}</div>;
+  return <div className={className}>{displayedResponse}</div>;
 };
