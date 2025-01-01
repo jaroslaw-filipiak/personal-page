@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
   images: {
     loader: 'custom',
     loaderFile: './loader.js',
@@ -13,6 +11,9 @@ const nextConfig = {
         pathname: '**',
       },
     ],
+  },
+  env: {
+    ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,
   },
 };
 
