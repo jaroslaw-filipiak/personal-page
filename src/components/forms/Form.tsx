@@ -33,7 +33,7 @@ export default function Form(props: formProps) {
       formData.append('tel-548', phone);
 
       const response = await fetch(
-        `${NEXT_PUBLIC_BASE_URL}/api/wp-json/contact-form-7/v1/contact-forms/${props.formId}/feedback`,
+        `https://j-filipiak.pl/api/wp-json/contact-form-7/v1/contact-forms/${props.formId}/feedback`,
         {
           method: 'POST',
           body: formData,

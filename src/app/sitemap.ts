@@ -2,9 +2,7 @@
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/wp-json/wp/v2/posts`
-  );
+  const res = await fetch(`https://j-filipiak.pl/api/wp-json/wp/v2/posts`);
   const posts = await res.json();
 
   const postsEntries: MetadataRoute.Sitemap = posts.map(
