@@ -596,29 +596,33 @@ export default function PricingConfigurator() {
       {/* step3 */}
       {step === 'step3' && (
         <div className='container'>
-          <div className='mb-6 container flex items-start justify-center  border border-opacity-20 border-black p-6 gap-12'>
-            <div className=' w-8/12'>
-              Wybrałeś:
-              <span className='font-semibold pl-1'>
-                {websiteTypes[selectedOptions.websiteType].name}
-              </span>{' '}
-              a podejście z którego zdecydowałeś się skorzystać to:{' '}
-              <span className='font-semibold pl-1 pr-1'>
-                {approaches[selectedOptions.approach].name}.{' '}
-              </span>
-              <p>
-                Szacunkowy budżet jaki należy zabezpieczyć:{' '}
-                <strong>
-                  {' '}
-                  {totalEstimate.min.toLocaleString()} PLN -{' '}
-                  {totalEstimate.max.toLocaleString()} PLN
-                </strong>
-              </p>
+          <div className='mb-6 container flex items-stretch justify-center  border border-opacity-20 border-black p-6 gap-12'>
+            <div className='flex flex-col gap-4  min-w-full'>
+              <div className='w-full'>
+                Wybrałeś:
+                <span className='font-semibold pl-1'>
+                  {websiteTypes[selectedOptions.websiteType].name}
+                </span>{' '}
+                a podejście z którego zdecydowałeś się skorzystać to:{' '}
+                <span className='font-semibold pl-1 pr-1'>
+                  {approaches[selectedOptions.approach].name}.{' '}
+                </span>
+                <p>
+                  Szacunkowy budżet jaki należy zabezpieczyć:{' '}
+                  <strong>
+                    {' '}
+                    {totalEstimate.min.toLocaleString()} PLN -{' '}
+                    {totalEstimate.max.toLocaleString()} PLN
+                  </strong>
+                </p>
+              </div>
+              <div className='w-full min-w-ful'>
+                <ClaudeResponse
+                  messages={generateMessages()}
+                  className='bg-gray-50 '
+                />
+              </div>
             </div>
-            <ClaudeResponse
-              messages={generateMessages()}
-              className='mt-4 bg-gray-50 rounded p-4'
-            />
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-2'>
