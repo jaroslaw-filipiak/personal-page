@@ -235,7 +235,7 @@ export default function PricingConfigurator() {
   };
 
   // Generate messages for Claude based on current step
-  const generateMessages = (): ClaudeMessage[] => {
+  const generateMessages = useCallback((): ClaudeMessage[] => {
     switch (step) {
       case 'step2':
         return [
@@ -260,7 +260,7 @@ export default function PricingConfigurator() {
       default:
         return [];
     }
-  };
+  }, [step, selectedOptions.websiteType, selectedOptions.approach]);
 
   return (
     <div className='w-full overflow-hidden'>
