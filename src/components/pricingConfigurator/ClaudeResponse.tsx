@@ -18,7 +18,7 @@ export interface ClaudeResponseProps {
 export const ClaudeResponse: React.FC<ClaudeResponseProps> = ({
   messages,
   model = 'claude-3-opus-20240229',
-  maxTokens = 1000,
+  maxTokens = 2000,
   onResponseReceived,
   onError,
   className = 'claude-response p-4',
@@ -85,6 +85,8 @@ export const ClaudeResponse: React.FC<ClaudeResponseProps> = ({
     const generateResponse = async () => {
       if (messages.length === 0) return;
 
+      console.log(messages);
+
       setIsLoading(true);
       setError(null);
       setDisplayText('');
@@ -92,7 +94,7 @@ export const ClaudeResponse: React.FC<ClaudeResponseProps> = ({
 
       try {
         const res = await fetch(
-          'https://node-api-helper.vercel.app/api/claude',
+          'https://claude-proxy-muq7.onrender.com/api/claude',
           {
             method: 'POST',
             headers: {

@@ -237,24 +237,26 @@ export default function PricingConfigurator() {
   // Generate messages for Claude based on current step
   const generateMessages = useCallback((): ClaudeMessage[] => {
     switch (step) {
-      case 'step2':
+      case 'step4':
         return [
           {
             role: 'user' as const,
-            content: `Kontekst: Konfigurator strony. Użytkownik wybrał typ strony: ${
-              websiteTypes[selectedOptions.websiteType].name
-            }. Wygeneruj krótką (2 zdania) wskazówkę biznesową dotyczącą wyboru podejścia.`,
-          },
-        ];
-      case 'step3':
-        return [
-          {
-            role: 'user' as const,
-            content: `Kontekst: Konfigurator strony. Użytkownik wybrał typ: ${
-              websiteTypes[selectedOptions.websiteType].name
-            } i podejście: ${
-              approaches[selectedOptions.approach].name
-            }. Wygeneruj 3-zdaniową poradę biznesową.`,
+            content: `Na podstawie następujących wyborów klienta przygotuj profesjonalne podsumowanie projektu strony internetowej:
+
+            Typ strony: ${websiteTypes[selectedOptions.websiteType].name}
+            Wybrane podejście: ${approaches[selectedOptions.approach].name}
+            Liczba podstron: ${selectedOptions.pagesCount}
+            Dodatkowe funkcje: ${selectedOptions.additionalFeatures || 'brak'}
+            Czas realizacji: ${
+              selectedOptions.approach === 'template'
+                ? '1-2 tygodnie'
+                : selectedOptions.approach === 'custom_wp'
+                ? '2-4 tygodnie'
+                : '4-8 tygodni'
+            }
+            Szacowany koszt: ${totalEstimate.min.toLocaleString()} - ${totalEstimate.max.toLocaleString()} PLN netto
+            
+            Przygotuj podsumowanie wyborów klienta. Prezentacja powinna zawierać CTA do kontaktu, powinna to być oferta, która zachęci klienta do dalszej rozmowy.`,
           },
         ];
       default:
@@ -616,12 +618,6 @@ export default function PricingConfigurator() {
                   </strong>
                 </p>
               </div>
-              <div className='w-full min-w-ful'>
-                <ClaudeResponse
-                  messages={generateMessages()}
-                  className='bg-gray-50 '
-                />
-              </div>
             </div>
           </div>
 
@@ -742,9 +738,15 @@ export default function PricingConfigurator() {
                   / Netto + VAT
                 </span>
               </div>
-              <div>
+              {/* <div>
                 <div className='h-4 w-4' />
                 <div className='whitespace-pre-line'>{generateSummary()}</div>
+              </div> */}
+              <div className='w-full min-w-ful'>
+                <ClaudeResponse
+                  messages={generateMessages()}
+                  className='bg-gray-50 '
+                />
               </div>
             </div>
           </div>
