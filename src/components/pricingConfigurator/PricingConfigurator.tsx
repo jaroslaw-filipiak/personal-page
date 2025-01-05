@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { ClaudeResponse, ClaudeMessage } from './ClaudeResponse';
 
 import { approaches, websiteTypes, additionalFeatures } from '@/app/data';
+import Modal from '@/components/pricingConfigurator/Modal';
 
 interface SelectedOptions {
   approach: keyof typeof approaches;
@@ -129,6 +130,10 @@ export default function PricingConfigurator() {
   const [currentStep, setCurrentStep] = useState<'step1' | 'step2' | 'step3'>(
     'step1'
   );
+
+  const [modalContent, setModalContent] = useState('');
+  const [modalTitle, setModalTitle] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({
     approach: '' as keyof typeof approaches,
     websiteType: '' as keyof typeof websiteTypes,
@@ -143,6 +148,12 @@ export default function PricingConfigurator() {
     min: 0,
     max: 0,
   });
+
+  const showFeatureDetails = (key: keyof typeof additionalFeatures) => {
+    setModalContent(additionalFeatures[key].explain);
+    setModalTitle(additionalFeatures[key].name);
+    setIsModalOpen(true);
+  };
 
   const sliderRef = useRef<any>(null);
 
@@ -208,24 +219,43 @@ export default function PricingConfigurator() {
       })
       .join(', ');
 
+    const timeComplete =
+      selectedOptions.approach === 'template'
+        ? '1-2 tygodnie'
+        : selectedOptions.approach === 'custom_wp'
+        ? '2-4 tygodnie'
+        : '4-8 tygodni';
+
     return (
       <>
+        <p>
+          Podsumowanie projektu strony internetowej Dziękujemy za skorzystanie z
+          naszego konfiguratora i przedstawienie swoich preferencji dotyczących
+          nowego projektu strony internetowej. Na podstawie Twoich wyborów,
+          przygotowaliśmy podsumowanie, które pozwoli na realizację landing
+          page'a idealnie dopasowanego do Twoich potrzeb. Typ strony: Landing
+          Page Wybrane podejście: WordPress - Gotowe motywy Liczba podstron: 1
+          Dodatkowe funkcje: brak Czas realizacji: 4-8 tygodni Szacowany koszt:
+          1,598 - 6,400 PLN netto Nasza propozycja obejmuje stworzenie
+          atrakcyjnego i funkcjonalnego landing page'a opartego na platformie
+          WordPress, z wykorzystaniem profesjonalnego, gotowego motywu. Takie
+          rozwiązanie pozwoli na szybką i efektywną realizację projektu, przy
+          jednoczesnym zachowaniu wysokiej jakości i estetyki.
+        </p>
         <div>
-          <div> Wybrałeś podejście: {approach.name}</div>
-          <div>{approach.description}</div>
-          <div>Typ strony: {websiteType.name}</div>
-          <div>Liczba podstron: {selectedOptions.pagesCount}</div>
-          <div>Dodatkowe funkcjonalności: {selectedFeatures}</div>
+          <p>Podsumowanie:</p>
+          <ul>
+            <li>Typ strony: {websiteType.name}</li>
+            <li>Wybrane podejście: {approach.name}</li>
+            <li>Liczba podstron: {selectedOptions.pagesCount}</li>
+            <li>Dodatkowe funkcje: {selectedFeatures}</li>
+            <li>Czas realizacji: {timeComplete}</li>
+          </ul>
+          <p>
+            Szacowany koszt: {totalEstimate.min.toLocaleString()} -{' '}
+            {totalEstimate.max.toLocaleString()} PLN netto
+          </p>
           <div>
-            Szacowany czas realizacji:
-            {selectedOptions.approach === 'template'
-              ? '1-2 tygodnie'
-              : selectedOptions.approach === 'custom_wp'
-              ? '2-4 tygodnie'
-              : '4-8 tygodni'}
-          </div>
-          <div>
-            {' '}
             Ostateczna cena może się różnić w zależności od szczegółowych
             wymagań i stopnia skomplikowania projektu.
           </div>
@@ -668,6 +698,13 @@ export default function PricingConfigurator() {
           </div>
 
           {/* Dodatkowe funkcjonalności */}
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            content={modalContent}
+            title={modalTitle}
+          />
+
           <div className='mb-6'>
             <div className='p-6'>
               <h3 className='text-xl font-semibold mb-6'>
@@ -711,6 +748,18 @@ export default function PricingConfigurator() {
                     <p className='text-sm text-gray-600 selection:bg-transparent'>
                       {feature.description}
                     </p>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showFeatureDetails(
+                          key as keyof typeof additionalFeatures
+                        );
+                      }}
+                      className='mt-3 hover:underline underline-offset-8 text-xs selection:bg-transparent'
+                    >
+                      Szczegóły
+                    </button>
                   </div>
                 ))}
               </div>
@@ -738,15 +787,15 @@ export default function PricingConfigurator() {
                   / Netto + VAT
                 </span>
               </div>
-              {/* <div>
+              <div>
                 <div className='h-4 w-4' />
                 <div className='whitespace-pre-line'>{generateSummary()}</div>
-              </div> */}
+              </div>
               <div className='w-full min-w-ful'>
-                <ClaudeResponse
+                {/* <ClaudeResponse
                   messages={generateMessages()}
                   className='bg-gray-50 '
-                />
+                /> */}
               </div>
             </div>
           </div>

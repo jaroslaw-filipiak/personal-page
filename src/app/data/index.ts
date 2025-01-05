@@ -348,6 +348,8 @@ export const additionalFeatures = {
     name: 'RWD - Wariant Zaawansowany',
     description:
       'Rozszerzona responsywność z obsługą 5 breakpointów oraz dodatkową optymalizacją dla różnych urządzeń.',
+    explain:
+      'Ten pakiet sprawia, że Twoja strona będzie wyglądać idealnie na każdym urządzeniu - od małych smartfonów po duże monitory. Wyobraź sobie, że Twoja strona jest jak plastelina, która automatycznie dopasowuje się do ekranu użytkownika. Dzięki zaawansowanym testom mamy pewność, że wszystko działa perfekcyjnie zarówno na iPadzie trzymanym poziomo, jak i na najmniejszym telefonie. To jak posiadanie strony, która "czuje się jak w domu" na każdym urządzeniu.',
     details: [
       'Obsługa 5 breakpointów (mobile S/M/L, tablet, desktop)',
       'Zaawansowane testy na większej liczbie urządzeń',
@@ -362,6 +364,8 @@ export const additionalFeatures = {
     name: 'SEO - Pakiet Podstawowy',
     description:
       'Podstawowa optymalizacja SEO z implementacją najważniejszych elementów.',
+    explain:
+      'Rozpocznij swoją przygodę z pozycjonowaniem dzięki naszemu podstawowemu pakietowi SEO, który pomoże Twojej stronie być lepiej widoczną w wynikach wyszukiwania Google. Pakiet zawiera niezbędne elementy, które sprawią, że Twoja strona stanie się przyjazna zarówno dla użytkowników, jak i wyszukiwarek. Zoptymalizujemy tytuły i opisy stron, strukturę nagłówków oraz meta tagi, dzięki czemu Twoja strona będzie jasno komunikować swoją zawartość. Dodamy też odpowiednie opisy do zdjęć i utworzymy mapę strony, ułatwiając robotom Google indeksowanie Twojej witryny. To idealne rozwiązanie dla małych firm i start-upów, które chcą zwiększyć swoją widoczność online i przyciągnąć więcej potencjalnych klientów bez dużych nakładów finansowych."',
     details: [
       'Optymalizacja meta tagów',
       'Podstawowa struktura nagłówków',
@@ -374,6 +378,8 @@ export const additionalFeatures = {
     name: 'SEO - Pakiet Zaawansowany',
     description:
       'Rozszerzona optymalizacja SEO z dodatkowymi funkcjami i analizą.',
+    explain:
+      'Ten pakiet to jak zatrudnienie całego zespołu marketingowego dla Twojej strony. Nie tylko sprawiamy, że Google lepiej rozumie Twoją stronę, ale także przyspieszamy jej działanie i dodajemy specjalne oznaczenia, które mogą wyróżnić Twoją stronę w wynikach wyszukiwania (np. wyświetlając gwiazdki przy opiniach czy ceny przy produktach). Otrzymujesz też regularne raporty pokazujące, jak Twoja strona radzi sobie w wyszukiwarce. To kompleksowa strategia, która pomaga Ci być przed konkurencją.',
     details: [
       'Wszystko z pakietu podstawowego',
       'Optymalizacja prędkości ładowania',
@@ -389,6 +395,8 @@ export const additionalFeatures = {
   analytics_basic: {
     name: 'Analityka - Podstawowa',
     description: 'Podstawowe śledzenie zachowań użytkowników na stronie.',
+    explain:
+      'To jak zainstalowanie kamer w sklepie stacjonarnym - dowiesz się, ilu masz odwiedzających, które "półki" (podstrony) są najpopularniejsze i jak długo ludzie zostają w Twoim "sklepie". Podstawowa analityka daje Ci wgląd w to, co się dzieje na Twojej stronie, dzięki czemu możesz podejmować lepsze decyzje biznesowe. Zobaczysz, skąd przychodzą Twoi użytkownicy i co ich najbardziej interesuje.',
     details: [
       'Implementacja Google Analytics 4',
       'Podstawowe cele konwersji',
@@ -400,6 +408,8 @@ export const additionalFeatures = {
     name: 'Analityka - Zaawansowana',
     description:
       'Rozszerzone możliwości analityczne z dodatkowymi narzędziami.',
+    explain:
+      'Wyobraź sobie, że masz osobistego analityka, który śledzi każdy aspekt Twojej strony. Dowiesz się nie tylko ile osób odwiedza Twoją stronę, ale także dokładnie jak się po niej poruszają - gdzie klikają, jak daleko przewijają, co ich najbardziej interesuje. Dodatkowo, system automatycznie łączy się z Twoim CRM, więc widzisz pełną drogę klienta od pierwszych odwiedzin do zakupu. Co miesiąc otrzymujesz przystępny raport z najważniejszymi wskaźnikami i rekomendacjami.',
     details: [
       'Google Analytics 4 + Google Tag Manager',
       'Niestandardowe zdarzenia i cele',
@@ -415,6 +425,8 @@ export const additionalFeatures = {
     name: 'CMS - System Podstawowy',
     description:
       'Podstawowy system zarządzania treścią do prostej edycji zawartości.',
+    explain:
+      'To jak panel administracyjny dla Twojej strony - prosty w obsłudze interfejs, gdzie możesz samodzielnie zmieniać teksty i zdjęcia na stronie bez znajomości programowania. Wyobraź sobie, że to taki Word dla Twojej strony internetowej - możesz edytować treści tak łatwo, jak dokument tekstowy. Nie musisz dzwonić do programisty za każdym razem, gdy chcesz zaktualizować ofertę czy dodać nowe zdjęcie.',
     details: [
       'Edycja podstawowych treści',
       'Zarządzanie obrazami',
@@ -426,6 +438,8 @@ export const additionalFeatures = {
     name: 'CMS - System Zaawansowany',
     description:
       'Rozbudowany system zarządzania z dodatkowymi funkcjami i modułami.',
+    explain:
+      'To jak mieć profesjonalne studio wydawnicze na własność. Możesz nie tylko edytować treści, ale także tworzyć zaawansowane layouty, zarządzać wersjami treści (jak w Google Docs), przydzielać różne uprawnienia członkom zespołu i organizować multimedia w przejrzystej bibliotece. System posiada zaawansowany edytor tekstu podobny do Worda, który pozwala na tworzenie atrakcyjnych treści bez znajomości HTML. Możesz też przygotowywać treści wcześniej i publikować je w zaplanowanym terminie.',
     details: [
       'Zaawansowany edytor WYSIWYG',
       'System wersjonowania treści',
@@ -440,6 +454,8 @@ export const additionalFeatures = {
   security: {
     name: 'Bezpieczeństwo Premium',
     description: 'Zaawansowane zabezpieczenia strony i danych.',
+    explain:
+      'To jak zainstalowanie najnowocześniejszego systemu alarmowego w Twoim domu. Twoja strona otrzymuje wielopoziomową ochronę: szyfrowanie danych (SSL) zapewnia, że informacje przesyłane między użytkownikiem a stroną są bezpieczne, firewall chroni przed atakami hakerskimi, a system kopii zapasowych gwarantuje, że nawet w przypadku awarii nie stracisz żadnych danych. Regularne audyty bezpieczeństwa działają jak okresowe przeglądy techniczne, wykrywając potencjalne zagrożenia, zanim staną się problemem.',
     details: [
       'SSL/TLS',
       'Firewall aplikacyjny',
@@ -452,6 +468,8 @@ export const additionalFeatures = {
   performance: {
     name: 'Optymalizacja Wydajności',
     description: 'Kompleksowa optymalizacja wydajności strony.',
+    explain:
+      'Wyobraź sobie, że Twoja strona to samochód wyścigowy - musi działać szybko i płynnie, by nie tracić klientów. Ten pakiet sprawia, że strona ładuje się błyskawicznie: obrazy są automatycznie optymalizowane, treści dostarczane z najbliższego serwera (CDN), a elementy strony ładowane tylko wtedy, gdy są potrzebne. To jak tuning samochodu - każdy element jest dopracowany, by działać jak najwydajniej. Szybka strona to nie tylko zadowoleni użytkownicy, ale także lepsza pozycja w Google.',
     details: [
       'Optymalizacja obrazów i multimediów',
       'Implementacja CDN',
@@ -464,6 +482,8 @@ export const additionalFeatures = {
   multilingual: {
     name: 'Wsparcie Wielojęzyczności',
     description: 'Przystosowanie strony do obsługi wielu języków.',
+    explain:
+      'To jak zatrudnienie profesjonalnego tłumacza dla Twojej strony. System automatycznie wykrywa język przeglądarki użytkownika i wyświetla odpowiednią wersję strony. Możesz łatwo zarządzać wszystkimi tłumaczeniami w jednym miejscu, a strona jest zoptymalizowana pod SEO dla każdego języka osobno. To idealne rozwiązanie, jeśli chcesz dotrzeć do klientów z różnych krajów - każdy zobaczy Twoją stronę w swoim języku, co znacząco zwiększa zaufanie i konwersję.',
     details: [
       'System zarządzania tłumaczeniami',
       'SEO dla wielu języków',
@@ -475,6 +495,8 @@ export const additionalFeatures = {
   maintenance: {
     name: 'Pakiet Utrzymaniowy',
     description: 'Regularne wsparcie i utrzymanie strony.',
+    explain:
+      'To jak mieć osobistego mechanika dla Twojej strony. Co miesiąc wykonujemy przegląd techniczny: aktualizujemy zabezpieczenia, sprawdzamy czy wszystko działa jak należy, robimy kopie zapasowe i reagujemy na ewentualne problemy. Jeśli potrzebujesz drobnych zmian na stronie, wykonamy je w ramach pakietu. Monitorujemy też dostępność strony 24/7, więc jeśli cokolwiek przestanie działać, dowiesz się o tym od nas, a nie od swoich klientów.',
     details: [
       'Miesięczne aktualizacje bezpieczeństwa',
       'Monitoring dostępności',
@@ -489,6 +511,8 @@ export const additionalFeatures = {
   social_integration: {
     name: 'Integracja z Mediami Społecznościowymi',
     description: 'Kompleksowa integracja strony z platformami social media.',
+    explain:
+      'Ten pakiet łączy Twoją stronę ze światem mediów społecznościowych. To jak zbudowanie mostów między Twoją stroną a Facebookiem, Instagramem i innymi platformami. Odwiedzający mogą łatwo udostępniać Twoje treści, a Ty możesz pokazać najnowsze posty z social media bezpośrednio na stronie. System może też automatycznie publikować nowe treści ze strony na Twoich profilach społecznościowych. Dodatkowo, specjalne znaczniki sprawiają, że gdy ktoś udostępni link do Twojej strony, pojawi się atrakcyjny podgląd z obrazkiem i opisem.',
     details: [
       'Przyciski udostępniania treści',
       'Feed z social media na stronie',
@@ -502,6 +526,8 @@ export const additionalFeatures = {
   forms_advanced: {
     name: 'Zaawansowane Formularze i Integracje',
     description: 'System formularzy z integracjami i automatyzacją.',
+    explain:
+      'Wyobraź sobie inteligentnego asystenta, który pomaga Twoim klientom wypełniać formularze i automatycznie przetwarza otrzymane informacje. Formularze mogą być wieloetapowe (jak dobry sprzedawca, który prowadzi klienta krok po kroku), sprawdzają poprawność danych na bieżąco i automatycznie zapisują wersje robocze - nikt nie straci wypełnionych informacji, jeśli przypadkiem zamknie przeglądarkę. Gdy ktoś wypełni formularz, system może automatycznie wysłać potwierdzenie, zapisać dane w Twoim CRM i powiadomić odpowiednie osoby w firmie.',
     details: [
       'Formularze wieloetapowe',
       'Walidacja w czasie rzeczywistym',
@@ -516,6 +542,8 @@ export const additionalFeatures = {
   custom_animations: {
     name: 'Animacje i Efekty Specjalne',
     description: 'Zaawansowane animacje i interaktywne elementy strony.',
+    explain:
+      'To jak dodanie magii do Twojej strony. Zamiast statycznych elementów, Twoja strona ożywa: teksty płynnie pojawiają się podczas przewijania, tła zmieniają się w zależności od ruchu myszki, a przejścia między podstronami są płynne i eleganckie. To wszystko jest zrobione z dbałością o wydajność - animacje nie spowalniają strony i działają płynnie nawet na słabszych urządzeniach. To jak profesjonalny efekty specjalne w filmie - subtelne, ale robiące wrażenie.',
     details: [
       'Animacje scroll-triggered',
       'Efekty paralaksy',
@@ -530,6 +558,8 @@ export const additionalFeatures = {
   search_system: {
     name: 'System Wyszukiwania',
     description: 'Zaawansowany system wyszukiwania treści na stronie.',
+    explain:
+      'To jak posiadanie super-inteligentnego asystenta, który pomaga odwiedzającym znaleźć dokładnie to, czego szukają na Twojej stronie. System nie tylko znajduje dokładne frazy, ale rozumie też podobne słowa i synonimy. Podczas wpisywania podpowiada możliwe wyniki, a znalezione treści można łatwo filtrować i sortować. To jak mieć osobistego przewodnika, który dokładnie wie, gdzie co się znajduje na Twojej stronie i potrafi błyskawicznie do tego zaprowadzić.',
     details: [
       'Wyszukiwanie full-text',
       'Filtrowanie i sortowanie wyników',
@@ -546,6 +576,8 @@ export const additionalFeatures = {
     name: 'Integracja Płatności',
     description:
       'System obsługi płatności online z różnymi metodami płatności.',
+    explain:
+      'To jak wyposażenie Twojej strony w kompletny system kasowy z wszystkimi możliwymi metodami płatności. Twoi klienci mogą płacić tak, jak im wygodnie - kartą, przelewem, BLIK-iem czy w systemie ratalnym. System dba o bezpieczeństwo transakcji, automatycznie generuje faktury i wysyła potwierdzenia. Możesz też ustawić płatności cykliczne, idealne dla abonamentów czy regularnych usług. Panel administracyjny pokazuje Ci wszystkie transakcje w jednym miejscu, więc masz pełną kontrolę nad przepływem pieniędzy.',
     details: [
       'Integracja z popularnymi bramkami (Przelewy24, PayU, Stripe)',
       'Płatności cykliczne/subskrypcje',
