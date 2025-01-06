@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
+type ExtendedOrganization = Organization & {
+  openingHours?: string[];
+};
+
 export default function howMuchDoesItCost() {
   const features = [
     'Dowiesz się ile kosztuje strona internetowa',
@@ -32,21 +36,12 @@ export default function howMuchDoesItCost() {
     'Sam wybierzesz optymalny sposób wdrożenia strony internetowej i poznasz realne widełki cenowe',
   ];
 
-  const jsonLd: WithContext<
-    Organization & {
-      openingHoursSpecification: Array<{
-        '@type': 'OpeningHoursSpecification';
-        dayOfWeek: string[];
-        opens: string;
-        closes: string;
-      }>;
-    }
-  > = {
+  const jsonLd: WithContext<ExtendedOrganization> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'J-Filipiak',
     url: 'https://j-filipiak.pl',
-    logo: 'https://j-filipiak.pl/logo.png', // Add your actual logo URL
+    logo: 'https://j-filipiak.pl/logo.png',
     description:
       'Profesjonalne usługi tworzenia stron internetowych i rozwiązań webowych',
     address: {
@@ -82,22 +77,7 @@ export default function howMuchDoesItCost() {
       },
       name: 'Zarezerwuj rozmowę',
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-          'Sunday',
-        ],
-        opens: '00:00',
-        closes: '23:59',
-      },
-    ],
+    openingHours: ['Mo-Su 00:00-23:59'],
     areaServed: {
       '@type': 'GeoCircle',
       geoMidpoint: {
