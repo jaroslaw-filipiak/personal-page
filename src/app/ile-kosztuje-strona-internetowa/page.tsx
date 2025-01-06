@@ -102,10 +102,10 @@ export default function howMuchDoesItCost() {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: '52.309238', // Opalenica coordinates
-        longitude: '16.413059', // Opalenica coordinates
+        latitude: '52.309238',
+        longitude: '16.413059',
       },
-      geoRadius: '20000', // 20km radius in meters
+      geoRadius: '20000',
     },
   };
 
