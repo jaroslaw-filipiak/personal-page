@@ -41,7 +41,7 @@ export default function howMuchDoesItCost() {
     '@type': 'Organization',
     name: 'J-Filipiak',
     url: 'https://j-filipiak.pl',
-    logo: 'https://j-filipiak.pl/logo.png',
+    logo: 'https://j-filipiak.pl//img/logo.svg',
     description:
       'Profesjonalne usługi tworzenia stron internetowych i rozwiązań webowych',
     address: {
@@ -62,7 +62,6 @@ export default function howMuchDoesItCost() {
     sameAs: [
       'https://www.facebook.com/jfilipiakpl',
       'https://www.linkedin.com/showcase/j-filipiak-pl',
-      'https://twitter.com/twojafirma',
     ],
     potentialAction: {
       '@type': 'ReserveAction',

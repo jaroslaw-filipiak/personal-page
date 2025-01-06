@@ -35,7 +35,6 @@ export default function Contact() {
     sameAs: [
       'https://www.facebook.com/jfilipiakpl',
       'https://www.linkedin.com/showcase/j-filipiak-pl',
-      'https://twitter.com/twojafirma',
     ],
     potentialAction: {
       '@type': 'ReserveAction',
