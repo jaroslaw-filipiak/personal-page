@@ -2,10 +2,10 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import { Metadata } from 'next';
 import PricingConfigurator from '@/components/pricingConfigurator/PricingConfigurator';
+import Cta from '@/components/Cta';
 
 export const metadata: Metadata = {
-  title:
-    'Cennik stron internetowych, ile kosztuje strona internetowa? | j-filipiak.pl',
+  title: 'ile kosztuje strona internetowa? Cennik, konfigurator| j-filipiak.pl',
   description:
     'Poznaj realne koszty stron internetowych, ile kosztuje strona internetowa w 2025 roku?, cena landig page, one page, wordpress',
 };
@@ -21,16 +21,16 @@ export default function howMuchDoesItCost() {
   return (
     <div className='how-much-cost-page'>
       <Nav />
-      {/* <Hero
+      <Hero
         title='Ile kosztuje strona internetowa?'
         subtitle='Dlaczego podobna strona kosztuje 500 zł u jednego wykonawcy, a  5000 zł u kolejnego? Poznaj rzeczywiste składniki ceny i dowiedz się co wpływa na koszt strony internetowej korzystając z mojego konfiguratora'
         features={features}
         hasForm={true}
         formTitle='Potrzebujesz indywidualnej oferty?'
         formId={536}
-      /> */}
+      />
       {/* Dlaczego ceny tak bardzo sie roznia */}
-      <section className='hidden pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
+      <section className=' pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl max-w-5xl'>
             Dlaczego ceny stron internetowych tak bardzo się różnią?
@@ -168,7 +168,7 @@ export default function howMuchDoesItCost() {
       </section>
       {/* Konfigurator */}
       <div className='pt-[100px]'></div>
-      <section className='hidden pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
             Ile kosztuje strona internetowa? skorzystaj z konfiguratora i
@@ -182,6 +182,7 @@ export default function howMuchDoesItCost() {
         </div>
       </section>
       <PricingConfigurator />
+      <Cta title='Masz ciekawy projekt? Potrzebujesz profesjonalnych usług ?! Napisz do mnie lub zadzwoń już teraz! (+48) 663 568 828' />
     </div>
   );
 }

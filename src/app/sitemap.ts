@@ -44,6 +44,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/ile-kosztuje-strona-internetowa`,
+      priority: 1,
+    },
+    {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/oferta/usuwanie-wirusow-wordpress`,
       priority: 1,
     },

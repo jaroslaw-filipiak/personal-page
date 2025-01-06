@@ -17,7 +17,7 @@
 }
 
 .slick-slide {
-  margin: 0 10px;
+  @apply lg:mx-4;
 }
 
 .slick-list {

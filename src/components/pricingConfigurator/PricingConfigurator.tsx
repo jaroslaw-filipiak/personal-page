@@ -26,33 +26,34 @@ type AdditionalFeatureKey = keyof typeof additionalFeatures;
 
 //slider
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
-  speed: 500,
+  speed: 300,
   slidesToShow: 3,
   slidesToScroll: 1,
+  adaptiveHeight: true,
   centerMode: true,
-  centerPadding: '60px',
+  mobileFirst: true,
+  centerPadding: '30px',
   nextArrow: <div>Next</div>,
   prevArrow: <div>Prev</div>,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1400,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
-        dots: true,
+        dots: false,
         centerPadding: '60px',
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 2,
-        centerPadding: '40px',
+        initialSlide: 3,
       },
     },
     {
@@ -228,34 +229,30 @@ export default function PricingConfigurator() {
 
     return (
       <>
-        <p>
-          Podsumowanie projektu strony internetowej Dziękujemy za skorzystanie z
-          naszego konfiguratora i przedstawienie swoich preferencji dotyczących
-          nowego projektu strony internetowej. Na podstawie Twoich wyborów,
-          przygotowaliśmy podsumowanie, które pozwoli na realizację landing
-          page'a idealnie dopasowanego do Twoich potrzeb. Typ strony: Landing
-          Page Wybrane podejście: WordPress - Gotowe motywy Liczba podstron: 1
-          Dodatkowe funkcje: brak Czas realizacji: 4-8 tygodni Szacowany koszt:
-          1,598 - 6,400 PLN netto Nasza propozycja obejmuje stworzenie
-          atrakcyjnego i funkcjonalnego landing page'a opartego na platformie
-          WordPress, z wykorzystaniem profesjonalnego, gotowego motywu. Takie
-          rozwiązanie pozwoli na szybką i efektywną realizację projektu, przy
-          jednoczesnym zachowaniu wysokiej jakości i estetyki.
+        <p className='text-lg mb-4'>
+          Dziękujemy za skorzystanie z naszego konfiguratora i przedstawienie
+          swoich preferencji dotyczących nowego projektu strony internetowej. Na
+          podstawie Twoich wyborów, przygotowaliśmy podsumowanie projektu.
         </p>
         <div>
-          <p>Podsumowanie:</p>
           <ul>
-            <li>Typ strony: {websiteType.name}</li>
-            <li>Wybrane podejście: {approach.name}</li>
-            <li>Liczba podstron: {selectedOptions.pagesCount}</li>
-            <li>Dodatkowe funkcje: {selectedFeatures}</li>
-            <li>Czas realizacji: {timeComplete}</li>
+            <li>
+              Typ strony: <strong>{websiteType.name}</strong>
+            </li>
+            <li>
+              Wybrane podejście: <strong> {approach.name}</strong>
+            </li>
+            <li>
+              Liczba podstron: <strong>{selectedOptions.pagesCount}</strong>
+            </li>
+            <li>
+              Dodatkowe funkcje: <strong>{selectedFeatures}</strong>
+            </li>
+            <li>
+              Czas realizacji: <strong>{timeComplete}</strong>
+            </li>
           </ul>
-          <p>
-            Szacowany koszt: {totalEstimate.min.toLocaleString()} -{' '}
-            {totalEstimate.max.toLocaleString()} PLN netto
-          </p>
-          <div>
+          <div className='mt-6'>
             Ostateczna cena może się różnić w zależności od szczegółowych
             wymagań i stopnia skomplikowania projektu.
           </div>
@@ -296,12 +293,12 @@ export default function PricingConfigurator() {
 
   return (
     <div className='w-full overflow-hidden'>
-      <div className='bg-gray-50 p-6 mb-8'>
+      <div className='bg-gray-50 p-6'>
         <h2 className='text-3xl mb-4 text-center'>
           Konfigurator kosztów strony internetowej
         </h2>
         <nav>
-          <ul className='flex justify-center gap-4 mt-10'>
+          <ul className='flex justify-center gap-4 mt-10 flex-col lg:flex-row'>
             <StepItem
               stepNumber='1'
               label='Wybierz rodzaj strony internetowej'
@@ -438,7 +435,7 @@ export default function PricingConfigurator() {
               {Object.entries(websiteTypes).map(([key, type]) => (
                 <div
                   key={key}
-                  className={`relative overflow-visible transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100  z-20
+                  className={`relative overflow-visible transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 z-20
                   ${
                     selectedOptions.websiteType === key
                       ? 'bg-slate-100 '
@@ -775,10 +772,9 @@ export default function PricingConfigurator() {
 
           <div className='mb-6 bg-slate-100 container'>
             <div className='px-6 py-12'>
-              <h3 className='text-xl mb-4'>Szacunkowa wycena</h3>
-              <div className='text-2xl  mb-4'>
+              <h3 className='text-lg opacity-45'>Szacunkowa wycena</h3>
+              <div className='text-2xl mb-4'>
                 <span className='font-semibold'>
-                  {' '}
                   {totalEstimate.min.toLocaleString()} PLN -{' '}
                   {totalEstimate.max.toLocaleString()} PLN
                 </span>
