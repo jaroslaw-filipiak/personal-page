@@ -1,13 +1,27 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import { Metadata } from 'next';
+import { WithContext, ContactPoint, Organization, Person } from 'schema-dts';
 import PricingConfigurator from '@/components/pricingConfigurator/PricingConfigurator';
 import Cta from '@/components/Cta';
 
 export const metadata: Metadata = {
-  title: 'ile kosztuje strona internetowa? Cennik, konfigurator| j-filipiak.pl',
+  title:
+    'ile kosztuje strona internetowa? Cennik, konfigurator| j-filipiak.pl!',
   description:
     'Poznaj realne koszty stron internetowych, ile kosztuje strona internetowa w 2025 roku?, cena landig page, one page, wordpress',
+  keywords: [
+    'Ile kosztuje strona internetowa',
+    'Cena landingpage',
+    'Koszt strony internetowej',
+    'Ile kosztuje strona na WordPress',
+    'WordPress',
+    'Strony internetowe cennik',
+  ],
+  generator: 'Next.js',
+  openGraph: {
+    images: ['ogimage-ile-kosztuje-strona-internetowa.jpg'],
+  },
 };
 
 export default function howMuchDoesItCost() {
@@ -18,9 +32,91 @@ export default function howMuchDoesItCost() {
     'Sam wybierzesz optymalny sposób wdrożenia strony internetowej i poznasz realne widełki cenowe',
   ];
 
+  const jsonLd: WithContext<
+    Organization & {
+      openingHoursSpecification: Array<{
+        '@type': 'OpeningHoursSpecification';
+        dayOfWeek: string[];
+        opens: string;
+        closes: string;
+      }>;
+    }
+  > = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'J-Filipiak',
+    url: 'https://j-filipiak.pl',
+    logo: 'https://j-filipiak.pl/logo.png', // Add your actual logo URL
+    description:
+      'Profesjonalne usługi tworzenia stron internetowych i rozwiązań webowych',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'PL',
+      addressRegion: 'Wielkopolskie',
+      addressLocality: 'Opalenica',
+      postalCode: '64-330',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      telephone: '+48 663 568 828',
+      email: 'info@j-filipiak.pl',
+      areaServed: 'PL',
+      availableLanguage: ['Polish'],
+    },
+    sameAs: [
+      'https://www.facebook.com/jfilipiakpl',
+      'https://www.linkedin.com/showcase/j-filipiak-pl',
+      'https://twitter.com/twojafirma',
+    ],
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://calendly.com/jaroslaw-filipiak',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/IOSPlatform',
+          'http://schema.org/AndroidPlatform',
+        ],
+      },
+      name: 'Zarezerwuj rozmowę',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '00:00',
+        closes: '23:59',
+      },
+    ],
+    areaServed: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: '52.309238', // Opalenica coordinates
+        longitude: '16.413059', // Opalenica coordinates
+      },
+      geoRadius: '20000', // 20km radius in meters
+    },
+  };
+
   return (
     <div className='how-much-cost-page'>
       <Nav />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        key='how-much-costs-website-configurator-page-schema-jsonld'
+      ></script>
       <Hero
         title='Ile kosztuje strona internetowa?'
         subtitle='Dlaczego podobna strona kosztuje 500 zł u jednego wykonawcy, a  5000 zł u kolejnego? Poznaj rzeczywiste składniki ceny i dowiedz się co wpływa na koszt strony internetowej korzystając z mojego konfiguratora'
