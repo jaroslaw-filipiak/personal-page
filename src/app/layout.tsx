@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import Hamburger from '@/components/Hamburger';
 import SideMenu from '@/components/SideMenu';
 
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -33,7 +33,7 @@ export default function RootLayout({
         <Hamburger />
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
-        <GoogleAnalytics gaId='G-X4MDTE1EBE' />
+        <GoogleTagManager gtmId='GTM-M7H5MHM' />
         <Script
           type='text/plain'
           data-category='analytics'
