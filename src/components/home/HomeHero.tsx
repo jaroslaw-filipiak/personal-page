@@ -16,7 +16,7 @@ export default function HomeHero() {
         <div className='container flex flex-col items-start relative'>
           <div className='sm:w-9/12'>
             <h1 className='text-5xl text-balance pb-10 '>
-              Profesjonalne strony internetowe, które przyciągają klientów.
+              Profesjonalne strony internetowe, które przyciągają klientów
             </h1>
           </div>
 
