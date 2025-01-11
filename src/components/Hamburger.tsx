@@ -37,7 +37,7 @@ export default function Nav() {
   return (
     <nav
       className={`fixed w-screen lg:hidden left-0 transition-all z-30 bg-transparnt flex items-center pt-3 pb-3  ${
-        isMenuOpen ? 'bg-transparent' : 'bg-white'
+        isMenuOpen ? 'bg-transparent' : 'bg-transparent'
       } ${
         scrollDirection === 'up'
           ? 'nav--visible  top-0'

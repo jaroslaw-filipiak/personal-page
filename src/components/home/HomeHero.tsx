@@ -5,16 +5,17 @@ export default function HomeHero() {
     <section
       id='start'
       className='pt-32 lg:pt-40 2xl:pt-72 pb-40 lg:pb-40 2xl:pb-72'
-      style={
-        {
-          // background: 'url(/img/jfilipiak_hero_jarek.avif) no-repeat cover',
-        }
-      }
+      style={{
+        backgroundImage: 'url(/img/hero--main.jpg)',
+        backgroundSize: ' cover',
+        backgroundPosition: 'fixed',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       <div className='flex items-center justify-center'>
         <div className='container flex flex-col items-start relative'>
-          <div>
-            <h1 className='text-5xl text-balance pb-10'>
+          <div className='sm:w-9/12'>
+            <h1 className='text-5xl text-balance pb-10 '>
               Profesjonalne strony internetowe, które przyciągają klientów.
             </h1>
           </div>
