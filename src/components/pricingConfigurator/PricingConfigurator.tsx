@@ -107,7 +107,7 @@ const StepItem = ({
   clickable: boolean;
   onClick: () => void;
 }) => (
-  <li
+  <div
     className={`cursor-pointer opacity-70 hover:opacity-100 group ${
       clickable ? 'cursor-pointer' : 'pointer-events-none blur-[2px] opacity-15'
     }`}
@@ -124,11 +124,123 @@ const StepItem = ({
         currentStep === `step${stepNumber}` ? 'bg-opacity-100' : 'bg-opacity-20'
       }`}
     ></div>
-  </li>
+  </div>
 );
 
+// scrollable steps
+
+const ScrollableSteps = ({
+  step,
+  activeApproach,
+  websiteTypeKey,
+  selectedOptions,
+  setStep,
+}: {
+  step: 'step1' | 'step2' | 'step3' | 'step4';
+  activeApproach: string;
+  websiteTypeKey: string;
+  selectedOptions: SelectedOptions;
+  setStep: (step: 'step1' | 'step2' | 'step3' | 'step4') => void;
+}) => {
+  const scrollContainerRef = useRef(null);
+
+  interface ScrollOptions {
+    left: number;
+    behavior: ScrollBehavior;
+  }
+
+  const scroll = (direction: number): void => {
+    if (scrollContainerRef.current) {
+      const scrollAmount: number = 250; // Matches the min-width of StepItem
+      const container: HTMLUListElement = scrollContainerRef.current;
+      const scrollOptions: ScrollOptions = {
+        left: container.scrollLeft + direction * scrollAmount,
+        behavior: 'smooth',
+      };
+      container.scroll(scrollOptions);
+    }
+  };
+
+  return (
+    <div className='relative w-full px-4'>
+      <button
+        onClick={() => scroll(-1)}
+        className='absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow-lg rounded-full hover:bg-gray-50 lg:hidden'
+      >
+        <div>left</div>
+      </button>
+
+      <ul
+        ref={scrollContainerRef}
+        className='flex items-center justify-center overflow-x-auto gap-6 px-12 py-4 scroll-smooth scrollbar-hide'
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        <StepItem
+          stepNumber='1'
+          label='Wybierz rodzaj strony internetowej'
+          currentStep={step}
+          activeApproach={activeApproach}
+          onClick={() => setStep('step1')}
+          isActiveStep={websiteTypeKey !== ''}
+          clickable={true}
+        />
+        <StepItem
+          stepNumber='2'
+          label='Wybierz podejście do tworzenia strony'
+          currentStep={step}
+          activeApproach={activeApproach}
+          onClick={() => setStep('step2')}
+          isActiveStep={activeApproach !== '' && websiteTypeKey !== ''}
+          clickable={websiteTypeKey !== ''}
+        />
+        <StepItem
+          stepNumber='3'
+          label='Liczba podstron oraz dodatkowe funkcjonalności'
+          currentStep={step}
+          activeApproach={activeApproach}
+          onClick={() => setStep('step3')}
+          isActiveStep={false}
+          clickable={websiteTypeKey !== '' && activeApproach !== ''}
+        />
+        <StepItem
+          stepNumber='4'
+          label='Podsumowanie'
+          currentStep={step}
+          activeApproach={activeApproach}
+          onClick={() => setStep('step4')}
+          isActiveStep={false}
+          clickable={
+            websiteTypeKey !== '' &&
+            activeApproach !== '' &&
+            selectedOptions.pagesCount > 0
+          }
+        />
+      </ul>
+
+      <button
+        onClick={() => scroll(1)}
+        className='absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow-lg rounded-full hover:bg-gray-50 lg:hidden'
+      >
+        <div>right</div>
+      </button>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </div>
+  );
+};
+
 export default function PricingConfigurator() {
-  const [step, setStep] = useState('step1');
+  const [step, setStep] = useState<'step1' | 'step2' | 'step3' | 'step4'>(
+    'step1'
+  );
   const [currentStep, setCurrentStep] = useState<'step1' | 'step2' | 'step3'>(
     'step1'
   );
@@ -159,8 +271,9 @@ export default function PricingConfigurator() {
 
   const sliderRef = useRef<any>(null);
 
-  const websiteTypeKey =
-    selectedOptions.websiteType as keyof typeof websiteTypes;
+  const websiteTypeKey = (
+    selectedOptions.websiteType as keyof typeof websiteTypes
+  ).toString();
 
   const calculateEstimate = useCallback(() => {
     if (!selectedOptions.websiteType || !selectedOptions.approach) {
@@ -302,51 +415,15 @@ export default function PricingConfigurator() {
         <h2 className='text-3xl mb-4 text-center'>
           Konfigurator kosztów strony internetowej
         </h2>
-        <nav>
-          <ul className='flex justify-center gap-4 mt-10 flex-col lg:flex-row'>
-            <StepItem
-              stepNumber='1'
-              label='Wybierz rodzaj strony internetowej'
-              currentStep={step}
-              activeApproach={activeApproach}
-              onClick={() => setStep('step1')}
-              isActiveStep={websiteTypeKey !== ''}
-              clickable={true}
-            />
-            <StepItem
-              stepNumber='2'
-              label='Wybierz podejście do tworzenia strony'
-              currentStep={step}
-              activeApproach={activeApproach}
-              onClick={() => setStep('step2')}
-              isActiveStep={activeApproach !== '' && websiteTypeKey !== ''}
-              clickable={websiteTypeKey !== ''}
-            />
-            <StepItem
-              stepNumber='3'
-              label='Liczba podstron oraz dodatkowe funkcjonalności'
-              currentStep={step}
-              activeApproach={activeApproach}
-              onClick={() => setStep('step3')}
-              isActiveStep={false}
-              clickable={websiteTypeKey !== '' && activeApproach !== ''}
-            />
 
-            <StepItem
-              stepNumber='4'
-              label='Podsumowanie'
-              currentStep={step}
-              activeApproach={activeApproach}
-              onClick={() => setStep('step4')}
-              isActiveStep={false}
-              clickable={
-                websiteTypeKey !== '' &&
-                activeApproach !== '' &&
-                selectedOptions.pagesCount > 0
-              }
-            />
-          </ul>
-        </nav>
+        <ScrollableSteps
+          step={step}
+          activeApproach={activeApproach}
+          websiteTypeKey={websiteTypeKey}
+          selectedOptions={selectedOptions}
+          setStep={setStep}
+        />
+
         <p className='text-gray-600 mb-4 hidden'>
           Przed rozpoczęciem konfiguracji, zachęcamy do zapoznania się z naszym
           szczegółowym przewodnikiem:

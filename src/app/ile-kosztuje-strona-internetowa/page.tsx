@@ -246,7 +246,7 @@ export default function howMuchDoesItCost() {
           <div className='spacer border-b-[1px] border-lightGray mt-20 mb-6 border-opacity-35'></div>
 
           <div>
-            <h6 className='text-xl text-center pt-20'>
+            <h6 className='text-xl text-center pt-20 pb-16 lg:pb-0'>
               To tylko kilka ze składowych, które wpływają na cenę strony
               internetowej. A to tylko kilka przykładów. Dlatego też warto
               poprosić potencjalnego wykonawcę o szczegółową wycenę oraz
@@ -260,7 +260,7 @@ export default function howMuchDoesItCost() {
       <div className='lg:pt-[100px]'></div>
       <section className='pb-16 lg:pt-40 2xl:pt-42 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
-          <h3 className='text-5xl'>
+          <h3 className='text-5xl pt-16 lg:pt-0'>
             Ile kosztuje strona internetowa? skorzystaj z konfiguratora i
             dowiedz się jaki budżet powinieneś zabezpieczyć na jej wykonanie
           </h3>
