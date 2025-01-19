@@ -7,12 +7,23 @@ import ValidationMessage from '@/components/forms/ValidationMessage';
 
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-type formProps = {
+interface FormProps {
   title: string;
   formId: number;
-};
+  configuratorData?: {
+    websiteType: string;
+    approach: string;
+    pagesCount: number;
+    additionalFeatures: string;
+    timeComplete: string;
+    estimatedBudget: {
+      min: number;
+      max: number;
+    };
+  };
+}
 
-export default function Form(props: formProps) {
+export default function Form(props: FormProps) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState();
   const [name, setName] = useState('');
@@ -31,6 +42,12 @@ export default function Form(props: formProps) {
       formData.append('your-name', name);
       formData.append('your-email', email);
       formData.append('tel-548', phone);
+      if (props.formId === 585 && props.configuratorData) {
+        formData.append(
+          'configurator-data',
+          JSON.stringify(props.configuratorData)
+        );
+      }
 
       const response = await fetch(
         `https://j-filipiak.pl/api/wp-json/contact-form-7/v1/contact-forms/${props.formId}/feedback`,

@@ -11,6 +11,7 @@ import { ClaudeResponse, ClaudeMessage } from './ClaudeResponse';
 
 import { approaches, websiteTypes, additionalFeatures } from '@/app/data';
 import Modal from '@/components/pricingConfigurator/Modal';
+import Form from '../forms/Form';
 
 interface SelectedOptions {
   approach: keyof typeof approaches;
@@ -228,36 +229,40 @@ export default function PricingConfigurator() {
         : '4-8 tygodni';
 
     return (
-      <>
-        <p className='text-lg mb-4'>
-          Dziękujemy za skorzystanie z naszego konfiguratora i przedstawienie
-          swoich preferencji dotyczących nowego projektu strony internetowej. Na
-          podstawie Twoich wyborów, przygotowaliśmy podsumowanie projektu.
+      <div className='flex flex-col'>
+        <p className='text-base mb-4 lg:pr-24'>
+          Dziekuje bardzo za skorzystanie z konfiguratora wyceny i
+          przedstawienie swoich preferencji dotyczących nowego projektu strony
+          internetowej. Na podstawie Twoich wyborów, system przygotował
+          podsumowanie projektu.
         </p>
-        <div>
-          <ul>
-            <li>
-              Typ strony: <strong>{websiteType.name}</strong>
-            </li>
-            <li>
-              Wybrane podejście: <strong> {approach.name}</strong>
-            </li>
-            <li>
-              Liczba podstron: <strong>{selectedOptions.pagesCount}</strong>
-            </li>
-            <li>
-              Dodatkowe funkcje: <strong>{selectedFeatures}</strong>
-            </li>
-            <li>
-              Czas realizacji: <strong>{timeComplete}</strong>
-            </li>
-          </ul>
-          <div className='mt-6'>
-            Ostateczna cena może się różnić w zależności od szczegółowych
-            wymagań i stopnia skomplikowania projektu.
-          </div>
-        </div>
-      </>
+
+        <ul>
+          <li>
+            Typ strony: <strong>{websiteType.name}</strong>
+          </li>
+          <li>
+            Wybrane podejście: <strong> {approach.name}</strong>
+          </li>
+          <li>
+            Liczba podstron: <strong>{selectedOptions.pagesCount}</strong>
+          </li>
+          <li>
+            Dodatkowe funkcje: <strong>{selectedFeatures}</strong>
+          </li>
+          <li>
+            Czas realizacji: <strong>{timeComplete}</strong>
+          </li>
+        </ul>
+        <p className='mt-24 text-xs max-w-3xl'>
+          * Ostateczna cena może się różnić w zależności od szczegółowych
+          wymagań i stopnia skomplikowania projektu. Konfigurator ma charakter
+          podglądowy i chcemy aby miał jak najwyższą wartośc edukacyjną. Dlatego
+          też stale będzie aktualizowany.Zaglądaj tutaj często aby być na
+          bieżąco. Jeżeli jednak chciałbyś prozmawiać na temat swojego projektu
+          skorzystaj z formularza kontaktowego.
+        </p>
+      </div>
     );
   };
 
@@ -314,16 +319,16 @@ export default function PricingConfigurator() {
               currentStep={step}
               activeApproach={activeApproach}
               onClick={() => setStep('step2')}
-              isActiveStep={step === 'step2' && activeApproach !== ''}
+              isActiveStep={activeApproach !== '' && websiteTypeKey !== ''}
               clickable={websiteTypeKey !== ''}
             />
             <StepItem
               stepNumber='3'
-              label='Liczba podstron oraz dodatkowe funkcjonalnośći'
+              label='Liczba podstron oraz dodatkowe funkcjonalności'
               currentStep={step}
               activeApproach={activeApproach}
               onClick={() => setStep('step3')}
-              isActiveStep={step === 'step3' && activeApproach !== ''}
+              isActiveStep={false}
               clickable={websiteTypeKey !== '' && activeApproach !== ''}
             />
 
@@ -333,7 +338,7 @@ export default function PricingConfigurator() {
               currentStep={step}
               activeApproach={activeApproach}
               onClick={() => setStep('step4')}
-              isActiveStep={step === 'step4' && activeApproach !== ''}
+              isActiveStep={false}
               clickable={
                 websiteTypeKey !== '' &&
                 activeApproach !== '' &&
@@ -466,6 +471,13 @@ export default function PricingConfigurator() {
                     </div>
                     <h3 className='text-2xl mb-2'>{type.name}</h3>
                     <p className='text-gray-600 mb-4'>{type.description}</p>
+                    <ul>
+                      {type.cons?.map((feature, index) => (
+                        <li key={index} className='text-sm'>
+                          ✓ {feature}
+                        </li>
+                      )) || []}
+                    </ul>
                     <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -474,7 +486,7 @@ export default function PricingConfigurator() {
                           <span className='text-black'>
                             Od: {type.basePrice.min} zł{' '}
                           </span>
-                          <span className='text-black text-opacity-40 pl-1'>
+                          <span className='text-black text-opacity-40 pl-1 text-sm'>
                             / netto + VAT
                           </span>
                         </h4>
@@ -770,21 +782,21 @@ export default function PricingConfigurator() {
         <>
           {/* Podsumowanie */}
 
-          <div className='mb-6 bg-slate-100 container'>
-            <div className='px-6 py-12'>
+          <div className='mb-6 bg-white container border border-black border-opacity-20 flex items-center px-12 py-12'>
+            {/* left */}
+            <div className='flex flex-col w-8/12'>
               <h3 className='text-lg opacity-45'>Szacunkowa wycena</h3>
               <div className='text-2xl mb-4'>
                 <span className='font-semibold'>
                   {totalEstimate.min.toLocaleString()} PLN -{' '}
-                  {totalEstimate.max.toLocaleString()} PLN
+                  {totalEstimate.max.toLocaleString()} PLN *
                 </span>
-                <span className='text-black text-opacity-20'>
+                <span className='text-black text-opacity-20 text-md'>
                   {' '}
                   / Netto + VAT
                 </span>
               </div>
               <div>
-                <div className='h-4 w-4' />
                 <div className='whitespace-pre-line'>{generateSummary()}</div>
               </div>
               <div className='w-full min-w-ful'>
@@ -792,6 +804,36 @@ export default function PricingConfigurator() {
                   messages={generateMessages()}
                   className='bg-gray-50 '
                 /> */}
+              </div>
+            </div>
+            {/* right */}
+            <div className='border border-[#d7d7d7] shadow-md lg:w-6/12 xl:w-4/12 p-10 pb-10'>
+              <div>
+                <Form
+                  title='Potrzebujesz indywidualnej oferty? Porozmawiajmy!'
+                  formId={585}
+                  configuratorData={{
+                    websiteType: websiteTypes[selectedOptions.websiteType].name,
+                    approach: approaches[selectedOptions.approach].name,
+                    pagesCount: selectedOptions.pagesCount,
+                    additionalFeatures: selectedOptions.additionalFeatures
+                      .map((feature) => {
+                        const featureKey = feature as AdditionalFeatureKey;
+                        return additionalFeatures[featureKey].name;
+                      })
+                      .join(', '),
+                    timeComplete:
+                      selectedOptions.approach === 'template'
+                        ? '1-2 tygodnie'
+                        : selectedOptions.approach === 'custom_wp'
+                        ? '2-4 tygodnie'
+                        : '4-8 tygodni',
+                    estimatedBudget: {
+                      min: totalEstimate.min,
+                      max: totalEstimate.max,
+                    },
+                  }}
+                ></Form>
               </div>
             </div>
           </div>

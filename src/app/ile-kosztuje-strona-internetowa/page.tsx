@@ -7,7 +7,7 @@ import Cta from '@/components/Cta';
 
 export const metadata: Metadata = {
   title:
-    'ile kosztuje strona internetowa? Cennik, konfigurator| j-filipiak.pl!',
+    'ile kosztuje strona internetowa? Cennik, konfigurator - j-filipiak.pl',
   description:
     'Poznaj realne koszty stron internetowych, ile kosztuje strona internetowa w 2025 roku?, cena landig page, one page, wordpress',
   keywords: [
@@ -100,48 +100,82 @@ export default function howMuchDoesItCost() {
         subtitle='Dlaczego podobna strona kosztuje 500 zł u jednego wykonawcy, a  5000 zł u kolejnego? Poznaj rzeczywiste składniki ceny i dowiedz się co wpływa na koszt strony internetowej korzystając z mojego konfiguratora'
         features={features}
         hasForm={true}
-        formTitle='Potrzebujesz indywidualnej oferty?'
+        formTitle='Potrzebujesz indywidualnej oferty? Porozmawiajmy'
         formId={536}
       />
       {/* Dlaczego ceny tak bardzo sie roznia */}
-      <section className=' pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
+      <section className=' pt-32 lg:pt-40 2xl:pt-42 lg:pb-40 2xl:pb-42 bg-dark text-lightGray w-full'>
         <div className='container'>
           <h3 className='text-5xl max-w-5xl'>
             Dlaczego ceny stron internetowych tak bardzo się różnią?
           </h3>
-          <h4 className='text-xl pt-10 pb-32'>
+          <h4 className='text-xl pt-10 pb-16 lg:pb-32'>
             Można powiedzieć, że strona internetowa kosztuje tyle co czerwony
             samochód i będzie w tym sporo prawdy, cena podobnej strony
             internetowej może róznić się diametralnie a na cene wpływa mnóstwo
-            czynników, kilka i tylko kilka z nich to:
+            czynników. Kilka i tylko kilka z nich to:
           </h4>
-          <div className='flex flex-col lg:flex-row gap-20 lg:gap-0'>
-            {/*   Typ i rozmiar strony. */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
-              <div>
-                {/* <Image
+
+          <div className='flex flex-col lg:flex-row'>
+            {/* typ rozmiar i sposób wdrożenia col */}
+            <div className='flex flex-col lg:border border-opacity-35 border-lightGray  '>
+              <div className='flex flex-col gap-16'>
+                {/*   Typ i rozmiar strony. */}
+                <div className='flex flex-col items-start justify-start w-full   group relative top-0 transition-all '>
+                  <div>
+                    {/* <Image
                   width={166}
                   height={166}
                   loading='lazy'
                   src='/img/icon_1.svg'
                   alt='wordpress, ikona informacyjna'
                 /> */}
-              </div>
-              <div className='flex flex-col items-start gap-5 '>
-                <h4 className='text-xl lg:mt-14 text-balance'>
-                  Typ i rozmiar strony
-                </h4>
-                <p className='text-sm text-gray text-balance'>
-                  Pod pojęciem strona internetowa kryje się zarówno prosta
-                  strona wizytówka, strona typu landing page jak i ogromna
-                  firmowa strona z mnóstwem podstron, czy też rozbudowany sklep
-                  internetowy
-                </p>
+                  </div>
+                  <div className='flex flex-col items-start gap-5 lg:pl-10'>
+                    <h4 className='text-xl lg:mt-14 text-balance'>
+                      Typ i rozmiar strony
+                    </h4>
+                    <p className='text-sm text-gray text-balance'>
+                      Pod pojęciem strona internetowa kryje się zarówno prosta
+                      strona wizytówka, strona typu landing page jak i ogromna
+                      firmowa strona z mnóstwem podstron, czy też rozbudowany
+                      sklep internetowy
+                    </p>
+                  </div>
+                </div>
+
+                {/*   Sposób wdrożenia
+                 */}
+                <div className='flex flex-col items-start justify-start w-full group relative top-0 transition-all lg:pl-10'>
+                  <div>
+                    {/* <Image
+                  width={166}
+                  height={166}
+                  loading='lazy'
+                  src='/img/icon_2.svg'
+                  alt='wordpress, ikona informacyjna'
+                /> */}
+                  </div>
+                  <div className='flex flex-col items-start gap-5 pb-16'>
+                    <h4 className='text-xl lg:mt-14 text-balance'>
+                      Sposób wdrożenia
+                    </h4>
+                    <p className='text-sm text-gray text-balance'>
+                      Strona internetowa może być wykonana z tzw: gotowego
+                      szablonu lub zaprojektowana w pełnii indywidualnie.
+                      Indywidualne strony już na samym wstepie kosztują parę
+                      tysięcy więcej aniżeli strony na tzw: ‘Gotowcach’.
+                      Dlaczego? Ponieważ dochodzi kolejna osoba do projektu -
+                      grafik, który musi zaprojektować stronę od zera co
+                      generuje dodatkowe godziny pracy.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/*   Funkcjonalności strony */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
+            <div className='flex flex-col lg:pl-10 pb-16 lg:pb-0'>
               <div>
                 {/* <Image
                   width={166}
@@ -157,41 +191,21 @@ export default function howMuchDoesItCost() {
                 </h4>
                 <p className='text-sm text-gray text-balance'>
                   Tutaj jest w czym wybierać. Wsród funkcjonalności strony
-                  możemy wyróznic chcoiażby blog, newsletter, panel klienta,
+                  możemy wyróznic chociażby blog, newsletter, panel klienta,
                   rozbudowane formularze, automatyzacje, przystosowanie pod SEO
-                  oraz o wiele więcej. Każda funkcjonalnośc to dodatkowe koszty
-                </p>
-              </div>
-            </div>
-
-            {/*   Sposób wdrożenia
-             */}
-            <div className='flex flex-col items-start justify-start w-full xl:w-4/12  xl:pl-10 xl:pr-10  group relative top-0 transition-all '>
-              <div>
-                {/* <Image
-                  width={166}
-                  height={166}
-                  loading='lazy'
-                  src='/img/icon_2.svg'
-                  alt='wordpress, ikona informacyjna'
-                /> */}
-              </div>
-              <div className='flex flex-col items-start gap-5'>
-                <h4 className='text-xl lg:mt-14 text-balance'>
-                  Sposób wdrożenia
-                </h4>
-                <p className='text-sm text-gray text-balance'>
-                  Strona internetowa może być wykonana z tzw: gotowego szablonu
-                  lub zaprojektowana w pełnii indywidualnie. Indywidualne strony
-                  już na samym wstepie kosztują parę tysięcy więcej aniżeli
-                  strony na tzw: ‘Gotowcach’
+                  oraz o wiele więcej. Każda funkcjonalnośc to dodatkowe koszty.
+                  Dodatkową komplikacją w wycenie jest fakt, że tutaj również
+                  mówimy o różnych widełkach cenowych. Rozbudowany formularz
+                  może kosztować + 1000 zł podczas gdy integracja z systemem CRM
+                  klienta może kosztować + 4000 zł
                 </p>
               </div>
             </div>
           </div>
-          <div className='spacer border-b-[1px] border-lightGray mt-32 mb-6 border-opacity-35'></div>
 
-          <div className='flex flex-col lg:flex-row gap-20 lg:gap-0'>
+          <div className='spacer border-b-[1px] border-lightGray hidden lg:flex mt-32 lg:mb-6 border-opacity-35'></div>
+
+          <div className='flex flex-col lg:flex-row gap-16 lg:gap-0'>
             {/*  Indywidualne wymagania klienta */}
             <div className='flex flex-col items-start justify-start w-full xl:w-6/12 xl:pl-10 xl:pr-10 group relative top-0 transition-all '>
               <div></div>
@@ -234,29 +248,31 @@ export default function howMuchDoesItCost() {
           <div>
             <h6 className='text-xl text-center pt-20'>
               To tylko kilka ze składowych, które wpływają na cenę strony
-              interentowej. Dlatego też koszt wykonania strony internetowej może
-              różnić się diametralnie.
+              internetowej. A to tylko kilka przykładów. Dlatego też warto
+              poprosić potencjalnego wykonawcę o szczegółową wycenę oraz
+              informację dotyczącą tzw: stacku technologicznego czyli
+              technologii, które zostaną użyte do wykonania strony internetowej.
             </h6>
           </div>
         </div>
       </section>
       {/* Konfigurator */}
-      <div className='pt-[100px]'></div>
-      <section className='pt-32 lg:pt-40 2xl:pt-42 pb-40 lg:pb-40 2xl:pb-42 w-full'>
+      <div className='lg:pt-[100px]'></div>
+      <section className='pb-16 lg:pt-40 2xl:pt-42 lg:pb-40 2xl:pb-42 w-full'>
         <div className='container'>
           <h3 className='text-5xl'>
             Ile kosztuje strona internetowa? skorzystaj z konfiguratora i
             dowiedz się jaki budżet powinieneś zabezpieczyć na jej wykonanie
           </h3>
           <h4 className='text-lg mt-6 max-w-5xl'>
-            Nasz konfigurator pomoże Ci zorientować się w przedziale cenowym
+            Ten konfigurator pomoże Ci zorientować się w przedziale cenowym
             Twojego projektu. Pamiętaj, że ostateczna wycena może się różnić w
-            zależności od szczegółowych wymagań.
+            zależności od szczegółowych wymagań.Gwarantuje, że konfigurator jako
+            ważna część tej strony będzie stale aktualizowany i ulepszany.
           </h4>
         </div>
       </section>
       <PricingConfigurator />
-      <Cta title='Masz ciekawy projekt? Potrzebujesz profesjonalnych usług ?! Napisz do mnie lub zadzwoń już teraz! (+48) 663 568 828' />
     </div>
   );
 }
