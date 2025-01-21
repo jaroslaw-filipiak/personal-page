@@ -127,6 +127,13 @@ export default function Nav() {
             <Link
               className='hover:underline underline-offset-[6px] transition-all'
               href='/kontakt'
+              onClick={() => {
+                window.dataLayer?.push({
+                  event: 'contact_click',
+                  event_category: 'Navigation',
+                  event_label: 'Navbar',
+                });
+              }}
             >
               Kontakt
             </Link>
