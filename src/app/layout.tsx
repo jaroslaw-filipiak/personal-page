@@ -11,6 +11,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import CookieConsent from '@/components/CookieConsent';
 import { Metadata } from 'next';
+import SmoothScroll from '@/components/SmoothScroll';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang='pl'>
       <body className={`relative  ${satoshi.className}`}>
+        <SmoothScroll />
         <Hamburger />
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
