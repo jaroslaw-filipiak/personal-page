@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     'ile kosztuje strona internetowa? Cennik, konfigurator - j-filipiak.pl',
   description:
-    'Poznaj realne koszty stron internetowych, ile kosztuje strona internetowa w 2025 roku?, cena landig page, one page, wordpress',
+    'Poznaj realne koszty stron internetowych, ile kosztuje strona internetowa w 2025 roku?, cena landing page, one page, wordpress',
   keywords: [
     'Ile kosztuje strona internetowa',
     'Cena landingpage',
