@@ -10,6 +10,7 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import CookieConsent from '@/components/CookieConsent';
+import { Metadata } from 'next';
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
