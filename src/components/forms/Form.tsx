@@ -77,7 +77,7 @@ export default function Form(props: FormProps) {
         height={629}
         role='presentation'
         alt='shadow png'
-        src='img/form-shadow222.png'
+        src='/img/form-shadow222.png'
       ></Image>
       <div className='text-2xl mb-14'>{props.title}</div>
       <div>

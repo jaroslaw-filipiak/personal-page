@@ -140,7 +140,6 @@ export default function AboutMe() {
                 ></Image>
               </div>
               <div className='lg:flex-1'>
-                Image
                 <h3 className='text-5xl text-balance pb-10 lg:pb-24'>
                   Oferuje indywidualne , partnerskie podejście w kameralnym
                   gronie, ogromne doświadczenie oraz jasne warunki współpracy.

@@ -33,9 +33,9 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   adaptiveHeight: true,
-  centerMode: true,
+  centerMode: false,
   mobileFirst: true,
-  centerPadding: '30px',
+  centerPadding: '10px',
   nextArrow: <div>Next</div>,
   prevArrow: <div>Prev</div>,
   responsive: [
@@ -423,40 +423,6 @@ export default function PricingConfigurator() {
           selectedOptions={selectedOptions}
           setStep={setStep}
         />
-
-        <p className='text-gray-600 mb-4 hidden'>
-          Przed rozpoczęciem konfiguracji, zachęcamy do zapoznania się z naszym
-          szczegółowym przewodnikiem:
-        </p>
-        <ul className='space-y-2 hidden'>
-          <li>
-            <a
-              href='#podejscia'
-              className='text-blue-600 hover:text-blue-800 flex items-center'
-            >
-              {/* <ArrowRight className='h-4 w-4 mr-2' /> */}
-              Szczegółowe porównanie różnych podejść do tworzenia stron
-            </a>
-          </li>
-          <li>
-            <a
-              href='#etapy'
-              className='text-blue-600 hover:text-blue-800 flex items-center'
-            >
-              {/* <ArrowRight className='h-4 w-4 mr-2' /> */}
-              Etapy realizacji i czasochłonność dla każdego podejścia
-            </a>
-          </li>
-          <li>
-            <a
-              href='#koszty'
-              className='text-blue-600 hover:text-blue-800 flex items-center'
-            >
-              {/* <ArrowRight className='h-4 w-4 mr-2' /> */}
-              Szczegółowa analiza kosztów
-            </a>
-          </li>
-        </ul>
       </div>
 
       {/* step1 */}
@@ -517,7 +483,7 @@ export default function PricingConfigurator() {
               {Object.entries(websiteTypes).map(([key, type]) => (
                 <div
                   key={key}
-                  className={`relative overflow-visible transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 z-20
+                  className={`relative overflow-visible transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 z-20 border-white border-[10px]
                   ${
                     selectedOptions.websiteType === key
                       ? 'bg-slate-100 '
@@ -615,17 +581,18 @@ export default function PricingConfigurator() {
               </div>
             </div>
 
-            <Slider {...settings} ref={sliderRef}>
-              {Object.entries(approaches)
-                .filter(([_, approach]) =>
-                  approach.showForSelectedWebsiteType.includes(
-                    selectedOptions.websiteType as string
+            <div>
+              <Slider {...settings} ref={sliderRef}>
+                {Object.entries(approaches)
+                  .filter(([_, approach]) =>
+                    approach.showForSelectedWebsiteType.includes(
+                      selectedOptions.websiteType as string
+                    )
                   )
-                )
-                .map(([key, approach]) => (
-                  <div
-                    key={key}
-                    className={`relative transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 
+                  .map(([key, approach]) => (
+                    <div
+                      key={key}
+                      className={`border-white border-[10px] relative transition-colors py-12 px-6 cursor-pointer hover:bg-slate-100 
                   ${activeApproach === key ? 'bg-slate-100 ' : 'bg-lightGray'}
                   ${
                     activeApproach === key
@@ -633,80 +600,81 @@ export default function PricingConfigurator() {
                       : 'border border-transparent'
                   }
                   `}
-                    onClick={() => {
-                      setActiveApproach(key);
-                      setSelectedOptions((prev) => ({
-                        ...prev,
-                        approach: key as keyof typeof approaches,
-                      }));
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeApproach === key
-                          ? 'block absolute right-5 top-5'
-                          : 'hidden'
-                      }`}
+                      onClick={() => {
+                        setActiveApproach(key);
+                        setSelectedOptions((prev) => ({
+                          ...prev,
+                          approach: key as keyof typeof approaches,
+                        }));
+                      }}
                     >
-                      <ActiveApproachCheckmark />
-                    </div>
-                    <div className='p-6'>
-                      <h3 className='text-3xl  mb-2'>{approach.name}</h3>
-                      <p className='text-gray-600 mb-4'>
-                        {approach.description}
-                      </p>
-                      <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
+                      <div
+                        className={`${
+                          activeApproach === key
+                            ? 'block absolute right-5 top-5'
+                            : 'hidden'
+                        }`}
+                      >
+                        <ActiveApproachCheckmark />
+                      </div>
+                      <div className='p-6'>
+                        <h3 className='text-3xl  mb-2'>{approach.name}</h3>
+                        <p className='text-gray-600 mb-4'>
+                          {approach.description}
+                        </p>
+                        <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
 
-                      <div className='flex flex-col gap-6'>
-                        {/* zalety */}
-                        <div>
-                          <h4 className='font-semibold text-green-600 mb-2'>
-                            Zalety:
-                          </h4>
-                          <ul className='list-disc pl-5'>
-                            {approach.pros.map((pro, index) => (
-                              <li key={index} className='text-sm'>
-                                {pro}
-                              </li>
-                            ))}
-                          </ul>
+                        <div className='flex flex-col gap-6'>
+                          {/* zalety */}
+                          <div>
+                            <h4 className='font-semibold text-green-600 mb-2'>
+                              Zalety:
+                            </h4>
+                            <ul className='list-disc pl-5'>
+                              {approach.pros.map((pro, index) => (
+                                <li key={index} className='text-sm'>
+                                  {pro}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          {/* wady */}
+                          <div>
+                            <h4 className='font-semibold text-red-600 mb-2'>
+                              Wady:
+                            </h4>
+                            <ul className='list-disc pl-5'>
+                              {approach.cons.map((con, index) => (
+                                <li key={index} className='text-sm'>
+                                  {con}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                        {/* wady */}
-                        <div>
-                          <h4 className='font-semibold text-red-600 mb-2'>
-                            Wady:
-                          </h4>
-                          <ul className='list-disc pl-5'>
-                            {approach.cons.map((con, index) => (
-                              <li key={index} className='text-sm'>
-                                {con}
-                              </li>
-                            ))}
-                          </ul>
+                        <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
+                        <div className='mt-6'>
+                          Koszty dla wykonania:
+                          <strong className='pl-1 pr-2'>
+                            {websiteTypes[selectedOptions.websiteType].name}
+                          </strong>
+                          zgodnie z tym podejściem rozpoczynają się od:
                         </div>
-                      </div>
-                      <div className='line w-full h-[1px] bg-black bg-opacity-20 my-6'></div>
-                      <div className='mt-6'>
-                        Koszty dla wykonania:
-                        <strong className='pl-1 pr-2'>
-                          {websiteTypes[selectedOptions.websiteType].name}
-                        </strong>
-                        zgodnie z tym podejściem rozpoczynają się od:
-                      </div>
-                      <div className='mt-3'>
-                        <span className='text-black'>
-                          {websiteTypes[selectedOptions.websiteType].basePrice
-                            .min * approach.priceModifier}
-                          zł
-                        </span>
-                        <span className='text-black text-opacity-40 pl-1'>
-                          / netto + VAT
-                        </span>
+                        <div className='mt-3'>
+                          <span className='text-black'>
+                            {websiteTypes[selectedOptions.websiteType].basePrice
+                              .min * approach.priceModifier}
+                            zł
+                          </span>
+                          <span className='text-black text-opacity-40 pl-1'>
+                            / netto + VAT
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-            </Slider>
+                  ))}
+              </Slider>
+            </div>
           </div>
         </div>
       )}

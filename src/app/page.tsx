@@ -3,6 +3,7 @@ import Cta from '@/components/Cta';
 import Image from 'next/image';
 import Link from 'next/link';
 import HomeHero from '@/components/home/HomeHero';
+import Wp from '@/components/icons/Wp';
 import Head from 'next/head';
 
 import { Metadata } from 'next';
@@ -76,6 +77,8 @@ export default function Home() {
             {/* projektowanie graficzne */}
             <div className='flex flex-col items-start justify-between w-full xl:w-4/12 group relative top-0 transition-all '>
               <div>
+                {/* <Wp /> */}
+
                 <Image
                   width={147}
                   height={138}

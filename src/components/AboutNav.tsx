@@ -66,8 +66,15 @@ export default function Nav() {
         </li>
         <li>
           <Link
-            className='hover:underline underline-offset-[6px] transition-all'
+            className='bg-dark hover:opacity-80 transition-all text-white block py-3 px-10 items-center justify-center text-center'
             href='/kontakt'
+            onClick={() => {
+              window.dataLayer?.push({
+                event: 'contact_click_about_page',
+                event_category: 'Navigation',
+                event_label: 'Navbar',
+              });
+            }}
           >
             Kontakt
           </Link>

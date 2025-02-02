@@ -20,7 +20,7 @@ export default function BlogHero() {
               Blog o tworzeniu nowoczesnych stron internetowych WordPress,
               Node.js, Vue.js, Next.js
             </h1>
-            <h2>
+            <h2 className='text-xl max-w-6xl'>
               Porady i nowinki dla osób zainteresowanych Tworzeniem stron
               internetowych. Automatyzacje procesów firmowych, ciekawe narzędzia
               a także najlepsze praktyki SEO i UX. Optymalizacja stron pod kątem
