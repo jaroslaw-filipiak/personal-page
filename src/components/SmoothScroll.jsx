@@ -7,14 +7,15 @@ export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       wheelMultiplier: 1,
       touchMultiplier: 2,
+      smooth: true,
+      smoothTouch: false,
       infinite: false,
     });
 
-    function raf(time: number) {
+    function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }

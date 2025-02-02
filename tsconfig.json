@@ -28,7 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/sitemap.ts",
-    "src/components/pricingConfigurator/PricingConfigurator.tsx"
+    "src/components/pricingConfigurator/PricingConfigurator.tsx",
+    "src/components/SmoothScroll.jsx",
+    "src/components/SmoothScroll.jsx"
   ],
   "exclude": ["node_modules"]
 }
