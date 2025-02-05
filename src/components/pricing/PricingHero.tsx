@@ -2,6 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { trackFBEvent } from '@/utils/facebook';
+
+const test = () => {
+  trackFBEvent('click_pricing_page_heading_test', {
+    value: 1.0,
+    currency: 'PLN',
+  });
+};
+
 export default function BlogHero() {
   return (
     <section
@@ -18,7 +27,7 @@ export default function BlogHero() {
         >
           <div className='xl:w-8/12'>
             <h1 className='text-5xl text-balance pb-10'>Cennik</h1>
-            <h2 className='text-xl max-w-6xl'>
+            <h2 className='text-xl max-w-6xl' onClick={test}>
               Indywidualne oferty potrzebują indywidualnej wyceny, nie mniej
               zanim zdecydujesz się na rozmowę sprawdź w jakich “widełkach”
               cenowych się poruszam
