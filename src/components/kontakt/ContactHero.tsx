@@ -7,7 +7,7 @@ export default function ContactHero() {
   return (
     <div className='container relative'>
       <motion.div
-        initial={{ opacity: 0, top: 30 }}
+        initial={false}
         whileInView={{ opacity: 1, top: 0 }}
         exit={{ opacity: 0 }}
         transition={{ type: 'spring', duration: 1 }}
