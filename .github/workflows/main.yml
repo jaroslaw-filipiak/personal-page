@@ -1,4 +1,4 @@
-name: 🚀 Deploy Next.js website
+name: 🚀 Deploy website
 
 on:
   push:
@@ -20,12 +20,10 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: npm i
+        run: npm install
 
       - name: 🏗️ Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: 'https://j-filipiak.pl'
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -40,7 +38,6 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
-            **/.next/**
           state-name: .sync-state.json
           log-level: verbose
           timeout: 60000
