@@ -118,14 +118,14 @@ export default function pricing() {
         <Nav />
         <PricingHero />
         {/* one page */}
-        <section className='container pb-20 pt-20'>
+        <section className='container pb-20'>
           <h3 className='text-3xl mb-20'>1. Strony internetowe </h3>
           <ul>
             <li>
               <h4 className='text-2xl'>Strony typu OnePage</h4>
               <div className='border-b mt-3 mb-10'></div>
               <div className='description mb-10 flex flex-col lg:flex-row gap-8'>
-                <div className='text-lg w-full lg:w-5/12 xl:w-4/12'>
+                <div className='text-lg w-full lg:w-5/12 xl:w-6/12 '>
                   Strony typu onepage
                   <strong>
                     &nbsp;to strony internetowe, które wyświetlają całą swoją
@@ -134,7 +134,7 @@ export default function pricing() {
                   </strong>
                   .
                 </div>
-                <div className='w-full lg:w-7/12 xl:w-8/12'>
+                <div className='w-full lg:w-7/12 xl:w-6/12 '>
                   <p className='pb-6'>
                     Cała zawartość strony jest umieszczona na jednej dłuższej
                     stronie podzielonej na sekcje , a nawigacja opiera się na
