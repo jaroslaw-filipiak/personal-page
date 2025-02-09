@@ -16,13 +16,7 @@ export default function BlogHero() {
   return (
     <section id='start' className='pt-32 lg:pt-40 2xl:pt-72 pb-20'>
       <div>
-        <div
-          initial={{ opacity: 0, top: 30 }}
-          whileInView={{ opacity: 1, top: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ type: 'spring', duration: 1 }}
-          className='container relative flex flex-col xl:flex-row gap-10'
-        >
+        <div className='container relative flex flex-col xl:flex-row gap-10'>
           <div className='w-full xl:w-6/12 flex flex-col items-start justify-start gap-10'>
             <h1 className='text-5xl text-balance '>Cennik</h1>
             <h2 className='text-xl' onClick={test}>
