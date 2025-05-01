@@ -223,7 +223,7 @@ export default function Form(props: FormProps) {
             status === 'mail_sent'
           }
           onClick={sendForm}
-          className={`hover:opacity-80 transition-all py-4 px-10 inline-block ${submitButtonClasses[status]}`}
+          className={` text-wrap hover:opacity-80 transition-all py-4 px-3 md:px-10 md:inline-block ${submitButtonClasses[status]}`}
           type='submit'
           value={formComputedValue[status]}
         />

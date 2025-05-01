@@ -48,7 +48,7 @@ export default function Hero(props: heroProps) {
             </ul>
           </div>
           {props.hasForm && (
-            <div className='border border-[#d7d7d7] shadow-md lg:w-6/12 xl:w-4/12 p-10 pb-10'>
+            <div className='border border-[#d7d7d7] shadow-md lg:w-6/12 xl:w-4/12 p-10 '>
               <Form title={props.formTitle} formId={props.formId}></Form>
             </div>
           )}
