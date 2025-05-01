@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef } from 'react';
-
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
 export default function Confetti() {
@@ -10,19 +9,16 @@ export default function Confetti() {
   }, []);
 
   const makeShot = useCallback((particleRatio, opts) => {
-    refAnimationInstance.current &&
+    if (refAnimationInstance.current) {
       refAnimationInstance.current({
         ...opts,
         origin: { y: 0.7 },
         particleCount: Math.floor(200 * particleRatio),
       });
+    }
   }, []);
 
-  useEffect(() => fire(), []);
-
   const fire = useCallback(() => {
-    console.log(ReactCanvasConfetti);
-    console.log(makeShot);
     makeShot(0.25, {
       spread: 26,
       startVelocity: 55,
@@ -51,9 +47,15 @@ export default function Confetti() {
     });
   }, [makeShot]);
 
+  useEffect(() => {
+    // Fire once when component mounts
+    fire();
+  }, [fire]);
+
   return (
     <ReactCanvasConfetti
-      refConfetti={getInstance}
+      // Update the prop name from refConfetti to ref
+      ref={getInstance}
       style={{
         position: 'fixed',
         pointerEvents: 'none',
@@ -62,7 +64,6 @@ export default function Confetti() {
         top: 0,
         left: 0,
         zIndex: 99999999999,
-        border: '2px solid red',
       }}
     />
   );

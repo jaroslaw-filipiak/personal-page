@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ValidationMessage from '@/components/forms/ValidationMessage';
+import ConfettiEffect from '@/components/extra/ConfettiEffect';
 
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -25,17 +26,95 @@ interface FormProps {
 
 export default function Form(props: FormProps) {
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState<string | null | undefined>(undefined);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [status, setStatus] = useState(null);
-  const [validationErr, setValidationErr] = useState([]);
+  const [status, setStatus] = useState<
+    | 'default'
+    | 'sending'
+    | 'success'
+    | 'validation_failed'
+    | 'mail_sent'
+    | 'loading'
+  >('default');
+  const [validationErr, setValidationErr] = useState<
+    Array<{ field: string; message: string }>
+  >([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const confettiCanvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  // Function to remove confetti canvas from DOM
+  const removeConfettiCanvas = () => {
+    // Find and remove all canvas elements that might have been created
+    const confettiCanvases = document.querySelectorAll('canvas');
+    confettiCanvases.forEach((canvas) => {
+      if (
+        canvas.style.position === 'fixed' &&
+        canvas.style.zIndex === '9999999'
+      ) {
+        document.body.removeChild(canvas);
+      }
+    });
+  };
+
+  // Debug function to manually trigger confetti
+  const triggerConfetti = () => {
+    // Remove any existing canvases first
+    removeConfettiCanvas();
+
+    setShowConfetti(true);
+    // Reset after 5 seconds
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000);
+  };
+
+  const formComputedValue = {
+    default: 'Wyślij wiadomość',
+    sending: 'Wysyłanie...',
+    success: 'Wiadomość została wysłana!',
+    mail_sent: 'Wiadomość została wysłana :)',
+    validation_failed: 'Upss.. nie udało się wysłać wiadomości',
+    loading: 'Wysyłanie...',
+  };
+
+  const submitButtonClasses = {
+    default: 'bg-dark text-white cursor-pointer w-full',
+    sending: 'bg-dark text-white  w-full pointer-none',
+    success:
+      'bg-accent text-dark border border-dashed border-dark cursor-pointer w-full',
+    mail_sent:
+      'bg-accent text-dark border border-dashed border-dark cursor-pointer w-full cursor-not-allowed',
+    validation_failed:
+      'bg-red-500 text-white w-full pointer-none cursor-not-allowed',
+    loading: 'bg-dark text-white w-full pointer-none cursor-not-allowed',
+  };
+
+  const clearValidationErr = (inputName: string) => {
+    setValidationErr((prevErrors) => {
+      return prevErrors.filter((err) => err.field !== inputName);
+    });
+  };
+
+  useEffect(() => {
+    if (status === 'success' || status === 'mail_sent') {
+      setShowConfetti(true);
+
+      // Hide confetti after 5 seconds
+      const timer = setTimeout(() => {
+        setShowConfetti(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   const sendForm = async () => {
     setValidationErr([]);
     setLoading(true);
+    setStatus('sending');
     try {
       const formData = new FormData();
       formData.append('_wpcf7_unit_tag', 'wpcf7-f183-p41-o1');
@@ -70,6 +149,7 @@ export default function Form(props: FormProps) {
 
   return (
     <div className='relative'>
+      {showConfetti && <ConfettiEffect />}
       <Image
         className='absolute hidden xl:flex xl:-left-[239px] xl:-top-[40px]'
         loading='lazy'
@@ -87,7 +167,12 @@ export default function Form(props: FormProps) {
           name='name'
           id='name'
           placeholder='Imię, nazwisko *'
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+            clearValidationErr('your-name');
+            setStatus('default');
+            setMessage(null);
+          }}
         />
         {status === 'validation_failed' && (
           <ValidationMessage errors={validationErr} field_key='your-name' />
@@ -100,7 +185,12 @@ export default function Form(props: FormProps) {
           name='email'
           id='email'
           placeholder='Email *'
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            clearValidationErr('your-email');
+            setStatus('default');
+            setMessage(null);
+          }}
         />
         {status === 'validation_failed' && (
           <ValidationMessage errors={validationErr} field_key='your-email' />
@@ -113,7 +203,12 @@ export default function Form(props: FormProps) {
           name='phone'
           id='phone'
           placeholder='Telefon'
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => {
+            setPhone(e.target.value);
+            clearValidationErr('tel-548');
+            setStatus('default');
+            setMessage(null);
+          }}
         />
         {status === 'validation_failed' && (
           <ValidationMessage errors={validationErr} field_key='tel-548' />
@@ -121,24 +216,32 @@ export default function Form(props: FormProps) {
       </div>
       <div className='mt-12 flex flex-col items-start gap-6'>
         <input
+          disabled={
+            status === 'sending' ||
+            status === 'validation_failed' ||
+            status === 'loading' ||
+            status === 'mail_sent'
+          }
           onClick={sendForm}
-          className='bg-dark hover:opacity-80 transition-all text-white py-4 px-10 inline-block  cursor-pointer w-full'
+          className={`hover:opacity-80 transition-all py-4 px-10 inline-block ${submitButtonClasses[status]}`}
           type='submit'
-          value={loading ? 'Wysyłam...' : 'Wyślij'}
+          value={formComputedValue[status]}
         />
-        <div>
+
+        <div className='flex flex-col gap-2'>
           <small>
             Wysyłając wiadomość wyrażasz zgodę na&nbsp;
             <Link
-              href='polityka-prywatnosci'
+              href='/polityka-prywatnosci'
               className='hover:underline underline-offset-[5px]'
             >
               przetwarzanie danych osobowych
             </Link>
           </small>
+          <small>* pola wymagane</small>
         </div>
       </div>
-      {message && <div className='h-4 mt-4 pb-10 pt-3'>{message}</div>}
+      {/* {message && <div className='h-4 mt-4 pb-10 pt-3'>{message}</div>} */}
     </div>
   );
 }
