@@ -7,10 +7,12 @@ import SideMenu from '@/components/SideMenu';
 
 import { GoogleTagManager } from '@next/third-parties/google';
 
+
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import CookieConsent from '@/components/CookieConsent';
 import SmoothScroll from '@/components/SmoothScroll';
+
 
 // Font files can be colocated inside of `app`
 const satoshi = localFont({
@@ -28,6 +30,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
+
   return (
     <html lang='pl'>
       <body className={`relative  ${satoshi.className}`}>
@@ -35,7 +39,32 @@ export default function RootLayout({
         <Hamburger />
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
+
+        {/* Set default consent to denied before GTM loads */}
+        <Script
+          id="consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+
+              // Set default consent to 'denied' for all services
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'functionality_storage': 'denied',
+                'personalization_storage': 'denied',
+                'security_storage': 'denied'
+              });
+            `
+          }}
+        />
+
+      
         <GoogleTagManager gtmId='GTM-M7H5MHM' />
+
         <Script
           type='text/plain'
           data-category='analytics'

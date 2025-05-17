@@ -35,12 +35,12 @@ const CookieConsentApiBtns = () => {
         <button type='button' onClick={() => acceptAndHide([])}>
           Tylko niezbędne
         </button>
-        {/* <button type='button' onClick={resetPlugin}>
+        <button type='button' onClick={resetPlugin}>
           Reset plugin
         </button>
         <button type='button' onClick={toggleDarkMode}>
           Toggle DarkMode
-        </button> */}
+        </button>
       </div>
     </>
   );
