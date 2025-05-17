@@ -39,6 +39,25 @@ export default function RootLayout({
         <Hamburger />
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
+        
+        <Script id="google-consent" strategy="beforeInteractive">
+          {`
+            // Define dataLayer and the gtag function.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Default consent settings to 'denied'.
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied',
+              'functionality_storage': 'denied',
+              'personalization_storage': 'denied',
+              'security_storage': 'granted', // Usually kept as granted for security purposes
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied'
+            });
+          `}
+        </Script>
 
        
         <GoogleTagManager gtmId='GTM-M7H5MHM' />
