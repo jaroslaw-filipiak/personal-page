@@ -15,17 +15,40 @@ const pluginConfig: CookieConsentConfig = {
       flipButtons: false,
     },
   },
-
-  onFirstConsent: function () {
-    console.log('onFirstAction fired');
+  onFirstConsent: function ({ cookie }) {
+    gtag('consent', 'update', {
+      'ad_storage': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_user_data': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_personalization': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'analytics_storage': cookie.categories.includes('analytics') ? 'granted' : 'denied',
+      'functionality_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'personalization_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'security_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied'
+    });
   },
 
   onConsent: function ({ cookie }) {
-    console.log('onConsent fired ...');
+    gtag('consent', 'update', {
+      'ad_storage': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_user_data': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_personalization': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'analytics_storage': cookie.categories.includes('analytics') ? 'granted' : 'denied',
+      'functionality_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'personalization_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'security_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied'
+    });
   },
 
   onChange: function ({ changedCategories, cookie }) {
-    console.log('onChange fired ...');
+    gtag('consent', 'update', {
+      'ad_storage': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_user_data': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_personalization': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'analytics_storage': cookie.categories.includes('analytics') ? 'granted' : 'denied',
+      'functionality_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'personalization_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
+      'security_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied'
+    });
   },
 
   categories: {
