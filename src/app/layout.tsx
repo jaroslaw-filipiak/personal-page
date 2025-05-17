@@ -50,9 +50,6 @@ export default function RootLayout({
             gtag('consent', 'default', {
               'ad_storage': 'denied',
               'analytics_storage': 'denied',
-              'functionality_storage': 'denied',
-              'personalization_storage': 'denied',
-              'security_storage': 'granted', // Usually kept as granted for security purposes
               'ad_user_data': 'denied',
               'ad_personalization': 'denied'
             });
