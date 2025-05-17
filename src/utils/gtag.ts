@@ -2,21 +2,21 @@ type GtagConsentArg =
   | ['consent', 'default', Record<string, 'granted' | 'denied'>]
   | ['consent', 'update', Record<string, 'granted' | 'denied'>];
 
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag: {
-      (...args: GtagConsentArg): void;
-      (...args: any[]): void;
-    };
-  }
+// Augment the existing Window interface
+interface Window {
+  gtag: {
+    (...args: GtagConsentArg): void;
+    (...args: any[]): void;
+  };
 }
 
 export const initializeGoogleConsent = () => {
   if (typeof window !== 'undefined') {
     // Set Google consent mode defaults
+    // @ts-ignore - dataLayer is added by Google Tag Manager script
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function() {
+      // @ts-ignore - dataLayer is added by Google Tag Manager script
       (window.dataLayer = window.dataLayer || []).push(arguments);
     };
 
