@@ -1,4 +1,32 @@
+// Add type definitions for Google Tag Manager
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 import type { CookieConsentConfig } from 'vanilla-cookieconsent';
+import { updateGoogleConsent } from '@/utils/gtag';
+
+// Set Google consent mode defaults
+window.gtag = window.gtag || function() {
+  (window.dataLayer = window.dataLayer || []).push(arguments);
+};
+
+window.dataLayer = window.dataLayer || [];
+function gtag(...args: any[]) {
+  window.dataLayer.push(args);
+}
+
+// Default consent settings
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted'
+});
 
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
@@ -16,15 +44,15 @@ const pluginConfig: CookieConsentConfig = {
     },
   },
   onFirstConsent: function ({ cookie }) {
-   
+    updateGoogleConsent(cookie);
   },
 
   onConsent: function ({ cookie }) {
-   
+    updateGoogleConsent(cookie);
   },
 
   onChange: function ({ changedCategories, cookie }) {
-   
+    updateGoogleConsent(cookie);
   },
 
   categories: {
