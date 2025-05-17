@@ -40,7 +40,7 @@ export default function RootLayout({
         <SideMenu />
         <main className='z-10 relative mb-[100vh] bg-white'>{children}</main>
         
-        <Script id="google-consent" strategy="beforeInteractive">
+        {/* <Script id="google-consent" strategy="beforeInteractive">
           {`
             // Define dataLayer and the gtag function.
             window.dataLayer = window.dataLayer || [];
@@ -54,7 +54,7 @@ export default function RootLayout({
               'ad_personalization': 'denied'
             });
           `}
-        </Script>
+        </Script> */}
 
        
         <GoogleTagManager gtmId='GTM-M7H5MHM' />
