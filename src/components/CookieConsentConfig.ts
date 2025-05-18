@@ -50,6 +50,8 @@ const pluginConfig: CookieConsentConfig = {
       },
     },
     marketing: {
+      readOnly: false,
+      enabled: false,
       autoClear: {
         cookies: [
           {
