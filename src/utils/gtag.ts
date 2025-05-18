@@ -24,6 +24,8 @@ export const initializeGoogleConsent = () => {
     window.gtag('consent', 'default', {
       'analytics_storage': 'denied',
       'ad_storage': 'denied',
+      'ad_user_data': 'denied',     
+      'ad_personalization': 'denied', 
       'functionality_storage': 'denied',
       'personalization_storage': 'denied',
       'security_storage': 'granted'
@@ -36,6 +38,8 @@ export const updateGoogleConsent = (cookie: { categories: string[] }) => {
     const consentModeStates = {
       'analytics_storage': cookie.categories.includes('analytics') ? 'granted' : 'denied',
       'ad_storage': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_user_data': cookie.categories.includes('marketing') ? 'granted' : 'denied',
+      'ad_personalization': cookie.categories.includes('marketing') ? 'granted' : 'denied',
       'functionality_storage': cookie.categories.includes('necessary') ? 'granted' : 'denied',
       'personalization_storage': cookie.categories.includes('marketing') ? 'granted' : 'denied',
       'security_storage': 'granted'
