@@ -67,7 +67,7 @@ export default function RootLayout({
         />
         <Script
           type='text/plain'
-          data-category='analytics'
+          data-category='marketing'
           src='/meta-pixel.js'
           strategy='afterInteractive'
         />

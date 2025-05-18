@@ -50,8 +50,16 @@ const pluginConfig: CookieConsentConfig = {
       },
     },
     marketing: {
-      readOnly: false,
-      enabled: false,
+      autoClear: {
+        cookies: [
+          {
+            name: /^_fbp/, // Facebook Pixel
+          },
+          {
+            name: /^_gcl_au/, // Google Ads
+          },
+        ],
+      },
     },
   },
 

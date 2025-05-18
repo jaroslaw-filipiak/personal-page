@@ -22,12 +22,12 @@ export const initializeGoogleConsent = () => {
 
     // Default consent settings
     window.gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',     
-      'ad_personalization': 'denied', 
-      'functionality_storage': 'denied',
-      'personalization_storage': 'denied',
+      'analytics_storage': 'denied',  // Analytics
+      'ad_storage': 'denied',  // Cookies reklamowe
+      'ad_user_data': 'denied',     // Pomiar skuteczności  
+      'ad_personalization': 'denied',   // Personalizacja
+      'functionality_storage': 'denied',  // Funkcjonalność
+      'personalization_storage': 'denied',  // Personalizacja
       'security_storage': 'granted'
     });
   }
