@@ -12,19 +12,34 @@
     @apply pb-10;
   }
 
-  img {
+  img,
+  video {
     @apply mb-5 shadow-lg;
   }
 
+  pre,
+  code {
+    @apply max-w-full h-auto block;
+  }
+
   figcaption {
-    @apply mb-3 text-[15px] opacity-80 relative -top-5;
+    @apply text-[15px] opacity-70 pt-2 italic pe-5 lg:pe-20;
   }
 
   .wp-block-code {
-    @apply bg-[#181818] text-lightGray p-8 mb-10 pb-14;
+    @apply bg-[#181818] text-lightGray p-8 mb-10 pb-14 lg:py-20  lg:px-20 max-w-full rounded-xl;
+    code {
+      @apply text-wrap;
+    }
+  }
+  .wp-block-video {
+    video {
+      @apply min-w-full w-full max-w-full h-auto block;
+    }
   }
 
-  p {
+  p,
+  figcaption {
     @apply pb-6;
   }
 

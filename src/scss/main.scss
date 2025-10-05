@@ -5,6 +5,10 @@
 @import './components/cta.scss';
 @import './components/testimonials.scss';
 
+body {
+  @apply text-dark;
+}
+
 .has-bg--circle {
   @apply relative border;
 
@@ -15,11 +19,3 @@
     z-index: -99999999999;
   }
 }
-
-// .slick-slide {
-//   @apply lg:mx-4;
-// }
-
-// .slick-list {
-//   overflow: visible !important;
-// }

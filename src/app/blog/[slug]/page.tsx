@@ -151,7 +151,7 @@ export default async function Page({
         </div>
       </section>
 
-      <div className='wrapper container flex items-start single-blog'>
+      <div className='wrapper  flex items-start single-blog '>
         <main className='container p-0 w-full lg:w-7/12 xl:w-9/12 lg:pr-16 flex flex-col items-start'>
           <div
             className='content'
@@ -163,12 +163,12 @@ export default async function Page({
           <BlogComments postId={post[0]?.id} />
         </main>
 
-        <aside className='hidden lg:block lg:w-5/12 xl:w-3/12 sticky top-14'>
+        {/* <aside className='hidden lg:block lg:w-5/12 xl:w-3/12 sticky top-14'>
           <div>
             <MailerLiteNewsletterForm />
-            {/* <LHbanner /> */}
+            <LHbanner />
           </div>
-        </aside>
+        </aside> */}
       </div>
 
       <Cta />

@@ -30,6 +30,7 @@ export default function Form(props: FormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [url, setUrl] = useState('');
   const [status, setStatus] = useState<
     | 'default'
     | 'sending'
@@ -73,6 +74,15 @@ export default function Form(props: FormProps) {
 
   const formComputedValue = {
     default: 'Wyślij wiadomość',
+    sending: 'Wysyłanie...',
+    success: 'Wiadomość została wysłana!',
+    mail_sent: 'Wiadomość została wysłana :)',
+    validation_failed: 'Upss.. nie udało się wysłać wiadomości',
+    loading: 'Wysyłanie...',
+  };
+  //usuwanie wirusów WordPress
+  const removeMallwareComputedValue = {
+    default: 'Wycena w ciągu 24h!',
     sending: 'Wysyłanie...',
     success: 'Wiadomość została wysłana!',
     mail_sent: 'Wiadomość została wysłana :)',
@@ -126,6 +136,10 @@ export default function Form(props: FormProps) {
           'configurator-data',
           JSON.stringify(props.configuratorData)
         );
+      }
+      //u usuwanie wirusów WordPress
+      if (props.formId === 539) {
+        formData.append('url-108', url);
       }
 
       const response = await fetch(
@@ -214,6 +228,50 @@ export default function Form(props: FormProps) {
           <ValidationMessage errors={validationErr} field_key='tel-548' />
         )}
       </div>
+
+      {/* url usuwanie wirusów */}
+      {props.formId === 539 && (
+        <div>
+          <input
+            className='w-full p-4 border-b-[1px] appearance-none outline:none focus:outline-none focus:border-b-[2px] transition-border'
+            type='text'
+            name='url'
+            id='url'
+            placeholder='Adres strony *'
+            onChange={(e) => {
+              setUrl(e.target.value);
+              clearValidationErr('url-108');
+              setStatus('default');
+              setMessage(null);
+            }}
+          />
+
+          {status === 'validation_failed' && url === '' && (
+            <div className='text-[14px] text-red-500  pt-1 flex items-start gap-2'>
+              <div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  className='icon icon-tabler icons-tabler-outline icon-tabler-exclamation-circle'
+                >
+                  <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                  <path d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0' />
+                  <path d='M12 9v4' />
+                  <path d='M12 16v.01' />
+                </svg>
+              </div>
+              Adres strony jest niezbędny do przygotowania wyceny.
+            </div>
+          )}
+        </div>
+      )}
       <div className='mt-12 flex flex-col items-start gap-6'>
         <input
           disabled={
@@ -225,7 +283,11 @@ export default function Form(props: FormProps) {
           onClick={sendForm}
           className={` text-wrap hover:opacity-80 transition-all py-4 px-3 md:px-10 md:inline-block ${submitButtonClasses[status]}`}
           type='submit'
-          value={formComputedValue[status]}
+          value={
+            props.formId === 539
+              ? removeMallwareComputedValue[status]
+              : formComputedValue[status]
+          }
         />
 
         <div className='flex flex-col gap-2'>
